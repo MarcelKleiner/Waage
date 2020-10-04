@@ -1936,4 +1936,52 @@ Wire Wire Line
 	4250 2300 4250 2350
 Wire Wire Line
 	3450 2700 3850 2700
+$Comp
+L Device:Battery_Cell BT1
+U 1 1 5F7B154D
+P 7000 5950
+F 0 "BT1" H 7118 6046 50  0000 L CNN
+F 1 "Battery_Cell" H 7118 5955 50  0000 L CNN
+F 2 "Battery:BatteryHolder_Keystone_3000_1x12mm" V 7000 6010 50  0001 C CNN
+F 3 "~" V 7000 6010 50  0001 C CNN
+	1    7000 5950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Timer_RTC:PCF8563T U9
+U 1 1 5F7B252F
+P 7950 6000
+F 0 "U9" H 7950 6581 50  0000 C CNN
+F 1 "PCF8563T" H 7950 6490 50  0000 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 7950 6000 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/PCF8563.pdf" H 7950 6000 50  0001 C CNN
+F 4 "PCF8563T/F4,118" H 7950 6000 50  0001 C CNN "Hersteller Nr."
+F 5 "771-PCF8563TD-T" H 7950 6000 50  0001 C CNN "Mouser Nr."
+	1    7950 6000
+	1    0    0    -1  
+$EndComp
+NoConn ~ 7550 5800
+NoConn ~ 7550 6200
+NoConn ~ 8350 6200
+NoConn ~ 8350 6100
+Wire Wire Line
+	7950 5600 7950 5550
+Wire Wire Line
+	7950 5550 7000 5550
+Wire Wire Line
+	7000 5550 7000 5750
+Wire Wire Line
+	7000 6050 7000 6450
+Wire Wire Line
+	7000 6450 7950 6450
+Wire Wire Line
+	7950 6450 7950 6400
+Wire Wire Line
+	8350 5900 8500 5900
+Wire Wire Line
+	8350 5800 8500 5800
+Text GLabel 8500 5900 2    50   Input ~ 0
+SDA
+Text GLabel 8500 5800 2    50   Output ~ 0
+SCL
 $EndSCHEMATC

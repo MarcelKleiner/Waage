@@ -1,659 +1,204 @@
-145911860961241
-MountingHole
-MountingHole_2.1mm
-Mounting Hole 2.1mm, no annular
-mounting hole 2.1mm no annular
+45015361360731
+Battery
+BatteryHolder_Bulgin_BX0036_1xC
+Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
+Bulgin BX0036
+0
+2
+2
+Battery
+BatteryHolder_Eagle_12BH611-GR
+https://eu.mouser.com/datasheet/2/209/EPD-200766-1274481.pdf
+9V Battery Holder
+0
+2
+2
+Battery
+BatteryHolder_Keystone_103_1x20mm
+http://www.keyelco.com/product-pdf.cfm?p=719
+Keystone type 103 battery holder
+0
+2
+2
+Battery
+BatteryHolder_Keystone_104_1x23mm
+http://www.keyelco.com/product-pdf.cfm?p=744
+Keystone type 104 battery holder
+0
+2
+2
+Battery
+BatteryHolder_Keystone_105_1x2430
+http://www.keyelco.com/product-pdf.cfm?p=745
+Keystone type 105 battery holder
+0
+2
+2
+Battery
+BatteryHolder_Keystone_106_1x20mm
+http://www.keyelco.com/product-pdf.cfm?p=720
+Keystone type 106 battery holder
+0
+2
+2
+Battery
+BatteryHolder_Keystone_107_1x23mm
+http://www.keyelco.com/product-pdf.cfm?p=746
+Keystone type 107 battery holder
+0
+2
+2
+Battery
+BatteryHolder_Keystone_500
+Keystone #500, CR1220 battery holder, http://www.keyelco.com/product-pdf.cfm?p=710
+CR1220 battery holder
+0
+2
+2
+Battery
+BatteryHolder_Keystone_1042_1x18650
+Battery holder for 18650 cylindrical cells http://www.keyelco.com/product.cfm/product_id/918
+18650 Keystone 1042 Li-ion
+0
+2
+2
+Battery
+BatteryHolder_Keystone_1058_1x2032
+http://www.keyelco.com/product-pdf.cfm?p=14028
+Keystone type 1058 coin cell retainer
+0
+2
+2
+Battery
+BatteryHolder_Keystone_1060_1x2032
+http://www.keyelco.com/product-pdf.cfm?p=726
+CR2032 BR2032 BatteryHolder Battery
+0
+2
+2
+Battery
+BatteryHolder_Keystone_2462_2xAA
+2xAA cell battery holder, Keystone P/N 2462, https://www.keyelco.com/product-pdf.cfm?p=1027
+AA battery cell holder
+0
+2
+2
+Battery
+BatteryHolder_Keystone_2466_1xAAA
+1xAAA Battery Holder, Keystone, Plastic Case, http://www.keyelco.com/product-pdf.cfm?p=1031
+AAA battery holder Keystone
+0
+2
+2
+Battery
+BatteryHolder_Keystone_2468_2xAAA
+2xAAA cell battery holder, Keystone P/N 2468, http://www.keyelco.com/product-pdf.cfm?p=1033
+AAA battery cell holder
+0
+2
+2
+Battery
+BatteryHolder_Keystone_2479_3xAAA
+3xAAA cell battery holder, Keystone P/N 2479, http://www.keyelco.com/product-pdf.cfm?p=1041
+AAA battery cell holder
+0
+2
+2
+Battery
+BatteryHolder_Keystone_2993
+http://www.keyelco.com/product-pdf.cfm?p=776
+Keystone type 2993 negative battery contact
+0
+1
+1
+Battery
+BatteryHolder_Keystone_3000_1x12mm
+http://www.keyelco.com/product-pdf.cfm?p=777
+Keystone type 3000 coin cell retainer
+0
+3
+2
+Battery
+BatteryHolder_Keystone_3001_1x12mm
+http://www.keyelco.com/product-pdf.cfm?p=778
+Keystone type 3001 coin cell retainer
+0
+3
+2
+Battery
+BatteryHolder_Keystone_3008_1x2450
+http://www.keyelco.com/product-pdf.cfm?p=786
+Keystone type 3008 coin cell retainer
+0
+3
+2
+Battery
+BatteryHolder_Keystone_3009_1x2450
+http://www.keyelco.com/product-pdf.cfm?p=787
+Keystone type 3009 coin cell retainer
+0
+3
+2
+Battery
+BatteryHolder_Keystone_3034_1x20mm
+Keystone 3034 SMD battery holder for 2020, 2025 and 2032 coincell batteries. http://www.keyelco.com/product-pdf.cfm?p=798
+Keystone type 3034 coin cell retainer
+0
+3
+2
+Battery
+BatteryHolder_LINX_BAT-HLD-012-SMT
+SMT battery holder for CR1216/1220/1225, https://linxtechnologies.com/wp/wp-content/uploads/bat-hld-012-smt.pdf
+battery holder coin cell cr1216 cr1220 cr1225
+0
+3
+2
+Battery
+BatteryHolder_MPD_BC2AAPC_2xAA
+2xAA cell battery holder, Memory Protection Devices P/N BC2AAPC, http://www.memoryprotectiondevices.com/datasheets/BC2AAPC-datasheet.pdf
+AA battery cell holder
+0
+2
+2
+Battery
+BatteryHolder_MPD_BC12AAPC_2xAA
+2xAA cell battery holder, Memory Protection Devices P/N BC12AAPC, http://www.memoryprotectiondevices.com/datasheets/BC12AAPC-datasheet.pdf
+AA battery cell holder
+0
+2
+2
+Battery
+BatteryHolder_MPD_BC2003_1x2032
+http://www.memoryprotectiondevices.com/datasheets/BC-2003-datasheet.pdf
+BC2003 CR2032 2032 Battery Holder
+0
+3
+2
+Battery
+BatteryHolder_MPD_BH-18650-PC2
+18650 Battery Holder (http://www.memoryprotectiondevices.com/datasheets/BK-18650-PC2-datasheet.pdf)
+18650 Battery Holder
+0
+2
+2
+Battery
+BatteryHolder_Seiko_MS621F
+Seiko MS621F, https://www.sii.co.jp/en/me/files/2014/02/file_EXTENDED_PRDCT_SPEC_75_FILE_11.jpg
+Seiko MS621F
+0
+2
+2
+Battery
+BatteryHolder_TruPower_BH-331P_3xAA
+Keystone Battery Holder BH-331P Battery Type 3xAA (Script generated with StandardBox.py) (Keystone Battery Holder BH-331P Battery Type 3xAA)
+Battery Holder BH-331P Battery Type 3xAA
+0
+2
+2
+Battery
+Battery_CR1225
+CR1225 battery
+battery CR1225 coin cell
 0
 0
 0
-MountingHole
-MountingHole_2.2mm_M2
-Mounting Hole 2.2mm, no annular, M2
-mounting hole 2.2mm no annular m2
-0
-0
-0
-MountingHole
-MountingHole_2.2mm_M2_DIN965
-Mounting Hole 2.2mm, no annular, M2, DIN965
-mounting hole 2.2mm no annular m2 din965
-0
-0
-0
-MountingHole
-MountingHole_2.2mm_M2_DIN965_Pad
-Mounting Hole 2.2mm, M2, DIN965
-mounting hole 2.2mm m2 din965
-0
-1
-1
-MountingHole
-MountingHole_2.2mm_M2_ISO7380
-Mounting Hole 2.2mm, no annular, M2, ISO7380
-mounting hole 2.2mm no annular m2 iso7380
-0
-0
-0
-MountingHole
-MountingHole_2.2mm_M2_ISO7380_Pad
-Mounting Hole 2.2mm, M2, ISO7380
-mounting hole 2.2mm m2 iso7380
-0
-1
-1
-MountingHole
-MountingHole_2.2mm_M2_ISO14580
-Mounting Hole 2.2mm, no annular, M2, ISO14580
-mounting hole 2.2mm no annular m2 iso14580
-0
-0
-0
-MountingHole
-MountingHole_2.2mm_M2_ISO14580_Pad
-Mounting Hole 2.2mm, M2, ISO14580
-mounting hole 2.2mm m2 iso14580
-0
-1
-1
-MountingHole
-MountingHole_2.2mm_M2_Pad
-Mounting Hole 2.2mm, M2
-mounting hole 2.2mm m2
-0
-1
-1
-MountingHole
-MountingHole_2.2mm_M2_Pad_Via
-Mounting Hole 2.2mm, M2
-mounting hole 2.2mm m2
-0
-9
-1
-MountingHole
-MountingHole_2.5mm
-Mounting Hole 2.5mm, no annular
-mounting hole 2.5mm no annular
-0
-0
-0
-MountingHole
-MountingHole_2.5mm_Pad
-Mounting Hole 2.5mm
-mounting hole 2.5mm
-0
-1
-1
-MountingHole
-MountingHole_2.5mm_Pad_Via
-Mounting Hole 2.5mm
-mounting hole 2.5mm
-0
-9
-1
-MountingHole
-MountingHole_2.7mm
-Mounting Hole 2.7mm, no annular
-mounting hole 2.7mm no annular
-0
-0
-0
-MountingHole
-MountingHole_2.7mm_M2.5
-Mounting Hole 2.7mm, no annular, M2.5
-mounting hole 2.7mm no annular m2.5
-0
-0
-0
-MountingHole
-MountingHole_2.7mm_M2.5_DIN965
-Mounting Hole 2.7mm, no annular, M2.5, DIN965
-mounting hole 2.7mm no annular m2.5 din965
-0
-0
-0
-MountingHole
-MountingHole_2.7mm_M2.5_DIN965_Pad
-Mounting Hole 2.7mm, M2.5, DIN965
-mounting hole 2.7mm m2.5 din965
-0
-1
-1
-MountingHole
-MountingHole_2.7mm_M2.5_ISO7380
-Mounting Hole 2.7mm, no annular, M2.5, ISO7380
-mounting hole 2.7mm no annular m2.5 iso7380
-0
-0
-0
-MountingHole
-MountingHole_2.7mm_M2.5_ISO7380_Pad
-Mounting Hole 2.7mm, M2.5, ISO7380
-mounting hole 2.7mm m2.5 iso7380
-0
-1
-1
-MountingHole
-MountingHole_2.7mm_M2.5_ISO14580
-Mounting Hole 2.7mm, no annular, M2.5, ISO14580
-mounting hole 2.7mm no annular m2.5 iso14580
-0
-0
-0
-MountingHole
-MountingHole_2.7mm_M2.5_ISO14580_Pad
-Mounting Hole 2.7mm, M2.5, ISO14580
-mounting hole 2.7mm m2.5 iso14580
-0
-1
-1
-MountingHole
-MountingHole_2.7mm_M2.5_Pad
-Mounting Hole 2.7mm, M2.5
-mounting hole 2.7mm m2.5
-0
-1
-1
-MountingHole
-MountingHole_2.7mm_M2.5_Pad_Via
-Mounting Hole 2.7mm
-mounting hole 2.7mm
-0
-9
-1
-MountingHole
-MountingHole_2.7mm_Pad
-Mounting Hole 2.7mm
-mounting hole 2.7mm
-0
-1
-1
-MountingHole
-MountingHole_2.7mm_Pad_Via
-Mounting Hole 2.7mm
-mounting hole 2.7mm
-0
-9
-1
-MountingHole
-MountingHole_2mm
-Mounting Hole 2mm, no annular
-mounting hole 2mm no annular
-0
-0
-0
-MountingHole
-MountingHole_3.2mm_M3
-Mounting Hole 3.2mm, no annular, M3
-mounting hole 3.2mm no annular m3
-0
-0
-0
-MountingHole
-MountingHole_3.2mm_M3_DIN965
-Mounting Hole 3.2mm, no annular, M3, DIN965
-mounting hole 3.2mm no annular m3 din965
-0
-0
-0
-MountingHole
-MountingHole_3.2mm_M3_DIN965_Pad
-Mounting Hole 3.2mm, M3, DIN965
-mounting hole 3.2mm m3 din965
-0
-1
-1
-MountingHole
-MountingHole_3.2mm_M3_ISO7380
-Mounting Hole 3.2mm, no annular, M3, ISO7380
-mounting hole 3.2mm no annular m3 iso7380
-0
-0
-0
-MountingHole
-MountingHole_3.2mm_M3_ISO7380_Pad
-Mounting Hole 3.2mm, M3, ISO7380
-mounting hole 3.2mm m3 iso7380
-0
-1
-1
-MountingHole
-MountingHole_3.2mm_M3_ISO14580
-Mounting Hole 3.2mm, no annular, M3, ISO14580
-mounting hole 3.2mm no annular m3 iso14580
-0
-0
-0
-MountingHole
-MountingHole_3.2mm_M3_ISO14580_Pad
-Mounting Hole 3.2mm, M3, ISO14580
-mounting hole 3.2mm m3 iso14580
-0
-1
-1
-MountingHole
-MountingHole_3.2mm_M3_Pad
-Mounting Hole 3.2mm, M3
-mounting hole 3.2mm m3
-0
-1
-1
-MountingHole
-MountingHole_3.2mm_M3_Pad_Via
-Mounting Hole 3.2mm, M3
-mounting hole 3.2mm m3
-0
-9
-1
-MountingHole
-MountingHole_3.5mm
-Mounting Hole 3.5mm, no annular
-mounting hole 3.5mm no annular
-0
-0
-0
-MountingHole
-MountingHole_3.5mm_Pad
-Mounting Hole 3.5mm
-mounting hole 3.5mm
-0
-1
-1
-MountingHole
-MountingHole_3.5mm_Pad_Via
-Mounting Hole 3.5mm
-mounting hole 3.5mm
-0
-9
-1
-MountingHole
-MountingHole_3.7mm
-Mounting Hole 3.7mm, no annular
-mounting hole 3.7mm no annular
-0
-0
-0
-MountingHole
-MountingHole_3.7mm_Pad
-Mounting Hole 3.7mm
-mounting hole 3.7mm
-0
-1
-1
-MountingHole
-MountingHole_3.7mm_Pad_Via
-Mounting Hole 3.7mm
-mounting hole 3.7mm
-0
-9
-1
-MountingHole
-MountingHole_3mm
-Mounting Hole 3mm, no annular
-mounting hole 3mm no annular
-0
-0
-0
-MountingHole
-MountingHole_3mm_Pad
-Mounting Hole 3mm
-mounting hole 3mm
-0
-1
-1
-MountingHole
-MountingHole_3mm_Pad_Via
-Mounting Hole 3mm
-mounting hole 3mm
-0
-9
-1
-MountingHole
-MountingHole_4.3mm_M4
-Mounting Hole 4.3mm, no annular, M4
-mounting hole 4.3mm no annular m4
-0
-0
-0
-MountingHole
-MountingHole_4.3mm_M4_DIN965
-Mounting Hole 4.3mm, no annular, M4, DIN965
-mounting hole 4.3mm no annular m4 din965
-0
-0
-0
-MountingHole
-MountingHole_4.3mm_M4_DIN965_Pad
-Mounting Hole 4.3mm, M4, DIN965
-mounting hole 4.3mm m4 din965
-0
-1
-1
-MountingHole
-MountingHole_4.3mm_M4_ISO7380
-Mounting Hole 4.3mm, no annular, M4, ISO7380
-mounting hole 4.3mm no annular m4 iso7380
-0
-0
-0
-MountingHole
-MountingHole_4.3mm_M4_ISO7380_Pad
-Mounting Hole 4.3mm, M4, ISO7380
-mounting hole 4.3mm m4 iso7380
-0
-1
-1
-MountingHole
-MountingHole_4.3mm_M4_ISO14580
-Mounting Hole 4.3mm, no annular, M4, ISO14580
-mounting hole 4.3mm no annular m4 iso14580
-0
-0
-0
-MountingHole
-MountingHole_4.3mm_M4_ISO14580_Pad
-Mounting Hole 4.3mm, M4, ISO14580
-mounting hole 4.3mm m4 iso14580
-0
-1
-1
-MountingHole
-MountingHole_4.3mm_M4_Pad
-Mounting Hole 4.3mm, M4
-mounting hole 4.3mm m4
-0
-1
-1
-MountingHole
-MountingHole_4.3mm_M4_Pad_Via
-Mounting Hole 4.3mm, M4
-mounting hole 4.3mm m4
-0
-9
-1
-MountingHole
-MountingHole_4.3x6.2mm_M4_Pad
-Mounting Hole 4.3x6.2mm, M4
-mounting hole 4.3x6.2mm m4
-0
-1
-1
-MountingHole
-MountingHole_4.3x6.2mm_M4_Pad_Via
-Mounting Hole 4.3x6.2mm, M4
-mounting hole 4.3x6.2mm m4
-0
-17
-1
-MountingHole
-MountingHole_4.5mm
-Mounting Hole 4.5mm, no annular
-mounting hole 4.5mm no annular
-0
-0
-0
-MountingHole
-MountingHole_4.5mm_Pad
-Mounting Hole 4.5mm
-mounting hole 4.5mm
-0
-1
-1
-MountingHole
-MountingHole_4.5mm_Pad_Via
-Mounting Hole 4.5mm
-mounting hole 4.5mm
-0
-9
-1
-MountingHole
-MountingHole_4mm
-Mounting Hole 4mm, no annular
-mounting hole 4mm no annular
-0
-0
-0
-MountingHole
-MountingHole_4mm_Pad
-Mounting Hole 4mm
-mounting hole 4mm
-0
-1
-1
-MountingHole
-MountingHole_4mm_Pad_Via
-Mounting Hole 4mm
-mounting hole 4mm
-0
-9
-1
-MountingHole
-MountingHole_5.3mm_M5
-Mounting Hole 5.3mm, no annular, M5
-mounting hole 5.3mm no annular m5
-0
-0
-0
-MountingHole
-MountingHole_5.3mm_M5_DIN965
-Mounting Hole 5.3mm, no annular, M5, DIN965
-mounting hole 5.3mm no annular m5 din965
-0
-0
-0
-MountingHole
-MountingHole_5.3mm_M5_DIN965_Pad
-Mounting Hole 5.3mm, M5, DIN965
-mounting hole 5.3mm m5 din965
-0
-1
-1
-MountingHole
-MountingHole_5.3mm_M5_ISO7380
-Mounting Hole 5.3mm, no annular, M5, ISO7380
-mounting hole 5.3mm no annular m5 iso7380
-0
-0
-0
-MountingHole
-MountingHole_5.3mm_M5_ISO7380_Pad
-Mounting Hole 5.3mm, M5, ISO7380
-mounting hole 5.3mm m5 iso7380
-0
-1
-1
-MountingHole
-MountingHole_5.3mm_M5_ISO14580
-Mounting Hole 5.3mm, no annular, M5, ISO14580
-mounting hole 5.3mm no annular m5 iso14580
-0
-0
-0
-MountingHole
-MountingHole_5.3mm_M5_ISO14580_Pad
-Mounting Hole 5.3mm, M5, ISO14580
-mounting hole 5.3mm m5 iso14580
-0
-1
-1
-MountingHole
-MountingHole_5.3mm_M5_Pad
-Mounting Hole 5.3mm, M5
-mounting hole 5.3mm m5
-0
-1
-1
-MountingHole
-MountingHole_5.3mm_M5_Pad_Via
-Mounting Hole 5.3mm, M5
-mounting hole 5.3mm m5
-0
-9
-1
-MountingHole
-MountingHole_5.5mm
-Mounting Hole 5.5mm, no annular
-mounting hole 5.5mm no annular
-0
-0
-0
-MountingHole
-MountingHole_5.5mm_Pad
-Mounting Hole 5.5mm
-mounting hole 5.5mm
-0
-1
-1
-MountingHole
-MountingHole_5.5mm_Pad_Via
-Mounting Hole 5.5mm
-mounting hole 5.5mm
-0
-9
-1
-MountingHole
-MountingHole_5mm
-Mounting Hole 5mm, no annular
-mounting hole 5mm no annular
-0
-0
-0
-MountingHole
-MountingHole_5mm_Pad
-Mounting Hole 5mm
-mounting hole 5mm
-0
-1
-1
-MountingHole
-MountingHole_5mm_Pad_Via
-Mounting Hole 5mm
-mounting hole 5mm
-0
-9
-1
-MountingHole
-MountingHole_6.4mm_M6
-Mounting Hole 6.4mm, no annular, M6
-mounting hole 6.4mm no annular m6
-0
-0
-0
-MountingHole
-MountingHole_6.4mm_M6_DIN965
-Mounting Hole 6.4mm, no annular, M6, DIN965
-mounting hole 6.4mm no annular m6 din965
-0
-0
-0
-MountingHole
-MountingHole_6.4mm_M6_DIN965_Pad
-Mounting Hole 6.4mm, M6, DIN965
-mounting hole 6.4mm m6 din965
-0
-1
-1
-MountingHole
-MountingHole_6.4mm_M6_ISO7380
-Mounting Hole 6.4mm, no annular, M6, ISO7380
-mounting hole 6.4mm no annular m6 iso7380
-0
-0
-0
-MountingHole
-MountingHole_6.4mm_M6_ISO7380_Pad
-Mounting Hole 6.4mm, M6, ISO7380
-mounting hole 6.4mm m6 iso7380
-0
-1
-1
-MountingHole
-MountingHole_6.4mm_M6_ISO14580
-Mounting Hole 6.4mm, no annular, M6, ISO14580
-mounting hole 6.4mm no annular m6 iso14580
-0
-0
-0
-MountingHole
-MountingHole_6.4mm_M6_ISO14580_Pad
-Mounting Hole 6.4mm, M6, ISO14580
-mounting hole 6.4mm m6 iso14580
-0
-1
-1
-MountingHole
-MountingHole_6.4mm_M6_Pad
-Mounting Hole 6.4mm, M6
-mounting hole 6.4mm m6
-0
-1
-1
-MountingHole
-MountingHole_6.4mm_M6_Pad_Via
-Mounting Hole 6.4mm, M6
-mounting hole 6.4mm m6
-0
-9
-1
-MountingHole
-MountingHole_6.5mm
-Mounting Hole 6.5mm, no annular
-mounting hole 6.5mm no annular
-0
-0
-0
-MountingHole
-MountingHole_6.5mm_Pad
-Mounting Hole 6.5mm
-mounting hole 6.5mm
-0
-1
-1
-MountingHole
-MountingHole_6.5mm_Pad_Via
-Mounting Hole 6.5mm
-mounting hole 6.5mm
-0
-9
-1
-MountingHole
-MountingHole_6mm
-Mounting Hole 6mm, no annular
-mounting hole 6mm no annular
-0
-0
-0
-MountingHole
-MountingHole_6mm_Pad
-Mounting Hole 6mm
-mounting hole 6mm
-0
-1
-1
-MountingHole
-MountingHole_6mm_Pad_Via
-Mounting Hole 6mm
-mounting hole 6mm
-0
-9
-1
-MountingHole
-MountingHole_8.4mm_M8
-Mounting Hole 8.4mm, no annular, M8
-mounting hole 8.4mm no annular m8
-0
-0
-0
-MountingHole
-MountingHole_8.4mm_M8_Pad
-Mounting Hole 8.4mm, M8
-mounting hole 8.4mm m8
-0
-1
-1
-MountingHole
-MountingHole_8.4mm_M8_Pad_Via
-Mounting Hole 8.4mm, M8
-mounting hole 8.4mm m8
-0
-9
-1
