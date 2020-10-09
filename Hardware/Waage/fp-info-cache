@@ -1,204 +1,554 @@
-45015361360731
-Battery
-BatteryHolder_Bulgin_BX0036_1xC
-Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
-Bulgin BX0036
+122628053360808
+Diode_SMD
+Diode_Bridge_Diotec_ABS
+SMD diode bridge ABS (Diotec), see https://diotec.com/tl_files/diotec/files/pdf/datasheets/abs2.pdf
+ABS MBLS
+0
+4
+4
+Diode_SMD
+Diode_Bridge_Diotec_MicroDil_3.0x3.0x1.8mm
+SMD package Diotec Diotec MicroDil, body 3.0x3.0x1.8mm (e.g. diode bridge), see https://diotec.com/tl_files/diotec/files/pdf/datasheets/mys40.pdf
+Diotec MicroDil diode bridge
+0
+4
+4
+Diode_SMD
+Diode_Bridge_Diotec_SO-DIL-Slim
+SMD diode bridge Diotec SO-DIL Slim, see https://diotec.com/tl_files/diotec/files/pdf/datasheets/b40fs.pdf
+DFS SO-DIL Slim
+0
+4
+4
+Diode_SMD
+Diode_Bridge_Vishay_DFS
+SMD diode bridge DFS, see http://www.vishay.com/docs/88854/padlayouts.pdf
+DFS
+0
+4
+4
+Diode_SMD
+Diode_Bridge_Vishay_DFSFlat
+SMD diode bridge Low Profile DFS "Flat", see http://www.vishay.com/docs/88874/dfl15005.pdf
+DFS
+0
+4
+4
+Diode_SMD
+Diode_Bridge_Vishay_MBLS
+SMD diode bridge MBLS, see http://www.vishay.com/docs/89959/mbl104s.pdf http://www.vishay.com/docs/88854/padlayouts.pdf
+DFS
+0
+4
+4
+Diode_SMD
+D_0201_0603Metric
+Diode SMD 0201 (0603 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://www.vishay.com/docs/20052/crcw0201e3.pdf), generated with kicad-footprint-generator
+diode
+0
+4
+2
+Diode_SMD
+D_0402_1005Metric
+Diode SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+diode
 0
 2
 2
-Battery
-BatteryHolder_Eagle_12BH611-GR
-https://eu.mouser.com/datasheet/2/209/EPD-200766-1274481.pdf
-9V Battery Holder
+Diode_SMD
+D_0603_1608Metric
+Diode SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+diode
 0
 2
 2
-Battery
-BatteryHolder_Keystone_103_1x20mm
-http://www.keyelco.com/product-pdf.cfm?p=719
-Keystone type 103 battery holder
+Diode_SMD
+D_0603_1608Metric_Castellated
+Diode SMD 0603 (1608 Metric), castellated end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+diode castellated
 0
 2
 2
-Battery
-BatteryHolder_Keystone_104_1x23mm
-http://www.keyelco.com/product-pdf.cfm?p=744
-Keystone type 104 battery holder
+Diode_SMD
+D_0603_1608Metric_Pad1.05x0.95mm_HandSolder
+Diode SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+diode handsolder
 0
 2
 2
-Battery
-BatteryHolder_Keystone_105_1x2430
-http://www.keyelco.com/product-pdf.cfm?p=745
-Keystone type 105 battery holder
+Diode_SMD
+D_0805_2012Metric
+Diode SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator
+diode
 0
 2
 2
-Battery
-BatteryHolder_Keystone_106_1x20mm
-http://www.keyelco.com/product-pdf.cfm?p=720
-Keystone type 106 battery holder
+Diode_SMD
+D_0805_2012Metric_Castellated
+Diode SMD 0805 (2012 Metric), castellated end terminal, IPC_7351 nominal, (Body size source: https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator
+diode castellated
 0
 2
 2
-Battery
-BatteryHolder_Keystone_107_1x23mm
-http://www.keyelco.com/product-pdf.cfm?p=746
-Keystone type 107 battery holder
+Diode_SMD
+D_0805_2012Metric_Pad1.15x1.40mm_HandSolder
+Diode SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator
+diode handsolder
 0
 2
 2
-Battery
-BatteryHolder_Keystone_500
-Keystone #500, CR1220 battery holder, http://www.keyelco.com/product-pdf.cfm?p=710
-CR1220 battery holder
+Diode_SMD
+D_01005_0402Metric
+Diode SMD 01005 (0402 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.vishay.com/docs/20056/crcw01005e3.pdf), generated with kicad-footprint-generator
+diode
+0
+4
+2
+Diode_SMD
+D_1206_3216Metric
+Diode SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+diode
 0
 2
 2
-Battery
-BatteryHolder_Keystone_1042_1x18650
-Battery holder for 18650 cylindrical cells http://www.keyelco.com/product.cfm/product_id/918
-18650 Keystone 1042 Li-ion
+Diode_SMD
+D_1206_3216Metric_Castellated
+Diode SMD 1206 (3216 Metric), castellated end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+diode castellated
 0
 2
 2
-Battery
-BatteryHolder_Keystone_1058_1x2032
-http://www.keyelco.com/product-pdf.cfm?p=14028
-Keystone type 1058 coin cell retainer
+Diode_SMD
+D_1206_3216Metric_Pad1.42x1.75mm_HandSolder
+Diode SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+diode handsolder
 0
 2
 2
-Battery
-BatteryHolder_Keystone_1060_1x2032
-http://www.keyelco.com/product-pdf.cfm?p=726
-CR2032 BR2032 BatteryHolder Battery
+Diode_SMD
+D_1210_3225Metric
+Diode SMD 1210 (3225 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+diode
 0
 2
 2
-Battery
-BatteryHolder_Keystone_2462_2xAA
-2xAA cell battery holder, Keystone P/N 2462, https://www.keyelco.com/product-pdf.cfm?p=1027
-AA battery cell holder
+Diode_SMD
+D_1210_3225Metric_Castellated
+Diode SMD 1210 (3225 Metric), castellated end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+diode castellated
 0
 2
 2
-Battery
-BatteryHolder_Keystone_2466_1xAAA
-1xAAA Battery Holder, Keystone, Plastic Case, http://www.keyelco.com/product-pdf.cfm?p=1031
-AAA battery holder Keystone
+Diode_SMD
+D_1210_3225Metric_Pad1.42x2.65mm_HandSolder
+Diode SMD 1210 (3225 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+diode handsolder
 0
 2
 2
-Battery
-BatteryHolder_Keystone_2468_2xAAA
-2xAAA cell battery holder, Keystone P/N 2468, http://www.keyelco.com/product-pdf.cfm?p=1033
-AAA battery cell holder
+Diode_SMD
+D_1806_4516Metric
+Diode SMD 1806 (4516 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://www.modelithics.com/models/Vendor/MuRata/BLM41P.pdf), generated with kicad-footprint-generator
+diode
 0
 2
 2
-Battery
-BatteryHolder_Keystone_2479_3xAAA
-3xAAA cell battery holder, Keystone P/N 2479, http://www.keyelco.com/product-pdf.cfm?p=1041
-AAA battery cell holder
+Diode_SMD
+D_1806_4516Metric_Castellated
+Diode SMD 1806 (4516 Metric), castellated end terminal, IPC_7351 nominal, (Body size source: https://www.modelithics.com/models/Vendor/MuRata/BLM41P.pdf), generated with kicad-footprint-generator
+diode castellated
 0
 2
 2
-Battery
-BatteryHolder_Keystone_2993
-http://www.keyelco.com/product-pdf.cfm?p=776
-Keystone type 2993 negative battery contact
+Diode_SMD
+D_1806_4516Metric_Pad1.57x1.80mm_HandSolder
+Diode SMD 1806 (4516 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://www.modelithics.com/models/Vendor/MuRata/BLM41P.pdf), generated with kicad-footprint-generator
+diode handsolder
 0
-1
-1
-Battery
-BatteryHolder_Keystone_3000_1x12mm
-http://www.keyelco.com/product-pdf.cfm?p=777
-Keystone type 3000 coin cell retainer
+2
+2
+Diode_SMD
+D_1812_4532Metric
+Diode SMD 1812 (4532 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://www.nikhef.nl/pub/departments/mt/projects/detectorR_D/dtddice/ERJ2G.pdf), generated with kicad-footprint-generator
+diode
+0
+2
+2
+Diode_SMD
+D_1812_4532Metric_Castellated
+Diode SMD 1812 (4532 Metric), castellated end terminal, IPC_7351 nominal, (Body size source: https://www.nikhef.nl/pub/departments/mt/projects/detectorR_D/dtddice/ERJ2G.pdf), generated with kicad-footprint-generator
+diode castellated
+0
+2
+2
+Diode_SMD
+D_1812_4532Metric_Pad1.30x3.40mm_HandSolder
+Diode SMD 1812 (4532 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://www.nikhef.nl/pub/departments/mt/projects/detectorR_D/dtddice/ERJ2G.pdf), generated with kicad-footprint-generator
+diode handsolder
+0
+2
+2
+Diode_SMD
+D_2010_5025Metric
+Diode SMD 2010 (5025 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+diode
+0
+2
+2
+Diode_SMD
+D_2010_5025Metric_Castellated
+Diode SMD 2010 (5025 Metric), castellated end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+diode castellated
+0
+2
+2
+Diode_SMD
+D_2010_5025Metric_Pad1.52x2.65mm_HandSolder
+Diode SMD 2010 (5025 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+diode handsolder
+0
+2
+2
+Diode_SMD
+D_2114_3652Metric
+Diode SMD 2114 (3652 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size from: http://datasheets.avx.com/schottky.pdf), generated with kicad-footprint-generator
+diode
+0
+2
+2
+Diode_SMD
+D_2114_3652Metric_Castellated
+Diode SMD 2114 (3652 Metric), castellated end terminal, IPC_7351 nominal, (Body size from: http://datasheets.avx.com/schottky.pdf), generated with kicad-footprint-generator
+diode castellated
+0
+2
+2
+Diode_SMD
+D_2114_3652Metric_Pad1.85x3.75mm_HandSolder
+Diode SMD 2114 (3652 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size from: http://datasheets.avx.com/schottky.pdf), generated with kicad-footprint-generator
+diode handsolder
+0
+2
+2
+Diode_SMD
+D_2512_6332Metric
+Diode SMD 2512 (6332 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+diode
+0
+2
+2
+Diode_SMD
+D_2512_6332Metric_Castellated
+Diode SMD 2512 (6332 Metric), castellated end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+diode castellated
+0
+2
+2
+Diode_SMD
+D_2512_6332Metric_Pad1.52x3.35mm_HandSolder
+Diode SMD 2512 (6332 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+diode handsolder
+0
+2
+2
+Diode_SMD
+D_2816_7142Metric
+Diode SMD 2816 (7142 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size from: https://www.vishay.com/docs/30100/wsl.pdf), generated with kicad-footprint-generator
+diode
+0
+2
+2
+Diode_SMD
+D_2816_7142Metric_Castellated
+Diode SMD 2816 (7142 Metric), castellated end terminal, IPC_7351 nominal, (Body size from: https://www.vishay.com/docs/30100/wsl.pdf), generated with kicad-footprint-generator
+diode castellated
+0
+2
+2
+Diode_SMD
+D_2816_7142Metric_Pad3.20x4.45mm_HandSolder
+Diode SMD 2816 (7142 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size from: https://www.vishay.com/docs/30100/wsl.pdf), generated with kicad-footprint-generator
+diode handsolder
+0
+2
+2
+Diode_SMD
+D_3220_8050Metric
+Diode SMD 3220 (8050 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size from: http://datasheets.avx.com/schottky.pdf), generated with kicad-footprint-generator
+diode
+0
+2
+2
+Diode_SMD
+D_3220_8050Metric_Castellated
+Diode SMD 3220 (8050 Metric), castellated end terminal, IPC_7351 nominal, (Body size from: http://datasheets.avx.com/schottky.pdf), generated with kicad-footprint-generator
+diode castellated
+0
+2
+2
+Diode_SMD
+D_3220_8050Metric_Pad2.65x5.15mm_HandSolder
+Diode SMD 3220 (8050 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size from: http://datasheets.avx.com/schottky.pdf), generated with kicad-footprint-generator
+diode handsolder
+0
+2
+2
+Diode_SMD
+D_MELF
+Diode, MELF,,
+Diode MELF 
+0
+2
+2
+Diode_SMD
+D_MELF-RM10_Universal_Handsoldering
+Diode, Universal, MELF, RM10, Handsoldering, SMD, Thruhole,
+Diode Universal MELF RM10 Handsoldering SMD Thruhole 
+0
+2
+2
+Diode_SMD
+D_MELF_Handsoldering
+Diode MELF Handsoldering
+Diode MELF Handsoldering
+0
+2
+2
+Diode_SMD
+D_MicroMELF
+Diode, MicroMELF, http://www.vishay.com/docs/85597/bzm55-se.pdf
+MicroMELF Diode
+0
+2
+2
+Diode_SMD
+D_MicroMELF_Hadsoldering
+Diode, MicroMELF, hand-soldering, http://www.vishay.com/docs/85597/bzm55-se.pdf
+MicroMELF Diode
+0
+2
+2
+Diode_SMD
+D_MiniMELF
+Diode Mini-MELF
+Diode Mini-MELF
+0
+2
+2
+Diode_SMD
+D_MiniMELF_Handsoldering
+Diode Mini-MELF Handsoldering
+Diode Mini-MELF Handsoldering
+0
+2
+2
+Diode_SMD
+D_PowerDI-123
+http://www.diodes.com/_files/datasheets/ds30497.pdf
+PowerDI diode vishay
+0
+2
+2
+Diode_SMD
+D_Powermite2_AK
+Microsemi Powermite 2 SMD power package (https://www.microsemi.com/packaging-information/partpackage/details?pid=5341)
+PowerMite2
+0
+2
+2
+Diode_SMD
+D_Powermite2_KA
+Microsemi Powermite 2 SMD power package (https://www.microsemi.com/packaging-information/partpackage/details?pid=5341)
+PowerMite2
+0
+2
+2
+Diode_SMD
+D_Powermite3
+Microsemi Powermite 3 SMD power package (https://www.microsemi.com/packaging-information/partpackage/details?pid=5340)
+PowerMite3
+0
+3
+3
+Diode_SMD
+D_Powermite_AK
+Microsemi Powermite SMD power package (https://www.microsemi.com/packaging-information/partpackage/details?pid=5339, https://www.onsemi.com/pub/Collateral/457-04.PDF)
+Powermite
+0
+2
+2
+Diode_SMD
+D_Powermite_KA
+Microsemi Powermite SMD power package (https://www.microsemi.com/packaging-information/partpackage/details?pid=5339, https://www.onsemi.com/pub/Collateral/457-04.PDF)
+Powermite
+0
+2
+2
+Diode_SMD
+D_QFN_3.3x3.3mm_P0.65mm
+QFN, diode, 3.3x3.3x1mm (https://www.wolfspeed.com/media/downloads/846/C3D1P7060Q.pdf)
+diode qfn 3.3
 0
 3
 2
-Battery
-BatteryHolder_Keystone_3001_1x12mm
-http://www.keyelco.com/product-pdf.cfm?p=778
-Keystone type 3001 coin cell retainer
+Diode_SMD
+D_SC-80
+JEITA SC-80
+SC-80
+0
+2
+2
+Diode_SMD
+D_SC-80_HandSoldering
+JEITA SC-80
+SC-80
+0
+2
+2
+Diode_SMD
+D_SMA
+Diode SMA (DO-214AC)
+Diode SMA (DO-214AC)
+0
+2
+2
+Diode_SMD
+D_SMA-SMB_Universal_Handsoldering
+Diode, Universal, SMA (DO-214AC) or SMB (DO-214AA), Handsoldering,
+Diode Universal SMA (DO-214AC) SMB (DO-214AA) Handsoldering 
+0
+2
+2
+Diode_SMD
+D_SMA_Handsoldering
+Diode SMA (DO-214AC) Handsoldering
+Diode SMA (DO-214AC) Handsoldering
+0
+2
+2
+Diode_SMD
+D_SMB
+Diode SMB (DO-214AA)
+Diode SMB (DO-214AA)
+0
+2
+2
+Diode_SMD
+D_SMB-SMC_Universal_Handsoldering
+Diode, Universal, SMB(DO-214AA) or SMC (DO-214AB), Handsoldering,
+Diode Universal SMB(DO-214AA) SMC (DO-214AB) Handsoldering 
+0
+2
+2
+Diode_SMD
+D_SMB_Handsoldering
+Diode SMB (DO-214AA) Handsoldering
+Diode SMB (DO-214AA) Handsoldering
+0
+2
+2
+Diode_SMD
+D_SMB_Modified
+Diode SMB (DO-214AA) Modified (http://www.littelfuse.com/~/media/electronics/datasheets/sidactors/littelfuse_sidactor_battrax_positive_negative_modified_do_214_datasheet.pdf.pdf)
+Diode SMB (DO-214AA)
+0
+3
+3
+Diode_SMD
+D_SMC
+Diode SMC (DO-214AB)
+Diode SMC (DO-214AB)
+0
+2
+2
+Diode_SMD
+D_SMC-RM10_Universal_Handsoldering
+Diode, Universal, SMC (DO-214AB), RM10, Handsoldering, SMD, Thruhole
+Diode Universal SMC (DO-214AB) RM10 Handsoldering SMD Thruhole
+0
+2
+2
+Diode_SMD
+D_SMC_Handsoldering
+Diode SMC (DO-214AB) Handsoldering
+Diode SMC (DO-214AB) Handsoldering
+0
+2
+2
+Diode_SMD
+D_SOD-110
+SOD-110
+SOD-110
+0
+2
+2
+Diode_SMD
+D_SOD-123
+SOD-123
+SOD-123
+0
+2
+2
+Diode_SMD
+D_SOD-123F
+D_SOD-123F
+D_SOD-123F
+0
+2
+2
+Diode_SMD
+D_SOD-323
+SOD-323
+SOD-323
+0
+2
+2
+Diode_SMD
+D_SOD-323F
+SOD-323F http://www.nxp.com/documents/outline_drawing/SOD323F.pdf
+SOD-323F
+0
+2
+2
+Diode_SMD
+D_SOD-323_HandSoldering
+SOD-323
+SOD-323
+0
+2
+2
+Diode_SMD
+D_SOD-523
+http://www.diodes.com/datasheets/ap02001.pdf p.144
+Diode SOD523
+0
+2
+2
+Diode_SMD
+D_SOT-23_ANK
+SOT-23, Single Diode
+SOT-23
 0
 3
 2
-Battery
-BatteryHolder_Keystone_3008_1x2450
-http://www.keyelco.com/product-pdf.cfm?p=786
-Keystone type 3008 coin cell retainer
+Diode_SMD
+D_SOT-23_NKA
+SOT-23, Single Diode
+SOT-23
 0
 3
 2
-Battery
-BatteryHolder_Keystone_3009_1x2450
-http://www.keyelco.com/product-pdf.cfm?p=787
-Keystone type 3009 coin cell retainer
+Diode_SMD
+D_TUMD2
+ROHM - TUMD2
+TUMD2
+0
+2
+2
+Diode_SMD
+Littelfuse_PolyZen-LS
+http://m.littelfuse.com/~/media/electronics/datasheets/polyzen_devices/littelfuse_polyzen_standard_polyzen_catalog_datasheet.pdf.pdf
+Diode Polymer Protected Zener Diode Littelfuse LS
 0
 3
-2
-Battery
-BatteryHolder_Keystone_3034_1x20mm
-Keystone 3034 SMD battery holder for 2020, 2025 and 2032 coincell batteries. http://www.keyelco.com/product-pdf.cfm?p=798
-Keystone type 3034 coin cell retainer
-0
 3
-2
-Battery
-BatteryHolder_LINX_BAT-HLD-012-SMT
-SMT battery holder for CR1216/1220/1225, https://linxtechnologies.com/wp/wp-content/uploads/bat-hld-012-smt.pdf
-battery holder coin cell cr1216 cr1220 cr1225
-0
-3
-2
-Battery
-BatteryHolder_MPD_BC2AAPC_2xAA
-2xAA cell battery holder, Memory Protection Devices P/N BC2AAPC, http://www.memoryprotectiondevices.com/datasheets/BC2AAPC-datasheet.pdf
-AA battery cell holder
-0
-2
-2
-Battery
-BatteryHolder_MPD_BC12AAPC_2xAA
-2xAA cell battery holder, Memory Protection Devices P/N BC12AAPC, http://www.memoryprotectiondevices.com/datasheets/BC12AAPC-datasheet.pdf
-AA battery cell holder
-0
-2
-2
-Battery
-BatteryHolder_MPD_BC2003_1x2032
-http://www.memoryprotectiondevices.com/datasheets/BC-2003-datasheet.pdf
-BC2003 CR2032 2032 Battery Holder
-0
-3
-2
-Battery
-BatteryHolder_MPD_BH-18650-PC2
-18650 Battery Holder (http://www.memoryprotectiondevices.com/datasheets/BK-18650-PC2-datasheet.pdf)
-18650 Battery Holder
-0
-2
-2
-Battery
-BatteryHolder_Seiko_MS621F
-Seiko MS621F, https://www.sii.co.jp/en/me/files/2014/02/file_EXTENDED_PRDCT_SPEC_75_FILE_11.jpg
-Seiko MS621F
-0
-2
-2
-Battery
-BatteryHolder_TruPower_BH-331P_3xAA
-Keystone Battery Holder BH-331P Battery Type 3xAA (Script generated with StandardBox.py) (Keystone Battery Holder BH-331P Battery Type 3xAA)
-Battery Holder BH-331P Battery Type 3xAA
-0
-2
-2
-Battery
-Battery_CR1225
-CR1225 battery
-battery CR1225 coin cell
-0
-0
-0
