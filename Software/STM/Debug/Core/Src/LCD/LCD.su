@@ -1,0 +1,2 @@
+LCD.cpp:12:1:lcd::LCD::LCD()	16	static
+LCD.cpp:18:6:void lcd::LCD::Write(char*, char*)	24	static
