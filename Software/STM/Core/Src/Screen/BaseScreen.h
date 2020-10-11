@@ -10,12 +10,17 @@
 
 
 
-class IScreen {
+class BaseScreen {
 
-	virtual bool IsActive() = 0;
-	virtual void SetActive(void) = 0;
-	virtual void Update(void) = 0;
+private:
+	bool alive;
+	
+public:
+	BaseScreen(void);
 
+	void Update(void);
+	bool isActive() const;
+	void setActive(bool alive);
 };
 
 

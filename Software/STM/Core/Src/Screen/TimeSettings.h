@@ -8,9 +8,9 @@
 #ifndef SRC_SCREEN_TIMESETTINGS_H_
 #define SRC_SCREEN_TIMESETTINGS_H_
 
-#include "IScreen.h"
+#include "BaseScreen.h"
 
-class TimeSettings : IScreen {
+class TimeSettings : public BaseScreen {
 
 
 public:

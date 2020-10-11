@@ -8,12 +8,12 @@
 #ifndef SRC_SCREEN_MAINSCREEN_H_
 #define SRC_SCREEN_MAINSCREEN_H_
 
-#include "IScreen.h"
+#include "BaseScreen.h"
 
 
 
 
-class MainScreen : IScreen {
+class MainScreen : public BaseScreen {
 
 
 public:
@@ -21,11 +21,8 @@ public:
 
 
 private:
-	bool active;
 
-	void SetActive() override;
-	bool IsActive() override;
-	void Update() override;
+
 
 };
 

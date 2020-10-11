@@ -8,9 +8,9 @@
 #ifndef SRC_SCREEN_BWSETTINGS_H_
 #define SRC_SCREEN_BWSETTINGS_H_
 
-#include "IScreen.h"
+#include "BaseScreen.h"
 
-class BWSettings : IScreen{
+class BWSettings : public BaseScreen{
 public:
 	BWSettings();
 };

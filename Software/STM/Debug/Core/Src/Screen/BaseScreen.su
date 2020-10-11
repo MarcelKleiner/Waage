@@ -1,0 +1,4 @@
+BaseScreen.cpp:10:1:BaseScreen::BaseScreen()	16	static
+BaseScreen.cpp:15:6:void BaseScreen::Update()	16	static
+BaseScreen.cpp:19:6:bool BaseScreen::isActive() const	16	static
+BaseScreen.cpp:23:6:void BaseScreen::setActive(bool)	16	static

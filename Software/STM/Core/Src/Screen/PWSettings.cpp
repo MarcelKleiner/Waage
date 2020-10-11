@@ -7,7 +7,7 @@
 
 #include "PWSettings.h"
 
-PWSettings::PWSettings() {
+PWSettings::PWSettings() : BaseScreen() {
 	// TODO Auto-generated constructor stub
 
 }

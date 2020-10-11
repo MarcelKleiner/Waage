@@ -8,9 +8,9 @@
 #ifndef SRC_SCREEN_PWSETTINGS_H_
 #define SRC_SCREEN_PWSETTINGS_H_
 
-#include "IScreen.h"
+#include "BaseScreen.h"
 
-class PWSettings : IScreen{
+class PWSettings : public BaseScreen{
 
 public:
 	PWSettings();

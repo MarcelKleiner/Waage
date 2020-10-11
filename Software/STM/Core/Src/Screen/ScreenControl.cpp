@@ -10,6 +10,7 @@
 
 ScreenControl::ScreenControl() {
 	// TODO Auto-generated constructor stub
-
+	timeSettings.isActive();
+	timeSettings.setActive(true);
 }
 

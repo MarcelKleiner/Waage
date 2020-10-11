@@ -11,21 +11,8 @@
 
 
 MainScreen::MainScreen() {
-	this->active = false;
-
-}
-
-void MainScreen::SetActive() {
 
 
 }
 
-bool MainScreen::IsActive() {
 
-	return this->active;
-}
-
-void MainScreen::Update() {
-
-
-}
