@@ -10,7 +10,7 @@
 
 
 
-MainScreen::MainScreen() {
+MainScreen::MainScreen(Model *model) {
 
 
 }

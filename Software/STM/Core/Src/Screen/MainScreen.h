@@ -9,7 +9,7 @@
 #define SRC_SCREEN_MAINSCREEN_H_
 
 #include "BaseScreen.h"
-
+#include "../Model/Model.h"
 
 
 
@@ -17,10 +17,12 @@ class MainScreen : public BaseScreen {
 
 
 public:
-	MainScreen();
+	MainScreen(Model *model);
+
 
 
 private:
+	Model *model;
 
 
 

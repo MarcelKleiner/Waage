@@ -1,1 +1,1 @@
-BWSettings.cpp:10:1:BWSettings::BWSettings()	16	static
+BWSettings.cpp:10:1:BWSettings::BWSettings(Model*)	16	static

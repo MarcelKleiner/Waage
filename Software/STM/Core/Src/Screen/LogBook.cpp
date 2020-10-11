@@ -7,7 +7,7 @@
 
 #include "LogBook.h"
 
-LogBook::LogBook() {
+LogBook::LogBook(Model *model) {
 	// TODO Auto-generated constructor stub
 
 }

@@ -7,7 +7,7 @@
 
 #include "BWSettings.h"
 
-BWSettings::BWSettings() {
+BWSettings::BWSettings(Model *model) {
 	// TODO Auto-generated constructor stub
 
 }

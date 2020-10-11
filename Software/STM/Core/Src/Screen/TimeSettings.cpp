@@ -7,7 +7,7 @@
 
 #include "TimeSettings.h"
 
-TimeSettings::TimeSettings() {
+TimeSettings::TimeSettings(Model *model) :BaseScreen() {
 	// TODO Auto-generated constructor stub
 
 }

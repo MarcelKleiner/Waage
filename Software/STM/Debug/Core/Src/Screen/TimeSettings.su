@@ -1,1 +1,1 @@
-TimeSettings.cpp:10:1:TimeSettings::TimeSettings()	16	static
+TimeSettings.cpp:10:1:TimeSettings::TimeSettings(Model*)	16	static

@@ -9,13 +9,16 @@
 #define SRC_SCREEN_LOGBOOK_H_
 
 #include "BaseScreen.h"
+#include "../Model/Model.h"
 
 class LogBook : BaseScreen {
 
 
 public:
-	LogBook();
+	LogBook(Model *model);
 
+private:
+	Model *model;
 
 };
 

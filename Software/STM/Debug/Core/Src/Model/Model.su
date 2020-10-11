@@ -1,0 +1,21 @@
+Model.cpp:10:1:Model::Model()	16	static
+Model.cpp:15:9:uint8_t Model::getDay() const	16	static
+Model.cpp:19:6:void Model::setDay(uint8_t)	16	static
+Model.cpp:23:9:uint8_t Model::getDayOfWeek() const	16	static
+Model.cpp:27:6:void Model::setDayOfWeek(uint8_t)	16	static
+Model.cpp:31:9:uint8_t Model::getHour() const	16	static
+Model.cpp:35:6:void Model::setHour(uint8_t)	16	static
+Model.cpp:39:9:int32_t Model::getLoadCell1() const	16	static
+Model.cpp:43:6:void Model::setLoadCell1(int32_t)	16	static
+Model.cpp:47:9:int32_t Model::getLoadCell2() const	16	static
+Model.cpp:51:6:void Model::setLoadCell2(int32_t)	16	static
+Model.cpp:55:9:uint8_t Model::getMinute() const	16	static
+Model.cpp:59:6:void Model::setMinute(uint8_t)	16	static
+Model.cpp:63:9:uint8_t Model::getMonth() const	16	static
+Model.cpp:67:6:void Model::setMonth(uint8_t)	16	static
+Model.cpp:71:9:uint8_t Model::getSeconds() const	16	static
+Model.cpp:75:6:void Model::setSeconds(uint8_t)	16	static
+Model.cpp:79:9:int16_t Model::getWeight() const	16	static
+Model.cpp:83:6:void Model::setWeight(int16_t)	16	static
+Model.cpp:87:9:uint8_t Model::getYear() const	16	static
+Model.cpp:91:6:void Model::setYear(uint8_t)	16	static

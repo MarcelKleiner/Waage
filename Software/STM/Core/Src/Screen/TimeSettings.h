@@ -9,13 +9,16 @@
 #define SRC_SCREEN_TIMESETTINGS_H_
 
 #include "BaseScreen.h"
+#include "../Model/Model.h"
 
 class TimeSettings : public BaseScreen {
 
 
 public:
-	TimeSettings();
+	TimeSettings(Model *model);
 
+private:
+	Model *model;
 
 };
 

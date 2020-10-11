@@ -9,11 +9,16 @@
 #define SRC_SCREEN_PWSETTINGS_H_
 
 #include "BaseScreen.h"
+#include "../Model/Model.h"
 
 class PWSettings : public BaseScreen{
 
 public:
-	PWSettings();
+	PWSettings(Model *model);
+
+
+private:
+	Model *model;
 };
 
 #endif /* SRC_SCREEN_PWSETTINGS_H_ */

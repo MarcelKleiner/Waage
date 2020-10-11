@@ -1,0 +1,7 @@
+LoadCell.cpp:10:1:LoadCell::LoadCell(LoadCell::ComSettings, Model*, uint8_t)	24	static
+LoadCell.cpp:20:6:void LoadCell::Update()	16	static
+LoadCell.cpp:25:6:void LoadCell::InitLoadCell()	24	static
+LoadCell.cpp:42:6:void LoadCell::ReadValue()	32	static
+LoadCell.cpp:64:6:bool LoadCell::IsDataAvailable()	24	static
+LoadCell.cpp:78:6:void LoadCell::Write(uint8_t*, uint8_t)	24	static
+LoadCell.cpp:84:6:void LoadCell::WriteRead(uint8_t*, uint8_t*)	40	static

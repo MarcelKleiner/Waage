@@ -7,7 +7,7 @@
 
 #include "PWSettings.h"
 
-PWSettings::PWSettings() : BaseScreen() {
+PWSettings::PWSettings(Model *model) : BaseScreen() {
 	// TODO Auto-generated constructor stub
 
 }

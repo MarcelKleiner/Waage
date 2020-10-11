@@ -8,7 +8,7 @@
 #include "ScreenControl.h"
 
 
-ScreenControl::ScreenControl() {
+ScreenControl::ScreenControl() : BaseScreen(){
 	// TODO Auto-generated constructor stub
 	timeSettings.isActive();
 	timeSettings.setActive(true);

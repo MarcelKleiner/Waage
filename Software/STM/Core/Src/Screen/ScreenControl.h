@@ -13,6 +13,8 @@
 #include "PWSettings.h"
 #include "BWSettings.h"
 #include "TimeSettings.h"
+#include "stm32l4xx_hal.h"
+#include "../Model/Model.h"
 
 
 class ScreenControl {
@@ -21,11 +23,16 @@ public:
 
 
 private:
+	const static uint8_t ARRAY_SIZE = 4;
 
-	BaseScreen mainScreen = MainScreen();
-	BaseScreen pwSettings = PWSettings();
-	BaseScreen bwSettings = BWSettings();
-	BaseScreen timeSettings = TimeSettings();
+	Model *model;
+
+	BaseScreen mainScreen = MainScreen(model);
+	BaseScreen pwSettings = PWSettings(model);
+	BaseScreen bwSettings = BWSettings(model);
+	BaseScreen timeSettings = TimeSettings(model);
+
+	BaseScreen screens[ARRAY_SIZE] = {mainScreen, pwSettings, bwSettings,timeSettings};
 
 };
 
