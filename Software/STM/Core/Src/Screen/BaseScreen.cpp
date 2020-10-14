@@ -5,10 +5,10 @@
  *      Author: marcel
  */
 #include "BaseScreen.h"
-
+#include "main.h"
 
 BaseScreen::BaseScreen(){
-
+	HAL_GPIO_WritePin(LED_BW_GPIO_Port, LED_BW_Pin, GPIO_PIN_RESET);
 }
 
 

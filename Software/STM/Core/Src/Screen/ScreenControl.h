@@ -15,12 +15,13 @@
 #include "TimeSettings.h"
 #include "stm32l4xx_hal.h"
 #include "../Model/Model.h"
+#include "../LCD/LCD.h"
 
 
 class ScreenControl {
 public:
 	ScreenControl();
-
+	void InitScreen();
 
 private:
 	const static uint8_t ARRAY_SIZE = 4;
@@ -33,6 +34,8 @@ private:
 	BaseScreen timeSettings = TimeSettings(model);
 
 	BaseScreen screens[ARRAY_SIZE] = {mainScreen, pwSettings, bwSettings,timeSettings};
+
+	LCD lcd = LCD();
 
 };
 

@@ -1,0 +1,2 @@
+ScreenControl.cpp:11:1:ScreenControl::ScreenControl()	48	static
+ScreenControl.cpp:18:6:void ScreenControl::InitScreen()	16	static

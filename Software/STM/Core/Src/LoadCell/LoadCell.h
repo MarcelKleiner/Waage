@@ -18,15 +18,9 @@ class LoadCell {
 
 public:
 
-	struct ComSettings{
-		SPI_HandleTypeDef* hspi;
-		GPIO_TypeDef* CS_Port;
-		uint16_t CS_Pin;
-		uint32_t timeOut;
-	};
 
-	LoadCell(ComSettings comSettings, Model *model, uint8_t LC_Nr);
-
+	LoadCell(Model *model, uint8_t LC_Nr) ;
+	void InitLoadCell(ComSettings comSettings);
 	void Update(void);
 
 
@@ -37,12 +31,12 @@ private:
 	uint8_t loadCellNr;
 
 	void ReadValue(void);
-	void InitLoadCell(void);
+
 	bool IsDataAvailable(void);
 
 
 	void Write(uint8_t* txData, uint8_t size);
-	void WriteRead(uint8_t* txData, uint8_t* rxData);
+	void WriteRead(uint8_t* txData, uint8_t* rxData, uint8_t txSize, uint8_t rxSize);
 
 
 

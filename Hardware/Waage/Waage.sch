@@ -1033,17 +1033,13 @@ Wire Wire Line
 Wire Wire Line
 	8850 4350 8750 4350
 Wire Wire Line
-	8850 4450 8750 4450
+	8850 4850 8750 4850
 Wire Wire Line
-	8850 4550 8750 4550
+	8850 4950 8750 4950
 Wire Wire Line
-	8850 4650 8750 4650
+	8850 5050 8750 5050
 Wire Wire Line
-	8850 4750 8750 4750
-NoConn ~ 8850 4850
-NoConn ~ 8850 4950
-NoConn ~ 8850 5050
-NoConn ~ 8850 5150
+	8850 5150 8750 5150
 $Comp
 L power:VBUS #PWR0144
 U 1 1 5F93B3B2
@@ -1076,13 +1072,13 @@ Text GLabel 8750 4250 0    50   Input ~ 0
 LCD_RW
 Text GLabel 8750 4350 0    50   Input ~ 0
 LCD_E
-Text GLabel 8750 4450 0    50   Input ~ 0
+Text GLabel 8750 4850 0    50   Input ~ 0
 DB0
-Text GLabel 8750 4550 0    50   Input ~ 0
+Text GLabel 8750 4950 0    50   Input ~ 0
 DB1
-Text GLabel 8750 4650 0    50   Input ~ 0
+Text GLabel 8750 5050 0    50   Input ~ 0
 DB2
-Text GLabel 8750 4750 0    50   Input ~ 0
+Text GLabel 8750 5150 0    50   Input ~ 0
 DB3
 Wire Wire Line
 	2050 3900 1900 3900

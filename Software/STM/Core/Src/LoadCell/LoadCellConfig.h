@@ -8,6 +8,15 @@
 #ifndef SRC_LOADCELL_LOADCELLCONFIG_H_
 #define SRC_LOADCELL_LOADCELLCONFIG_H_
 
+
+	struct ComSettings{
+		SPI_HandleTypeDef hspi;
+		GPIO_TypeDef* CS_Port;
+		uint16_t CS_Pin;
+		uint32_t timeOut;
+	};
+
+
 //-----------Command Byte settings-----------
 #define Self_Calibration_Cycle 				0x90
 #define System_Offset_Calibration_Cycle 	0xA0

@@ -1,2 +1,6 @@
-LCD.cpp:12:1:lcd::LCD::LCD()	16	static
-LCD.cpp:18:6:void lcd::LCD::Write(char*, char*)	24	static
+LCD.cpp:13:1:LCD::LCD()	16	static
+LCD.cpp:19:6:void LCD::InitLCD()	16	static
+LCD.cpp:66:6:void LCD::Write(char*, char*)	24	static
+LCD.cpp:70:6:void LCD::WriteCommaandWwakeUp(uint8_t)	24	static
+LCD.cpp:83:6:void LCD::WriteCommand(uint8_t)	24	static
+LCD.cpp:110:6:void LCD::WriteData(uint8_t)	24	static
