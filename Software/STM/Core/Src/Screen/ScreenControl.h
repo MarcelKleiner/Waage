@@ -20,22 +20,26 @@
 
 class ScreenControl {
 public:
-	ScreenControl();
+	ScreenControl(Model *model);
 	void InitScreen();
+	void Update();
 
 private:
 	const static uint8_t ARRAY_SIZE = 4;
 
+	Model::ESCREEN currentScreen;
+	Model::ESCREEN nextScreen;
+
 	Model *model;
 
-	BaseScreen mainScreen = MainScreen(model);
-	BaseScreen pwSettings = PWSettings(model);
-	BaseScreen bwSettings = BWSettings(model);
-	BaseScreen timeSettings = TimeSettings(model);
+	LCD *lcd;
+	MainScreen *mainScreen;
+	PWSettings *pwSettings;
+	BWSettings *bwSettings;
+	TimeSettings *timeSettings;
 
-	BaseScreen screens[ARRAY_SIZE] = {mainScreen, pwSettings, bwSettings,timeSettings};
 
-	LCD lcd = LCD();
+
 
 };
 

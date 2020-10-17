@@ -30,6 +30,7 @@ CPP_DEPS :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 Core/Src \
+Core/Src/ButtonControl \
 Core/Src/LCD \
 Core/Src/LoadCell \
 Core/Src/Model \

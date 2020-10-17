@@ -86,10 +86,16 @@ void Error_Handler(void);
 #define SW_TAR_GPIO_Port GPIOA
 #define DB3_Pin GPIO_PIN_15
 #define DB3_GPIO_Port GPIOA
-#define LC2_CS_Pin GPIO_PIN_6
-#define LC2_CS_GPIO_Port GPIOB
-#define LC1_CS_Pin GPIO_PIN_7
-#define LC1_CS_GPIO_Port GPIOB
+#define LCD_LIGHT_Pin GPIO_PIN_3
+#define LCD_LIGHT_GPIO_Port GPIOB
+#define DATA_L1_Pin GPIO_PIN_4
+#define DATA_L1_GPIO_Port GPIOB
+#define CLK_L1_Pin GPIO_PIN_5
+#define CLK_L1_GPIO_Port GPIOB
+#define DATA_L2_Pin GPIO_PIN_6
+#define DATA_L2_GPIO_Port GPIOB
+#define CLK_L2_Pin GPIO_PIN_7
+#define CLK_L2_GPIO_Port GPIOB
 #define DB2_Pin GPIO_PIN_3
 #define DB2_GPIO_Port GPIOH
 /* USER CODE BEGIN Private defines */

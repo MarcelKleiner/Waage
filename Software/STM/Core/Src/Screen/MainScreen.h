@@ -10,22 +10,29 @@
 
 #include "BaseScreen.h"
 #include "../Model/Model.h"
-
+#include "../Model/Tools.h"
+#include "../LCD/LCD.h"
+#include <string>
 
 
 class MainScreen : public BaseScreen {
 
 
 public:
-	MainScreen(Model *model);
+	MainScreen(Model *model, LCD *lcd);
+
+	Model::ESCREEN Update(void);
+	void Init(void);
 
 
 
 private:
 	Model *model;
+	LCD *lcd;
+	Model::ESCREEN screen;
 
-
-
+	uint8_t summeCounter;
+	bool summeActive;
 };
 
 

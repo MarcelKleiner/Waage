@@ -8,8 +8,9 @@
 #ifndef SRC_LOADCELL_LOADCELL_H_
 #define SRC_LOADCELL_LOADCELL_H_
 
-#include "spi.h"
+
 #include "../Model/Model.h"
+#include "main.h"
 #include "LoadCellConfig.h"
 
 
@@ -17,29 +18,17 @@ class LoadCell {
 
 
 public:
-
-
-	LoadCell(Model *model, uint8_t LC_Nr) ;
-	void InitLoadCell(ComSettings comSettings);
+	LoadCell() ;
 	void Update(void);
+	void InitLoadCell(Model *model,LoadCellSettings loadCellSettings);
 
 
 private:
-	ComSettings comSettings;
 	Model *model;
+	LoadCellSettings lcSettings;
 
-	uint8_t loadCellNr;
-
-	void ReadValue(void);
-
-	bool IsDataAvailable(void);
-
-
-	void Write(uint8_t* txData, uint8_t size);
-	void WriteRead(uint8_t* txData, uint8_t* rxData, uint8_t txSize, uint8_t rxSize);
-
-
-
+	void DWT_Init(void);
+	void DWT_Delay_us(volatile uint32_t microseconds);
 };
 
 #endif /* SRC_LOADCELL_LOADCELL_H_ */

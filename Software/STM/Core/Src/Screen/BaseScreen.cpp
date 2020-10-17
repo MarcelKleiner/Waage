@@ -11,10 +11,10 @@ BaseScreen::BaseScreen(){
 	HAL_GPIO_WritePin(LED_BW_GPIO_Port, LED_BW_Pin, GPIO_PIN_RESET);
 }
 
+/*
+void BaseScreen::test() {
 
-void BaseScreen::Update() {
-
-}
+}*/
 
 bool BaseScreen::isActive() const {
 	return alive;

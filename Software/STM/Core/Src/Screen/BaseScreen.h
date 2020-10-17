@@ -18,7 +18,6 @@ private:
 public:
 	BaseScreen(void);
 
-	void Update(void);
 	bool isActive() const;
 	void setActive(bool alive);
 };

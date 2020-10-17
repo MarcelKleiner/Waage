@@ -10,15 +10,20 @@
 
 #include "BaseScreen.h"
 #include "../Model/Model.h"
+#include "../Model/Tools.h"
+#include "../LCD/LCD.h"
+#include <string>
 
 class LogBook : BaseScreen {
 
 
 public:
-	LogBook(Model *model);
-
+	LogBook(Model *model, LCD *lcd);
+	Model::ESCREEN Update(void);
 private:
 	Model *model;
+	LCD *lcd;
+	Model::ESCREEN screen;
 
 };
 

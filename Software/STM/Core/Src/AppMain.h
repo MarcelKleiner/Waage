@@ -12,7 +12,8 @@
 #include "Screen/ScreenControl.h"
 #include "LoadCell/LoadCell.h"
 #include "LoadCell/LoadCellConfig.h"
-#include "spi.h"
+#include "main.h"
+#include "ButtonControl/ButtonControl.h"
 
 class AppMain {
 public:
@@ -23,13 +24,14 @@ public:
 
 private:
 
-	ComSettings comSettings1;
-	ComSettings comSettings2;
+	LoadCellSettings lcSettings1;
+	LoadCellSettings lcSettings2;
 	Model model;
 
-	LoadCell loadCell1 = LoadCell(&model, 1);
-	LoadCell loadCell2 = LoadCell(&model, 2);
-	ScreenControl screenControl = ScreenControl();
+	LoadCell loadCell1; // = LoadCell(&model, 1);
+	LoadCell loadCell2; // = LoadCell(&model, 2);
+	ScreenControl screenControl = ScreenControl(&model);
+	ButtonControl buttonControl = ButtonControl(&model);
 
 };
 

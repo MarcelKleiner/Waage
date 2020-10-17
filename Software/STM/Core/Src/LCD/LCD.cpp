@@ -7,18 +7,18 @@
 
 #include "LCD.h"
 #include "main.h"
+using namespace std;
 
 
 
 LCD::LCD() {
-	// TODO Auto-generated constructor stub
 
 }
 
 
 void LCD::InitLCD(){
 
-	HAL_Delay(100);
+	string s;
 	HAL_GPIO_WritePin(DB0_GPIO_Port, DB0_Pin, GPIO_PIN_RESET);
 	HAL_GPIO_WritePin(DB1_GPIO_Port, DB1_Pin, GPIO_PIN_RESET);
 	HAL_GPIO_WritePin(DB2_GPIO_Port, DB2_Pin, GPIO_PIN_RESET);
@@ -28,44 +28,125 @@ void LCD::InitLCD(){
 	HAL_GPIO_WritePin(LCD_RW_GPIO_Port, LCD_RW_Pin, GPIO_PIN_RESET);
 	HAL_GPIO_WritePin(LCD_E_GPIO_Port, LCD_E_Pin, GPIO_PIN_RESET);
 
-
-	HAL_Delay(100);
 	WriteCommaandWwakeUp(0x30);
-	HAL_Delay(30);
-
 	WriteCommaandWwakeUp(0x30);
-
-	HAL_Delay(10);
-
 	WriteCommaandWwakeUp(0x30);
-
-	HAL_Delay(10);
-
 	WriteCommaandWwakeUp(0x20);
-	HAL_Delay(10);
 	WriteCommand(0x28);
-	HAL_Delay(10);
 	WriteCommand(0x10); //Set cursor
-	HAL_Delay(10);
 	WriteCommand(0x0F); //Display ON; Blinking cursor
-	HAL_Delay(10);
 	WriteCommand(0x06);
-
-
-	HAL_Delay(50);
-	WriteData(0x31);
-	HAL_Delay(10);
-	WriteData(0x32);
-	HAL_Delay(10);
-	WriteData(0x33);
-	HAL_Delay(10);
-	WriteData(0x34);
-	HAL_GPIO_WritePin(LED_PW_GPIO_Port, LED_PW_Pin, GPIO_PIN_RESET);
-}
-
-void LCD::Write(char* lin1, char* line2){
+	WriteCommand(0x01);
 
 }
+
+void LCD::Write(string line1, string line2){
+
+	WriteCommand(0x80);
+	for(uint8_t i = 0; i<12; i++){
+		if(line1.length() > i){
+			WriteData(line1[i]);
+		}else{
+			WriteData(0x10);
+		}
+	}
+	WriteCommand(0x80+0x40);
+	for(uint8_t i = 0; i<12; i++){
+		if(line2.length() > i){
+			WriteData(line2[i]);
+		}else{
+			WriteData(0x10);
+		}
+	}
+}
+
+void LCD::Write(char* line1, uint8_t lengthL1,uint8_t startl1, char* line2, uint8_t lengthL2, uint8_t startl2){
+
+	WriteCommand(0x80);
+	for(uint8_t a = 0; a<startl1; a++){
+		WriteData(0x10);
+	}
+	for(uint8_t i = 0; i<12; i++){
+		if(lengthL1 > i){
+			WriteData(line1[i]);
+		}else{
+			WriteData(0x10);
+		}
+	}
+	WriteCommand(0x80+0x40);
+	for(uint8_t a = 0; a<startl2; a++){
+		WriteData(0x10);
+	}
+
+	for(uint8_t i = 0; i<12-startl2; i++){
+		if(lengthL2 > i){
+			WriteData(line2[i]);
+		}else{
+			WriteData(0x10);
+		}
+	}
+}
+
+
+void LCD::Write(string line1, uint8_t startl1, char* line2, uint8_t lengthL2, uint8_t startl2){
+	WriteCommand(0x80+startl1);
+	for(uint8_t i = 0; i<12-startl1; i++){
+		if(line1.length() > i){
+			WriteData(line1[i]);
+		}else{
+			WriteData(0x10);
+		}
+	}
+
+
+	WriteCommand(0x80+0x40);
+	for(uint8_t a = 0; a<startl2; a++){
+		WriteData(0x10);
+	}
+
+	for(uint8_t i = 0; i<12-startl2; i++){
+		if(lengthL2 > i){
+			WriteData(line2[i]);
+		}else{
+			WriteData(0x10);
+		}
+	}
+
+
+}
+
+
+void LCD::Write(){
+	for(int i = 0; i<12; i++){
+		WriteData(0x30 + i);
+	}
+
+	for(int i = 0; i<12; i++){
+		WriteData(0x30 + i);
+	}
+
+}
+
+
+void LCD::SetCursorPosition(uint8_t position, uint8_t line, bool cursorBlink){
+
+	if(line == 1){
+		WriteCommand(0x80 + position);
+	}else if(line == 2){
+		WriteCommand(0x80+0x40+position);
+	}
+
+	if(cursorBlink){
+		WriteCommand(0x0F);
+	}else{
+		WriteCommand(0x0F);
+	}
+
+
+
+
+}
+
 
 void LCD::WriteCommaandWwakeUp(uint8_t data){
 
@@ -105,6 +186,7 @@ void LCD::WriteCommand(uint8_t data){
 	HAL_GPIO_WritePin(LCD_E_GPIO_Port, LCD_E_Pin, GPIO_PIN_SET);
 	HAL_Delay(1);
 	HAL_GPIO_WritePin(LCD_E_GPIO_Port, LCD_E_Pin, GPIO_PIN_RESET);
+	HAL_Delay(1);
 }
 
 void LCD::WriteData(uint8_t data){
@@ -131,6 +213,7 @@ void LCD::WriteData(uint8_t data){
 	HAL_GPIO_WritePin(LCD_E_GPIO_Port, LCD_E_Pin, GPIO_PIN_SET);
 	HAL_Delay(1);
 	HAL_GPIO_WritePin(LCD_E_GPIO_Port, LCD_E_Pin, GPIO_PIN_RESET);
+	HAL_Delay(1);
 }
 
 

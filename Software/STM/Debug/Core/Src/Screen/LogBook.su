@@ -1,1 +1,3 @@
-LogBook.cpp:10:1:LogBook::LogBook(Model*)	16	static
+gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+LogBook.cpp:10:1:LogBook::LogBook(Model*, LCD*)	24	static
+LogBook.cpp:16:16:Model::ESCREEN LogBook::Update()	16	static

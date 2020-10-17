@@ -1,7 +1,6 @@
-LoadCell.cpp:11:1:LoadCell::LoadCell(Model*, uint8_t)	24	static
-LoadCell.cpp:21:6:void LoadCell::Update()	16	static
-LoadCell.cpp:26:6:void LoadCell::InitLoadCell(ComSettings)	24	static
-LoadCell.cpp:70:6:void LoadCell::ReadValue()	40	static
-LoadCell.cpp:106:6:bool LoadCell::IsDataAvailable()	32	static
-LoadCell.cpp:118:6:void LoadCell::Write(uint8_t*, uint8_t)	24	static
-LoadCell.cpp:124:6:void LoadCell::WriteRead(uint8_t*, uint8_t*, uint8_t, uint8_t)	24	static
+gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+LoadCell.cpp:11:1:LoadCell::LoadCell()	16	static
+LoadCell.cpp:16:6:void LoadCell::InitLoadCell(Model*, LoadCellSettings)	16	static
+LoadCell.cpp:22:6:void LoadCell::Update()	24	static
+LoadCell.cpp:55:6:void LoadCell::DWT_Init()	16	static
+LoadCell.cpp:64:6:void LoadCell::DWT_Delay_us(uint32_t)	24	static
