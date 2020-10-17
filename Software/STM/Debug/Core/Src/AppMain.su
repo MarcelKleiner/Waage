@@ -1,3 +1,6 @@
 gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
 AppMain.cpp:14:1:AppMain::AppMain()	16	static
-AppMain.cpp:35:6:void AppMain::mainF()	56	static
+AppMain.cpp:33:6:void AppMain::Init()	40	static
+AppMain.cpp:43:6:void AppMain::mainF()	40	static
+AppMain.cpp:59:6:void AppMain::ButtonUpdate()	16	static
+AppMain.cpp:64:6:void AppMain::Clk()	24	static
