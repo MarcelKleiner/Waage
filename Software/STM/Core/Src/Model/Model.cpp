@@ -22,8 +22,8 @@ Model::Model() {
 
 	//---------------Wachs settings---------------
 
-	 Bienenwachs_Preis = 2.4; //Preis in Rr/10g
-	 Parafinwachs_Preis = 1.4;	//Preis in Rr/10g
+	 Bienenwachs_Preis = 400; //Preis in Rr/100g
+	 Parafinwachs_Preis = 350;	//Preis in Rr/100g
 
 
 	 wachstyp = E_UNDEF;
@@ -32,9 +32,9 @@ Model::Model() {
 
 
 	//---------------Zeit speicherung---------------
-	 year = 0;
-	 month = 0;
-	 day = 0;
+	 year = 00;
+	 month = 01;
+	 day = 01;
 	 dayOfWeek = 0;
 	 hour = 0;
 	 minute = 0;

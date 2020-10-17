@@ -35,6 +35,7 @@ Core/Src/LCD \
 Core/Src/LoadCell \
 Core/Src/Model \
 Core/Src/Screen \
+Core/Src/Screen/Settings \
 Core/Src/Time \
 Core/Startup \
 Drivers/STM32L4xx_HAL_Driver/Src \

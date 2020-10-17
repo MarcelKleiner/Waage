@@ -14,13 +14,17 @@
 #include "LoadCell/LoadCellConfig.h"
 #include "main.h"
 #include "ButtonControl/ButtonControl.h"
+#include "tim.h"
 
 class AppMain {
 public:
 	AppMain();
 
 	void mainF(void);
-
+	void Init(void);
+	void Clk(void);
+	void ButtonUpdate(void);
+	bool updateEnable = false;
 
 private:
 
@@ -32,6 +36,8 @@ private:
 	LoadCell loadCell2; // = LoadCell(&model, 2);
 	ScreenControl screenControl = ScreenControl(&model);
 	ButtonControl buttonControl = ButtonControl(&model);
+
+	uint32_t timeSynchroCounter;
 
 };
 

@@ -1,3 +1,4 @@
 gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
-PWSettings.cpp:10:1:PWSettings::PWSettings(Model*, LCD*)	24	static
-PWSettings.cpp:18:16:Model::ESCREEN PWSettings::Update()	16	static
+PWSettings.cpp:10:1:PWSettings::PWSettings(Model*, LCD*)	40	static
+PWSettings.cpp:17:16:Model::ESCREEN PWSettings::Update()	88	static
+PWSettings.cpp:130:7:char* PWSettings::prizeToCharArray(uint32_t)	24	static

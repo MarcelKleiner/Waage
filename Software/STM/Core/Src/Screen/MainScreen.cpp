@@ -28,9 +28,9 @@ Model::ESCREEN MainScreen::Update(){
 	//------------------Screen Update------------------
 	int prize = 0;
 	if(model->getWachstyp() == Model::E_BIENENWACHS){
-		prize = Tools::Round5Rp((model->getWeight())*model->getBienenwachsPreis());
+		prize = Tools::Round5Rp((model->getWeight())*model->getBienenwachsPreis()/100);
 	}else if(model->getWachstyp() == Model::E_PARAFINWACHS){
-		prize = Tools::Round5Rp((model->getWeight())*model->getParafinwachsPreis());
+		prize = Tools::Round5Rp((model->getWeight())*model->getParafinwachsPreis()/100);
 	}
 
 
@@ -96,6 +96,7 @@ Model::ESCREEN MainScreen::Update(){
 
 	//------------------Summe------------------
 	if(model->isT3Long()){
+
 		model->setT3Long(false);
 	}
 
@@ -103,10 +104,12 @@ Model::ESCREEN MainScreen::Update(){
 		//Summe Aktivierten oder summieren
 		model->setT3Short(false);
 		if(summeActive){
+			lcd->Write("            ", "            ");
 			summeCounter++;
 		}else{
 			summeActive = true;
 			summeCounter= 1;
+			lcd->Write("            ", "            ");
 			HAL_GPIO_WritePin(LED_SUM_GPIO_Port, LED_SUM_Pin, GPIO_PIN_RESET);
 		}
 	}
@@ -114,7 +117,7 @@ Model::ESCREEN MainScreen::Update(){
 	//------------------Total------------------
 	if(model->isT4Long()){
 		model->setT4Long(false);
-		screen = Model::E_TIME_SETTINGS;
+		screen = Model::E_TIME;
 	}
 	if(model->isT4Short()){
 		model->setT4Short(false);
@@ -126,11 +129,12 @@ Model::ESCREEN MainScreen::Update(){
 
 	//------------------Tar------------------
 	if(model->isT5Long()){
+		screen = Model::E_TIME_SETTINGS;
 		model->setT5Long(false);
-		model->setLoadCellOffset1(model->getLoadCell1());
-		model->setLoadCellOffset2(model->getLoadCell2());
 	}
 	if(model->isT5Short()){
+		model->setLoadCellOffset1(model->getLoadCell1());
+		model->setLoadCellOffset2(model->getLoadCell2());
 		model->setT5Short(false);
 	}
 

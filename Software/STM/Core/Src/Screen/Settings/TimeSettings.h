@@ -8,13 +8,13 @@
 #ifndef SRC_SCREEN_TIMESETTINGS_H_
 #define SRC_SCREEN_TIMESETTINGS_H_
 
-#include "BaseScreen.h"
-#include "../Model/Model.h"
-#include "../Model/Tools.h"
-#include "../LCD/LCD.h"
+
+#include "../../Model/Model.h"
+#include "../../Model/Tools.h"
+#include "../../LCD/LCD.h"
 #include <string>
 
-class TimeSettings : public BaseScreen {
+class TimeSettings{
 
 
 public:
@@ -25,6 +25,11 @@ private:
 	LCD *lcd;
 	Model::ESCREEN screen;
 
+	uint8_t position;
+	bool init;
+	string line1 = "Zeit";
+
+	char* TimeToCharArray(uint8_t hour, uint8_t minute, uint8_t seconds);
 };
 
 #endif /* SRC_SCREEN_TIMESETTINGS_H_ */

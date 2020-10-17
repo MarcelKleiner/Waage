@@ -20,7 +20,9 @@ public:
 		E_PW_SETTINGS,
 		E_LOG_BOOK,
 		E_MAIN_SCRREN,
+		E_TIME,
 		E_TIME_SETTINGS,
+		E_DATE_SETTINGS,
 	};
 
 	enum EWACHS{
@@ -47,8 +49,8 @@ private:
 
 	//---------------Wachs settings---------------
 
-	float Bienenwachs_Preis; //Preis in Fr/10g
-	float Parafinwachs_Preis;	//Preis in Fr/10g
+	int Bienenwachs_Preis; //Preis in Fr/10g
+	int Parafinwachs_Preis;	//Preis in Fr/10g
 
 	EWACHS wachstyp;
 

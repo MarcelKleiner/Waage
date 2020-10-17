@@ -15,19 +15,16 @@ using namespace std;
 ScreenControl::ScreenControl(Model *model) {
 	this->model = model;
 	lcd  = new  LCD();
-	mainScreen = new MainScreen(this->model, lcd);
+	mainScreen = new MainScreen(model, lcd);
 	pwSettings = new PWSettings(model, lcd);
 	bwSettings = new BWSettings(model, lcd);
 	timeSettings = new TimeSettings(model, lcd);
+	dateSettings = new DateSettings(model, lcd);
+	timeScreen = new TimeScreen(model, lcd);
 }
 
 void ScreenControl::InitScreen(){
 	lcd->InitLCD();
-
-
-
-
-
 
 	string i = "10.000 kg";
 	string a = "02.25 Fr";
@@ -52,13 +49,23 @@ void ScreenControl::Update(){
 		nextScreen = bwSettings->Update();
 		break;
 	case Model::E_PW_SETTINGS:
-
+		nextScreen = pwSettings->Update();
 		break;
 	case Model::E_TIME_SETTINGS:
+		nextScreen = timeSettings->Update();
+		break;
+	case Model::E_DATE_SETTINGS:
+		nextScreen = dateSettings->Update();
 		break;
 	case Model::E_LOG_BOOK:
 		break;
+	case Model::E_TIME:
+		nextScreen =timeScreen->Update();
+		break;
 	}
+}
 
 
+Model::ESCREEN ScreenControl::getCurrentScreen(){
+	return this->currentScreen;
 }

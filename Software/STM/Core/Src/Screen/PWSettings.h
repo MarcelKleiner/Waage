@@ -24,6 +24,12 @@ private:
 	Model *model;
 	LCD *lcd;
 	Model::ESCREEN screen;
+
+	uint8_t position;
+	bool init;
+	string line1 = "Parafinwachs";
+
+	char* prizeToCharArray(uint32_t prize);
 };
 
 #endif /* SRC_SCREEN_PWSETTINGS_H_ */

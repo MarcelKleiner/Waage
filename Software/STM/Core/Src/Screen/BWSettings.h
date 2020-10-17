@@ -23,9 +23,11 @@ private:
 	LCD *lcd;
 	Model::ESCREEN screen;
 
-
 	uint8_t position;
 	bool init;
+	string line1 = "Bienenwachs";
+
+	char* prizeToCharArray(uint32_t prize);
 
 };
 

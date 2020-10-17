@@ -12,7 +12,9 @@
 #include "MainScreen.h"
 #include "PWSettings.h"
 #include "BWSettings.h"
-#include "TimeSettings.h"
+#include "Settings/TimeSettings.h"
+#include "Settings/DateSettings.h"
+#include "TimeScreen.h"
 #include "stm32l4xx_hal.h"
 #include "../Model/Model.h"
 #include "../LCD/LCD.h"
@@ -23,6 +25,7 @@ public:
 	ScreenControl(Model *model);
 	void InitScreen();
 	void Update();
+	Model::ESCREEN getCurrentScreen();
 
 private:
 	const static uint8_t ARRAY_SIZE = 4;
@@ -37,7 +40,8 @@ private:
 	PWSettings *pwSettings;
 	BWSettings *bwSettings;
 	TimeSettings *timeSettings;
-
+	DateSettings *dateSettings;
+	TimeScreen *timeScreen;
 
 
 

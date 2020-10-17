@@ -90,11 +90,13 @@ int main(void)
   MX_GPIO_Init();
   MX_I2C1_Init();
   MX_USB_DEVICE_Init();
-  MX_TIM1_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   HAL_I2C_MspInit(&hi2c1);
-
-  appMain.mainF();
+  HAL_TIM_Base_MspInit(&htim2);
+  appMain.Init();
+  HAL_TIM_Base_Start_IT(&htim2);
+	appMain.mainF();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -166,6 +168,24 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+
+uint8_t timeCounter = 0;
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+	/*IO_COM Synchronisationstimer*/
+	if(htim->Instance == TIM2){
+		if(timeCounter == 99){
+			appMain.Clk();
+			timeCounter = 0;
+		}else{
+			timeCounter++;
+		}
+		appMain.ButtonUpdate();
+		appMain.updateEnable = true;
+
+	}
+}
+
 
 /* USER CODE END 4 */
 

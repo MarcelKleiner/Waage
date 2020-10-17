@@ -19,26 +19,11 @@ Model::ESCREEN BWSettings::Update(){
 
 	screen = Model::E_BW_SETTINGS;
 
-	int preis = model->getBienenwachsPreis()*100;
-	char *p = Tools::intToAsciiChar(preis, 2);
-	char result[12];
-	string line1 = "Bienenwachs";
-
-	for(uint8_t i = 0; i<5;i++){
-		result[i] = p[i+1];
-	}
-
-	result[5] = ' ';
-	result[6] = 'F';
-	result[7] = 'r';
-	result[8] = '/';
-	result[9] = '1';
-	result[10] = '0';
-	result[11] = '0';
-	result[12] = 'g';
+	int preis = model->getBienenwachsPreis();
 
 	if(!init){
-		lcd->Write(line1,0,result,12,0);
+		position = 0;
+		lcd->Write(line1,0,prizeToCharArray(preis),12,0);
 		lcd->SetCursorPosition(position, 2,true);
 		init = true;
 	}
@@ -56,7 +41,6 @@ Model::ESCREEN BWSettings::Update(){
 			}
 		}
 
-		lcd->Write(line1,0,result,12,0);
 		lcd->SetCursorPosition(position, 2,true);
 		model->setT1Short(false);
 	}
@@ -68,7 +52,7 @@ Model::ESCREEN BWSettings::Update(){
 	if(model->isT2Short()){
 
 		if(position == 0){
-			if((preis/1000 - (preis/10000)*10) == 9){
+			if(preis/1000 == 9){
 				preis -= 9000;
 			}else{
 				preis += 1000;
@@ -76,14 +60,14 @@ Model::ESCREEN BWSettings::Update(){
 		}
 
 		if(position == 1){
-			if((preis/100 - (preis/1000)*10) % 100 == 9){
+			if((preis/100 - (preis/1000)*10) == 9){
 				preis -= 900;
 			}else{
 				preis += 100;
 			}
 		}
 
-		if(position == 2){
+		if(position == 3){
 			if((preis/10 - (preis/100)*10) == 9){
 				preis -= 90;
 			}else{
@@ -92,15 +76,15 @@ Model::ESCREEN BWSettings::Update(){
 		}
 
 
-		if(position == 3){
-			if((preis - (preis/10)*10 ) == 9){
-				preis -= 9;
+		if(position == 4){
+			if((preis - (preis/10)*10 ) == 0){
+				preis += 5;
 			}else{
-				preis += 1;
+				preis -= 5;
 			}
 		}
-		model->setBienenwachsPreis(preis/100);
-		lcd->Write(line1,0,result,12,0);
+		model->setBienenwachsPreis(preis);
+		lcd->Write(line1,0,prizeToCharArray(preis),12,0);
 		lcd->SetCursorPosition(position, 2,true);
 		model->setT2Short(false);
 	}
@@ -140,4 +124,24 @@ Model::ESCREEN BWSettings::Update(){
 	}
 
 	return screen;
+}
+
+
+char* BWSettings::prizeToCharArray(uint32_t prize){
+	char *p = Tools::intToAsciiChar(prize, 2);
+	static char result[12];
+
+	for(uint8_t i = 0; i<5;i++){
+		result[i] = p[i+1];
+	}
+
+	result[5] = ' ';
+	result[6] = 'F';
+	result[7] = 'r';
+	result[8] = '/';
+	result[9] = '1';
+	result[10] = '0';
+	result[11] = '0';
+	result[12] = 'g';
+	return result;
 }
