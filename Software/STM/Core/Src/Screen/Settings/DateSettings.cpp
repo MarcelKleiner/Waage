@@ -217,7 +217,7 @@ Model::ESCREEN DateSettings::Update(){
 
 	//------------------SW_Tar------------------
 	if(model->isT5Short()){
-		screen = Model::E_TIME_SETTINGS;
+		screen = Model::E_KONTRAST_SETTINGS;
 		init = false;
 		model->setT5Short(false);
 	}

@@ -18,11 +18,11 @@
 #include "stm32l4xx_hal.h"
 #include "../Model/Model.h"
 #include "../LCD/LCD.h"
-
+#include "Settings/Contrast.h"
 
 class ScreenControl {
 public:
-	ScreenControl(Model *model);
+	ScreenControl(Model *model,Kontrast *contrast);
 	void InitScreen();
 	void Update();
 	Model::ESCREEN getCurrentScreen();
@@ -42,6 +42,8 @@ private:
 	TimeSettings *timeSettings;
 	DateSettings *dateSettings;
 	TimeScreen *timeScreen;
+	Contrast *kontrastSettings;
+	Kontrast *contrast;
 
 
 

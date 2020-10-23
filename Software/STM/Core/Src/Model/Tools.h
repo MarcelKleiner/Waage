@@ -15,6 +15,7 @@ class Tools {
 public:
 
 	static char* intToAsciiChar(int32_t data,uint8_t nachkommastellen);
+	static char* byteToAscii(uint8_t data);
 	static int32_t Round5Rp(int32_t prize);
 
 

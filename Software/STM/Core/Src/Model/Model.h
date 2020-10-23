@@ -23,6 +23,7 @@ public:
 		E_TIME,
 		E_TIME_SETTINGS,
 		E_DATE_SETTINGS,
+		E_KONTRAST_SETTINGS,
 	};
 
 	enum EWACHS{
@@ -56,8 +57,8 @@ private:
 
 	//---------------Screen activation---------------
 
-
-
+	//---------------Kontrast ---------------
+	uint8_t kontrast;
 
 	//---------------Zeit speicherung---------------
 	uint8_t year;
@@ -154,6 +155,8 @@ public:
 	void setParafinwachsPreis(float parafinwachsPreis);
 	EWACHS getWachstyp() const;
 	void setWachstyp(EWACHS wachstyp);
+	uint8_t getKontrast() const;
+	void setKontrast(uint8_t kontrast);
 };
 
 #endif /* SRC_MODEL_MODEL_H_ */

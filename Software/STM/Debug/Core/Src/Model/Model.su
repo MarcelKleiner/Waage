@@ -1,56 +1,58 @@
 gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
 Model.cpp:10:1:Model::Model()	16	static
-Model.cpp:61:9:uint8_t Model::getDay() const	16	static
-Model.cpp:65:6:void Model::setDay(uint8_t)	16	static
-Model.cpp:69:9:uint8_t Model::getDayOfWeek() const	16	static
-Model.cpp:73:6:void Model::setDayOfWeek(uint8_t)	16	static
-Model.cpp:77:9:uint8_t Model::getHour() const	16	static
-Model.cpp:81:6:void Model::setHour(uint8_t)	16	static
-Model.cpp:85:9:int32_t Model::getLoadCell1() const	16	static
-Model.cpp:89:6:void Model::setLoadCell1(int32_t)	16	static
-Model.cpp:93:9:int32_t Model::getLoadCell2() const	16	static
-Model.cpp:97:6:void Model::setLoadCell2(int32_t)	16	static
-Model.cpp:101:9:uint8_t Model::getMinute() const	16	static
-Model.cpp:105:6:void Model::setMinute(uint8_t)	16	static
-Model.cpp:109:9:uint8_t Model::getMonth() const	16	static
-Model.cpp:113:6:void Model::setMonth(uint8_t)	16	static
-Model.cpp:117:9:uint8_t Model::getSeconds() const	16	static
-Model.cpp:121:6:void Model::setSeconds(uint8_t)	16	static
-Model.cpp:125:9:int16_t Model::getWeight() const	16	static
-Model.cpp:129:6:void Model::setWeight(int16_t)	16	static
-Model.cpp:133:9:uint8_t Model::getYear() const	16	static
-Model.cpp:137:6:void Model::setYear(uint8_t)	16	static
-Model.cpp:141:6:bool Model::isT1Long() const	16	static
-Model.cpp:145:6:void Model::setT1Long(bool)	16	static
-Model.cpp:149:6:bool Model::isT1Short() const	16	static
-Model.cpp:153:6:void Model::setT1Short(bool)	16	static
-Model.cpp:157:6:bool Model::isT2Long() const	16	static
-Model.cpp:161:6:void Model::setT2Long(bool)	16	static
-Model.cpp:165:6:bool Model::isT2Short() const	16	static
-Model.cpp:169:6:void Model::setT2Short(bool)	16	static
-Model.cpp:173:6:bool Model::isT3Long() const	16	static
-Model.cpp:177:6:void Model::setT3Long(bool)	16	static
-Model.cpp:181:6:bool Model::isT3Short() const	16	static
-Model.cpp:185:6:void Model::setT3Short(bool)	16	static
-Model.cpp:189:6:bool Model::isT4Long() const	16	static
-Model.cpp:193:6:void Model::setT4Long(bool)	16	static
-Model.cpp:197:6:bool Model::isT4Short() const	16	static
-Model.cpp:201:6:void Model::setT4Short(bool)	16	static
-Model.cpp:205:6:bool Model::isT5Long() const	16	static
-Model.cpp:209:6:void Model::setT5Long(bool)	16	static
-Model.cpp:213:6:bool Model::isT5Short() const	16	static
-Model.cpp:217:6:void Model::setT5Short(bool)	16	static
-Model.cpp:221:7:float Model::getLoadCellGradient1() const	16	static
-Model.cpp:228:6:void Model::setLoadCellGradient1(float)	16	static
-Model.cpp:232:7:float Model::getLoadCellGradient2() const	16	static
-Model.cpp:239:6:void Model::setLoadCellGradient2(float)	16	static
-Model.cpp:243:9:int32_t Model::getLoadCellOffset1() const	16	static
-Model.cpp:247:6:void Model::setLoadCellOffset1(int32_t)	16	static
-Model.cpp:251:9:int32_t Model::getLoadCellOffset2() const	16	static
-Model.cpp:255:7:float Model::getBienenwachsPreis() const	16	static
-Model.cpp:259:6:void Model::setBienenwachsPreis(float)	16	static
-Model.cpp:263:7:float Model::getParafinwachsPreis() const	16	static
-Model.cpp:267:6:void Model::setParafinwachsPreis(float)	16	static
-Model.cpp:271:15:Model::EWACHS Model::getWachstyp() const	16	static
-Model.cpp:275:6:void Model::setWachstyp(Model::EWACHS)	16	static
-Model.cpp:294:6:void Model::setLoadCellOffset2(int32_t)	16	static
+Model.cpp:62:9:uint8_t Model::getDay() const	16	static
+Model.cpp:66:6:void Model::setDay(uint8_t)	16	static
+Model.cpp:70:9:uint8_t Model::getDayOfWeek() const	16	static
+Model.cpp:74:6:void Model::setDayOfWeek(uint8_t)	16	static
+Model.cpp:78:9:uint8_t Model::getHour() const	16	static
+Model.cpp:82:6:void Model::setHour(uint8_t)	16	static
+Model.cpp:86:9:int32_t Model::getLoadCell1() const	16	static
+Model.cpp:90:6:void Model::setLoadCell1(int32_t)	16	static
+Model.cpp:94:9:int32_t Model::getLoadCell2() const	16	static
+Model.cpp:98:6:void Model::setLoadCell2(int32_t)	16	static
+Model.cpp:102:9:uint8_t Model::getMinute() const	16	static
+Model.cpp:106:6:void Model::setMinute(uint8_t)	16	static
+Model.cpp:110:9:uint8_t Model::getMonth() const	16	static
+Model.cpp:114:6:void Model::setMonth(uint8_t)	16	static
+Model.cpp:118:9:uint8_t Model::getSeconds() const	16	static
+Model.cpp:122:6:void Model::setSeconds(uint8_t)	16	static
+Model.cpp:126:9:int16_t Model::getWeight() const	16	static
+Model.cpp:130:6:void Model::setWeight(int16_t)	16	static
+Model.cpp:134:9:uint8_t Model::getYear() const	16	static
+Model.cpp:138:6:void Model::setYear(uint8_t)	16	static
+Model.cpp:142:6:bool Model::isT1Long() const	16	static
+Model.cpp:146:6:void Model::setT1Long(bool)	16	static
+Model.cpp:150:6:bool Model::isT1Short() const	16	static
+Model.cpp:154:6:void Model::setT1Short(bool)	16	static
+Model.cpp:158:6:bool Model::isT2Long() const	16	static
+Model.cpp:162:6:void Model::setT2Long(bool)	16	static
+Model.cpp:166:6:bool Model::isT2Short() const	16	static
+Model.cpp:170:6:void Model::setT2Short(bool)	16	static
+Model.cpp:174:6:bool Model::isT3Long() const	16	static
+Model.cpp:178:6:void Model::setT3Long(bool)	16	static
+Model.cpp:182:6:bool Model::isT3Short() const	16	static
+Model.cpp:186:6:void Model::setT3Short(bool)	16	static
+Model.cpp:190:6:bool Model::isT4Long() const	16	static
+Model.cpp:194:6:void Model::setT4Long(bool)	16	static
+Model.cpp:198:6:bool Model::isT4Short() const	16	static
+Model.cpp:202:6:void Model::setT4Short(bool)	16	static
+Model.cpp:206:6:bool Model::isT5Long() const	16	static
+Model.cpp:210:6:void Model::setT5Long(bool)	16	static
+Model.cpp:214:6:bool Model::isT5Short() const	16	static
+Model.cpp:218:6:void Model::setT5Short(bool)	16	static
+Model.cpp:222:7:float Model::getLoadCellGradient1() const	16	static
+Model.cpp:229:6:void Model::setLoadCellGradient1(float)	16	static
+Model.cpp:233:7:float Model::getLoadCellGradient2() const	16	static
+Model.cpp:240:6:void Model::setLoadCellGradient2(float)	16	static
+Model.cpp:244:9:int32_t Model::getLoadCellOffset1() const	16	static
+Model.cpp:248:6:void Model::setLoadCellOffset1(int32_t)	16	static
+Model.cpp:252:9:int32_t Model::getLoadCellOffset2() const	16	static
+Model.cpp:256:7:float Model::getBienenwachsPreis() const	16	static
+Model.cpp:260:6:void Model::setBienenwachsPreis(float)	16	static
+Model.cpp:264:7:float Model::getParafinwachsPreis() const	16	static
+Model.cpp:268:6:void Model::setParafinwachsPreis(float)	16	static
+Model.cpp:272:15:Model::EWACHS Model::getWachstyp() const	16	static
+Model.cpp:276:6:void Model::setWachstyp(Model::EWACHS)	16	static
+Model.cpp:295:6:void Model::setLoadCellOffset2(int32_t)	16	static
+Model.cpp:299:9:uint8_t Model::getKontrast() const	16	static
+Model.cpp:303:6:void Model::setKontrast(uint8_t)	16	static

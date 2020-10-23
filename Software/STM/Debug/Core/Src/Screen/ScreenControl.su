@@ -1,5 +1,5 @@
 gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
-ScreenControl.cpp:15:1:ScreenControl::ScreenControl(Model*)	24	static
-ScreenControl.cpp:26:6:void ScreenControl::InitScreen()	128	static
-ScreenControl.cpp:38:6:void ScreenControl::Update()	16	static
-ScreenControl.cpp:69:16:Model::ESCREEN ScreenControl::getCurrentScreen()	16	static
+ScreenControl.cpp:15:1:ScreenControl::ScreenControl(Model*, Kontrast*)	32	static
+ScreenControl.cpp:28:6:void ScreenControl::InitScreen()	128	static
+ScreenControl.cpp:40:6:void ScreenControl::Update()	16	static
+ScreenControl.cpp:74:16:Model::ESCREEN ScreenControl::getCurrentScreen()	16	static

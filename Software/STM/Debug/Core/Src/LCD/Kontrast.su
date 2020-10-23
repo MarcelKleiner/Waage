@@ -1,0 +1,2 @@
+Kontrast.cpp:13:1:Kontrast::Kontrast()	16	static
+Kontrast.cpp:18:6:void Kontrast::setContrast(uint8_t)	32	static

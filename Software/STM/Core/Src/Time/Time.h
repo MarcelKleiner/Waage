@@ -12,6 +12,7 @@
 #include "i2c.h"
 #include "../Model/Model.h"
 #include "TimerConfig.h"
+#include "main.h"
 
 class Time {
 public:

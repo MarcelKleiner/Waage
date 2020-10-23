@@ -37,6 +37,13 @@ void AppMain::Init(){
 	HAL_GPIO_WritePin(LED_BW_GPIO_Port, LED_BW_Pin, GPIO_PIN_SET);
 	screenControl.InitScreen();
 	timeSynchroCounter = 0;
+	HAL_GPIO_WritePin(LCD_LIGHT_GPIO_Port, LCD_LIGHT_Pin, GPIO_PIN_RESET);
+	HAL_Delay(200);
+	HAL_GPIO_WritePin(LCD_LIGHT_GPIO_Port, LCD_LIGHT_Pin, GPIO_PIN_SET);
+	HAL_Delay(200);
+	HAL_GPIO_WritePin(LCD_LIGHT_GPIO_Port, LCD_LIGHT_Pin, GPIO_PIN_RESET);
+	contrast.setContrast(0x09);
+	time.UpdateTime();
 }
 
 
@@ -44,13 +51,14 @@ void AppMain::mainF(){
 while(true){
 	if(updateEnable)
 	updateEnable = false;
-	loadCell2.Update();
-	//loadCell.Update(); //ToDo
+	//loadCell2.Update();
+	loadCell1.Update(); //ToDo
 	int32_t weight1 = (model.getLoadCell1()-model.getLoadCellOffset1()) /model.getLoadCellGradient1();
 	int32_t weight2 = (model.getLoadCell2()-model.getLoadCellOffset2()) /model.getLoadCellGradient2();
-	model.setWeight(weight2);
+	model.setWeight(weight1);
 	model.setWeight(weight1 + weight2);
 	screenControl.Update();
+
 }
 
 

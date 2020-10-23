@@ -27,11 +27,7 @@ char* Tools::intToAsciiChar(int32_t data,uint8_t nachkommastellen) {
         	}else{
         		result[i] = d[j];
         	}
-
-
-
         }
-
 	return result;
 }
 
@@ -45,5 +41,13 @@ int32_t Tools::Round5Rp(int32_t prize){
     }else{
     	result = prize - rp;
     }
+    return result;
+}
+
+char* Tools::byteToAscii(uint8_t data) {;
+	static char result[3];
+	result[0] = data/100 + 0x30;
+	result[1] = data/10 - (data/100)*10 + 0x30;
+	result[2] = data - (data/10)*10 + 0x30;
     return result;
 }

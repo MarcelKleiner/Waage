@@ -12,8 +12,9 @@ using namespace std;
 
 
 
-ScreenControl::ScreenControl(Model *model) {
+ScreenControl::ScreenControl(Model *model, Kontrast *contrast) {
 	this->model = model;
+	this->contrast = contrast;
 	lcd  = new  LCD();
 	mainScreen = new MainScreen(model, lcd);
 	pwSettings = new PWSettings(model, lcd);
@@ -21,6 +22,7 @@ ScreenControl::ScreenControl(Model *model) {
 	timeSettings = new TimeSettings(model, lcd);
 	dateSettings = new DateSettings(model, lcd);
 	timeScreen = new TimeScreen(model, lcd);
+	kontrastSettings = new Contrast(model, lcd, contrast);
 }
 
 void ScreenControl::InitScreen(){
@@ -61,6 +63,9 @@ void ScreenControl::Update(){
 		break;
 	case Model::E_TIME:
 		nextScreen =timeScreen->Update();
+	break;
+	case Model::E_KONTRAST_SETTINGS:
+		nextScreen = kontrastSettings->Update();
 		break;
 	}
 }

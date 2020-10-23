@@ -15,6 +15,8 @@
 #include "main.h"
 #include "ButtonControl/ButtonControl.h"
 #include "tim.h"
+#include "LCD/Kontrast.h"
+#include "Time/Time.h"
 
 class AppMain {
 public:
@@ -34,9 +36,11 @@ private:
 
 	LoadCell loadCell1; // = LoadCell(&model, 1);
 	LoadCell loadCell2; // = LoadCell(&model, 2);
-	ScreenControl screenControl = ScreenControl(&model);
+	Kontrast contrast = Kontrast();
+	ScreenControl screenControl = ScreenControl(&model,&contrast);
 	ButtonControl buttonControl = ButtonControl(&model);
 
+	Time time = Time(&model, &hi2c1);;
 	uint32_t timeSynchroCounter;
 
 };

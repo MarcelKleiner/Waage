@@ -19,6 +19,7 @@ Model::Model() {
 	 loadCellGradient_2 = 3.35;
 
 	 weight = 0;
+	 kontrast = 100;
 
 	//---------------Wachs settings---------------
 
@@ -293,4 +294,12 @@ void Model::setWachstyp(EWACHS wachstyp) {
 
 void Model::setLoadCellOffset2(int32_t loadCellOffset2) {
 	loadCellOffset_2 = loadCellOffset2;
+}
+
+uint8_t Model::getKontrast() const {
+	return kontrast;
+}
+
+void Model::setKontrast(uint8_t kontrast) {
+	this->kontrast = kontrast;
 }

@@ -38,10 +38,7 @@ void Time::SetTime(uint8_t year, uint8_t month, uint8_t day, uint8_t hour,uint8_
 
 void Time::UpdateTime(){
 
-	uint8_t txData[1] = {SECONDS};
-	uint8_t rxData[7] = {0};
-	HAL_I2C_Master_Transmit(hi2c, WRITE_ADDR, txData, sizeof(txData)/sizeof(txData[0]), I2C_TIMEOUT);
-	HAL_I2C_Master_Receive(hi2c, READ_ADDR, rxData, sizeof(rxData)/sizeof(rxData[0]), I2C_TIMEOUT);
+	/*test = HAL_I2C_Master_Receive(hi2c, READ_ADDR<<1, rxData, 7, 100);
 
 	model->setSeconds(rxData[0]);
 	model->setMinute(rxData[1]);
@@ -49,5 +46,5 @@ void Time::UpdateTime(){
 	model->setDay(rxData[3]);
 	model->setDayOfWeek(rxData[4]);
 	model->setMonth(rxData[5]);
-	model->setYear(rxData[6]);
+	model->setYear(rxData[6]);*/
 }

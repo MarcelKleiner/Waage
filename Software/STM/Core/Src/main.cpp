@@ -96,9 +96,13 @@ int main(void)
   HAL_TIM_Base_MspInit(&htim2);
   appMain.Init();
   HAL_TIM_Base_Start_IT(&htim2);
+
 	appMain.mainF();
   /* USER CODE END 2 */
-
+uint8_t addr = 0;
+HAL_StatusTypeDef test;
+uint8_t txData[1];
+txData[0] = 0;
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
@@ -166,6 +170,7 @@ void SystemClock_Config(void)
     Error_Handler();
   }
 }
+
 
 /* USER CODE BEGIN 4 */
 
