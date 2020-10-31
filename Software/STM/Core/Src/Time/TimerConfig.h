@@ -27,8 +27,8 @@
 #define TIMER_CONTROL			0x0E
 #define TIMER					0x0F
 
-#define WRITE_ADDR				0x51
-#define READ_ADDR				0x51
+
+#define TIME_ADDR				0x51
 
 #define I2C_TIMEOUT				100
 

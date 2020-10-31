@@ -1,6 +1,9 @@
-gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
-AppMain.cpp:14:1:AppMain::AppMain()	16	static
-AppMain.cpp:33:6:void AppMain::Init()	40	static
-AppMain.cpp:50:6:void AppMain::mainF()	40	static
-AppMain.cpp:67:6:void AppMain::ButtonUpdate()	16	static
-AppMain.cpp:72:6:void AppMain::Clk()	24	static
+AppMain.cpp:24:1:AppMain::AppMain()	16	static
+AppMain.cpp:40:6:void AppMain::Init()	32	static
+AppMain.cpp:56:6:void AppMain::mainF()	40	static
+AppMain.cpp:80:6:bool AppMain::usbTransmit(uint8_t*, uint8_t)	32	static
+AppMain.cpp:95:6:void AppMain::ButtonUpdate()	16	static
+AppMain.cpp:99:6:void AppMain::Clk()	24	static
+AppMain.cpp:185:6:void AppMain::ReadLogbook()	32	static
+AppMain.cpp:193:1:void __static_initialization_and_destruction_0(int, int)	16	static
+AppMain.cpp:193:1:cpp)	8	static

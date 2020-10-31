@@ -22,7 +22,7 @@ Model::ESCREEN Contrast::Update(void) {
 
 		if(!init){
 
-			lcd->Write(line1,0,Tools::byteToAscii(model->getKontrast()),3,9);
+			lcd->Write(line1,8,0,Tools::byteToAscii(model->getKontrast()),3,9);
 			lcd->SetCursorPosition(11, 2,true);
 			init = true;
 		}
@@ -48,7 +48,7 @@ Model::ESCREEN Contrast::Update(void) {
 		if(model->isT2Short()){
 			if(kontrast < 100){
 				model->setKontrast(kontrast++);
-				lcd->Write(line1,0,Tools::byteToAscii(model->getKontrast()),3,9);
+				lcd->Write(line1,8,0,Tools::byteToAscii(model->getKontrast()),3,9);
 				lcd->SetCursorPosition(11, 2,true);
 				this->contrast->setContrast(100-kontrast);
 			}
@@ -58,7 +58,7 @@ Model::ESCREEN Contrast::Update(void) {
 		if(model->isT2Long()){
 			if(kontrast < 100){
 				model->setKontrast(kontrast++);
-				lcd->Write(line1,0,Tools::byteToAscii(model->getKontrast()),3,9);
+				lcd->Write(line1,8,0,Tools::byteToAscii(model->getKontrast()),3,9);
 				lcd->SetCursorPosition(11, 2,true);
 				this->contrast->setContrast(100-kontrast);
 			}
@@ -68,7 +68,7 @@ Model::ESCREEN Contrast::Update(void) {
 		if(model->isT3Short()){
 			if(kontrast > 0){
 			model->setKontrast(kontrast--);
-			lcd->Write(line1,0,Tools::byteToAscii(model->getKontrast()),3,9);
+			lcd->Write(line1,8,0,Tools::byteToAscii(model->getKontrast()),3,9);
 			lcd->SetCursorPosition(11, 2,true);
 			this->contrast->setContrast(100-kontrast);
 			}
@@ -77,7 +77,7 @@ Model::ESCREEN Contrast::Update(void) {
 		if(model->isT3Long()){
 			if(kontrast > 0){
 			model->setKontrast(kontrast--);
-			lcd->Write(line1,0,Tools::byteToAscii(model->getKontrast()),3,9);
+			lcd->Write(line1,8,0,Tools::byteToAscii(model->getKontrast()),3,9);
 			lcd->SetCursorPosition(11, 2,true);
 			this->contrast->setContrast(100-kontrast);
 			}

@@ -1,3 +1,2 @@
-gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
 ButtonControl.cpp:11:1:ButtonControl::ButtonControl(Model*)	16	static
 ButtonControl.cpp:27:6:void ButtonControl::UpdateButton()	16	static

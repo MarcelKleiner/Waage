@@ -8,13 +8,13 @@
 #ifndef SRC_SCREEN_PWSETTINGS_H_
 #define SRC_SCREEN_PWSETTINGS_H_
 
-#include "BaseScreen.h"
+
 #include "../Model/Model.h"
 #include "../Model/Tools.h"
 #include "../LCD/LCD.h"
-#include <string>
 
-class PWSettings : public BaseScreen{
+
+class PWSettings {
 
 public:
 	PWSettings(Model *model, LCD *lcd);
@@ -27,7 +27,7 @@ private:
 
 	uint8_t position;
 	bool init;
-	string line1 = "Parafinwachs";
+	const char* line1 = "Parafinwachs";
 
 	char* prizeToCharArray(uint32_t prize);
 };

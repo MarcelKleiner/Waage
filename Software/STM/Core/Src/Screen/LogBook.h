@@ -8,13 +8,13 @@
 #ifndef SRC_SCREEN_LOGBOOK_H_
 #define SRC_SCREEN_LOGBOOK_H_
 
-#include "BaseScreen.h"
+
 #include "../Model/Model.h"
 #include "../Model/Tools.h"
 #include "../LCD/LCD.h"
 #include <string>
 
-class LogBook : BaseScreen {
+class LogBook  {
 
 
 public:

@@ -8,13 +8,12 @@
 #ifndef SRC_SCREEN_BWSETTINGS_H_
 #define SRC_SCREEN_BWSETTINGS_H_
 
-#include "BaseScreen.h"
 #include "../Model/Model.h"
 #include "../Model/Tools.h"
 #include "../LCD/LCD.h"
-#include <string>
 
-class BWSettings : public BaseScreen{
+
+class BWSettings  {
 public:
 	BWSettings(Model *model, LCD *lcd);
 	Model::ESCREEN Update(void);
@@ -25,7 +24,7 @@ private:
 
 	uint8_t position;
 	bool init;
-	string line1 = "Bienenwachs";
+	const char* line1 = "Bienenwachs";
 
 	char* prizeToCharArray(uint32_t prize);
 

@@ -22,6 +22,7 @@
 #include "i2c.h"
 #include "tim.h"
 #include "usb_device.h"
+#include "usbd_cdc_if.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -31,7 +32,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-
+AppMain appMain = AppMain();
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -52,7 +53,7 @@
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-AppMain appMain = AppMain();
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -89,20 +90,17 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_I2C1_Init();
-  MX_USB_DEVICE_Init();
   MX_TIM2_Init();
+  MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
   HAL_I2C_MspInit(&hi2c1);
   HAL_TIM_Base_MspInit(&htim2);
-  appMain.Init();
   HAL_TIM_Base_Start_IT(&htim2);
 
-	appMain.mainF();
+  appMain.Init();
+  appMain.mainF();
   /* USER CODE END 2 */
-uint8_t addr = 0;
-HAL_StatusTypeDef test;
-uint8_t txData[1];
-txData[0] = 0;
+
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
@@ -171,7 +169,6 @@ void SystemClock_Config(void)
   }
 }
 
-
 /* USER CODE BEGIN 4 */
 
 uint8_t timeCounter = 0;
@@ -187,10 +184,17 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 		}
 		appMain.ButtonUpdate();
 		appMain.updateEnable = true;
-
 	}
 }
 
+
+
+void USBReceive(uint8_t *buf){
+
+		appMain.ReadLogbook();
+
+
+}
 
 /* USER CODE END 4 */
 

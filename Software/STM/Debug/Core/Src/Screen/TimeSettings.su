@@ -1,3 +1,0 @@
-gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
-TimeSettings.cpp:10:1:TimeSettings::TimeSettings(Model*, LCD*)	24	static
-TimeSettings.cpp:19:16:Model::ESCREEN TimeSettings::Update()	16	static

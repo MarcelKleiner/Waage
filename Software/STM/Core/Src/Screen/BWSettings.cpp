@@ -23,7 +23,7 @@ Model::ESCREEN BWSettings::Update(){
 
 	if(!init){
 		position = 0;
-		lcd->Write(line1,0,prizeToCharArray(preis),12,0);
+		lcd->Write(line1,11,0,prizeToCharArray(preis),12,0);
 		lcd->SetCursorPosition(position, 2,true);
 		init = true;
 	}
@@ -84,7 +84,7 @@ Model::ESCREEN BWSettings::Update(){
 			}
 		}
 		model->setBienenwachsPreis(preis);
-		lcd->Write(line1,0,prizeToCharArray(preis),12,0);
+		lcd->Write(line1,11,0,prizeToCharArray(preis),12,0);
 		lcd->SetCursorPosition(position, 2,true);
 		model->setT2Short(false);
 	}

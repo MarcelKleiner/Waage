@@ -7,30 +7,36 @@
 
 #include "ScreenControl.h"
 using namespace std;
-#include <string>
 
+
+
+static LCD lcd;
+static MainScreen *mainScreen;
+static PWSettings *pwSettings;
+static BWSettings *bwSettings;
+static TimeSettings *timeSettings;
+static DateSettings *dateSettings;
+static TimeScreen *timeScreen;
+static Contrast *kontrastSettings;
 
 
 
 ScreenControl::ScreenControl(Model *model, Kontrast *contrast) {
-	this->model = model;
-	this->contrast = contrast;
-	lcd  = new  LCD();
-	mainScreen = new MainScreen(model, lcd);
-	pwSettings = new PWSettings(model, lcd);
-	bwSettings = new BWSettings(model, lcd);
-	timeSettings = new TimeSettings(model, lcd);
-	dateSettings = new DateSettings(model, lcd);
-	timeScreen = new TimeScreen(model, lcd);
-	kontrastSettings = new Contrast(model, lcd, contrast);
+	model = model;
+	contrast = contrast;
+	lcd  = LCD();
+	mainScreen = new MainScreen(model, &lcd);
+	pwSettings = new PWSettings(model, &lcd);
+	bwSettings = new BWSettings(model, &lcd);
+	timeSettings = new TimeSettings(model, &lcd);
+	dateSettings = new DateSettings(model, &lcd);
+	timeScreen = new TimeScreen(model, &lcd);
+	kontrastSettings = new Contrast(model, &lcd, contrast);
 }
 
 void ScreenControl::InitScreen(){
-	lcd->InitLCD();
+	lcd.InitLCD();
 
-	string i = "10.000 kg";
-	string a = "02.25 Fr";
-	lcd->Write(i,a);
 	currentScreen = Model::E_MAIN_SCRREN;
 	nextScreen = Model::E_MAIN_SCRREN;
 

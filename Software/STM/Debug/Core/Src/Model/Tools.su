@@ -2,3 +2,7 @@ std_abs.h:56:3:long int std::abs(long int)	16	static
 Tools.cpp:12:7:static char* Tools::intToAsciiChar(int32_t, uint8_t)	24	static
 Tools.cpp:35:9:static int32_t Tools::Round5Rp(int32_t)	32	static
 Tools.cpp:47:7:static char* Tools::byteToAscii(uint8_t)	16	static
+Tools.cpp:57:9:static uint8_t Tools::BCDDecoder(uint8_t)	24	static
+Tools.cpp:64:9:static uint8_t Tools::BCDEncoder(uint8_t)	24	static
+Tools.cpp:78:6:static void Tools::DWT_Init()	4	static
+Tools.cpp:87:6:static void Tools::DWT_Delay_us(uint32_t)	24	static

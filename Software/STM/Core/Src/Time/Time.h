@@ -11,6 +11,7 @@
 #include "stm32l412xx.h"
 #include "i2c.h"
 #include "../Model/Model.h"
+#include "../Model/Tools.h"
 #include "TimerConfig.h"
 #include "main.h"
 
@@ -19,6 +20,7 @@ public:
 	Time(Model *model, I2C_HandleTypeDef *hi2c);
 
 	void SetTime(uint8_t year,uint8_t month,uint8_t day,uint8_t hour,uint8_t minute,uint8_t seconds);
+	void SetTime();
 	void UpdateTime();
 
 

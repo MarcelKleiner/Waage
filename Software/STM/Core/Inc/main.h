@@ -47,7 +47,7 @@ extern "C" {
 
 /* Exported macro ------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
-
+void USBReceive(uint8_t *buf);
 /* USER CODE END EM */
 
 /* Exported functions prototypes ---------------------------------------------*/

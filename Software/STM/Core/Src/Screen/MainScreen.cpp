@@ -26,12 +26,14 @@ Model::ESCREEN MainScreen::Update(){
 	screen = Model::E_MAIN_SCRREN;
 
 	//------------------Screen Update------------------
-	int prize = 0;
 	if(model->getWachstyp() == Model::E_BIENENWACHS){
 		prize = Tools::Round5Rp((model->getWeight())*model->getBienenwachsPreis()/100);
 	}else if(model->getWachstyp() == Model::E_PARAFINWACHS){
 		prize = Tools::Round5Rp((model->getWeight())*model->getParafinwachsPreis()/100);
+	}else{
+		prize = 0;
 	}
+	model->setPrize(prize);
 
 
 	char *asciiWeight = {Tools::intToAsciiChar(model->getWeight(),3)};
@@ -104,12 +106,12 @@ Model::ESCREEN MainScreen::Update(){
 		//Summe Aktivierten oder summieren
 		model->setT3Short(false);
 		if(summeActive){
-			lcd->Write("            ", "            ");
+			//lcd->Write("            ", "            ");
 			summeCounter++;
 		}else{
 			summeActive = true;
 			summeCounter= 1;
-			lcd->Write("            ", "            ");
+			//lcd->Write("            ", "            ");
 			HAL_GPIO_WritePin(LED_SUM_GPIO_Port, LED_SUM_Pin, GPIO_PIN_RESET);
 		}
 	}

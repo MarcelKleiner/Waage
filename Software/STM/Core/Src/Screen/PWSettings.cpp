@@ -7,7 +7,7 @@
 
 #include "PWSettings.h"
 
-PWSettings::PWSettings(Model *model, LCD *lcd) : BaseScreen() {
+PWSettings::PWSettings(Model *model, LCD *lcd) {
 	this->model = model;
 	this->lcd = lcd;
 }
@@ -22,7 +22,7 @@ Model::ESCREEN PWSettings::Update(){
 
 	if(!init){
 		position = 0;
-		lcd->Write(line1,0,prizeToCharArray(preis),12,0);
+		lcd->Write(line1,12,0,prizeToCharArray(preis),12,0);
 		lcd->SetCursorPosition(position, 2,true);
 		init = true;
 	}
@@ -84,7 +84,7 @@ Model::ESCREEN PWSettings::Update(){
 			}
 		}
 		model->setParafinwachsPreis(preis);
-		lcd->Write(line1,0,prizeToCharArray(preis),12,0);
+		lcd->Write(line1,12,0,prizeToCharArray(preis),12,0);
 		lcd->SetCursorPosition(position, 2,true);
 		model->setT2Short(false);
 	}

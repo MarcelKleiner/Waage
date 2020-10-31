@@ -8,7 +8,7 @@
 #ifndef SRC_SCREEN_SCREENCONTROL_H_
 #define SRC_SCREEN_SCREENCONTROL_H_
 
-#include "BaseScreen.h"
+
 #include "MainScreen.h"
 #include "PWSettings.h"
 #include "BWSettings.h"
@@ -34,19 +34,7 @@ private:
 	Model::ESCREEN nextScreen;
 
 	Model *model;
-
-	LCD *lcd;
-	MainScreen *mainScreen;
-	PWSettings *pwSettings;
-	BWSettings *bwSettings;
-	TimeSettings *timeSettings;
-	DateSettings *dateSettings;
-	TimeScreen *timeScreen;
-	Contrast *kontrastSettings;
 	Kontrast *contrast;
-
-
-
 };
 
 #endif /* SRC_SCREEN_SCREENCONTROL_H_ */

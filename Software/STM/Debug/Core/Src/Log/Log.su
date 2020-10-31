@@ -1,0 +1,5 @@
+Log.cpp:10:1:Log::Log(Model*)	16	static
+Log.cpp:15:6:void Log::init()	32	static
+Log.cpp:29:10:uint8_t* Log::getLogBookEntry(uint32_t)	32	static
+Log.cpp:45:6:void Log::addEntriy()	48	static
+Log.cpp:83:6:void Log::resetAddrPointer()	32	static

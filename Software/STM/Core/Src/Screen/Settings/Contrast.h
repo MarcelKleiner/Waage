@@ -12,7 +12,7 @@
 #include "../../Model/Tools.h"
 #include "../../LCD/LCD.h"
 #include "../../LCD/Kontrast.h"
-#include <string>
+
 
 class Contrast {
 public:
@@ -24,7 +24,7 @@ private:
 	Model *model;
 	LCD *lcd;
 	Kontrast *contrast;
-	const string line1 = "Kontrast";
+	const char* line1 = "Kontrast";
 	bool init;
 	uint8_t kontrast;
 };

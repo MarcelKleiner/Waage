@@ -18,6 +18,7 @@ RM := rm -rf
 -include Core/Src/Screen/Settings/subdir.mk
 -include Core/Src/Screen/subdir.mk
 -include Core/Src/Model/subdir.mk
+-include Core/Src/Log/subdir.mk
 -include Core/Src/LoadCell/subdir.mk
 -include Core/Src/LCD/subdir.mk
 -include Core/Src/ButtonControl/subdir.mk

@@ -303,3 +303,27 @@ uint8_t Model::getKontrast() const {
 void Model::setKontrast(uint8_t kontrast) {
 	this->kontrast = kontrast;
 }
+
+bool Model::isOverrideClock() const {
+	return overrideClock;
+}
+
+uint16_t Model::getAddrPointer() const {
+	return addrPointer;
+}
+
+uint32_t Model::getPrize() const {
+	return prize;
+}
+
+void Model::setPrize(uint32_t prize) {
+	this->prize = prize;
+}
+
+void Model::setAddrPointer(uint16_t addrPointer) {
+	this->addrPointer = addrPointer;
+}
+
+void Model::setOverrideClock(bool overrideClock) {
+	this->overrideClock = overrideClock;
+}

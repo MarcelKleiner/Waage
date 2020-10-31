@@ -17,6 +17,9 @@
 #include "tim.h"
 #include "LCD/Kontrast.h"
 #include "Time/Time.h"
+#include "Log/Log.h"
+#include "usb_device.h"
+#include "usbd_cdc_if.h"
 
 class AppMain {
 public:
@@ -26,21 +29,13 @@ public:
 	void Init(void);
 	void Clk(void);
 	void ButtonUpdate(void);
+	bool usbTransmit(uint8_t *data, uint8_t size);
 	bool updateEnable = false;
 
+	void ReadLogbook();
 private:
 
-	LoadCellSettings lcSettings1;
-	LoadCellSettings lcSettings2;
-	Model model;
 
-	LoadCell loadCell1; // = LoadCell(&model, 1);
-	LoadCell loadCell2; // = LoadCell(&model, 2);
-	Kontrast contrast = Kontrast();
-	ScreenControl screenControl = ScreenControl(&model,&contrast);
-	ButtonControl buttonControl = ButtonControl(&model);
-
-	Time time = Time(&model, &hi2c1);;
 	uint32_t timeSynchroCounter;
 
 };

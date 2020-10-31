@@ -1,4 +1,3 @@
-gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
-TimeSettings.cpp:10:1:TimeSettings::TimeSettings(Model*, LCD*)	40	static
-TimeSettings.cpp:18:16:Model::ESCREEN TimeSettings::Update()	96	static
-TimeSettings.cpp:164:7:char* TimeSettings::TimeToCharArray(uint8_t, uint8_t, uint8_t)	16	static
+TimeSettings.cpp:10:1:TimeSettings::TimeSettings(Model*, LCD*)	24	static
+TimeSettings.cpp:18:16:Model::ESCREEN TimeSettings::Update()	56	static
+TimeSettings.cpp:165:7:char* TimeSettings::TimeToCharArray(uint8_t, uint8_t, uint8_t)	16	static

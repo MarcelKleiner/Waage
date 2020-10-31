@@ -20,7 +20,7 @@ Model::ESCREEN DateSettings::Update(){
 
 	if(!init){
 		position = 0;
-		lcd->Write(line1,0,DateToCharArray(model->getYear(), model->getMonth(), model->getDay()),12,2);
+		lcd->Write(line1,5,0,DateToCharArray(model->getYear(), model->getMonth(), model->getDay()),12,2);
 		lcd->SetCursorPosition(position+2, 2,true);
 		init = true;
 	}
@@ -191,7 +191,7 @@ Model::ESCREEN DateSettings::Update(){
 		model->setYear(year);
 		model->setMonth(month);
 		model->setDay(day);
-		lcd->Write(line1,0,DateToCharArray(model->getYear(), model->getMonth(), model->getDay()),12,2);
+		lcd->Write(line1,5,0,DateToCharArray(model->getYear(), model->getMonth(), model->getDay()),12,2);
 		lcd->SetCursorPosition(position+2, 2,true);
 		model->setT2Short(false);
 	}
@@ -218,12 +218,14 @@ Model::ESCREEN DateSettings::Update(){
 	//------------------SW_Tar------------------
 	if(model->isT5Short()){
 		screen = Model::E_KONTRAST_SETTINGS;
+		model->setOverrideClock(true);
 		init = false;
 		model->setT5Short(false);
 	}
 	if(model->isT5Long()){
 		//Speichern ToDo
 		screen = Model::E_MAIN_SCRREN;
+		model->setOverrideClock(true);
 		init = false;
 		model->setT5Long(false);
 	}

@@ -47,6 +47,12 @@ private:
 	float loadCellGradient_2;
 
 	int16_t weight;
+	uint32_t prize;
+
+	//---------------Log settings---------------
+
+	uint16_t addrPointer;
+
 
 	//---------------Wachs settings---------------
 
@@ -68,6 +74,8 @@ private:
 	uint8_t hour;
 	uint8_t minute;
 	uint8_t seconds;
+
+	bool overrideClock;
 
 
 	//---------------Taster Status---------------
@@ -120,6 +128,8 @@ public:
 	void setLoadCell2(int32_t loadCell2);
 
 
+
+
 	bool isT1Long() const;
 	void setT1Long(bool t1Long);
 	bool isT1Short() const;
@@ -157,6 +167,13 @@ public:
 	void setWachstyp(EWACHS wachstyp);
 	uint8_t getKontrast() const;
 	void setKontrast(uint8_t kontrast);
+
+	bool isOverrideClock() const;
+	void setOverrideClock(bool overrideClock);
+	uint16_t getAddrPointer() const;
+	void setAddrPointer(uint16_t addrPointer);
+	uint32_t getPrize() const;
+	void setPrize(uint32_t prize);
 };
 
 #endif /* SRC_MODEL_MODEL_H_ */

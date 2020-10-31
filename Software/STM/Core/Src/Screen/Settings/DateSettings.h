@@ -11,7 +11,7 @@
 #include "../../Model/Model.h"
 #include "../../Model/Tools.h"
 #include "../../LCD/LCD.h"
-#include <string>
+
 
 class DateSettings {
 public:
@@ -23,7 +23,7 @@ private:
 	LCD *lcd;
 	Model::ESCREEN screen;
 
-	string line1 = "Datum";
+	const char* line1 = "Datum";
 	uint8_t position;
 	bool init;
 	char* DateToCharArray(uint8_t year, uint8_t month, uint8_t day);

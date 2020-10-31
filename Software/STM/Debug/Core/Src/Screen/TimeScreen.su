@@ -1,4 +1,3 @@
-gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
 TimeScreen.cpp:10:1:TimeScreen::TimeScreen(Model*, LCD*)	24	static
-TimeScreen.cpp:16:16:Model::ESCREEN TimeScreen::Update()	72	static
+TimeScreen.cpp:16:16:Model::ESCREEN TimeScreen::Update()	48	static
 TimeScreen.cpp:70:7:char* TimeScreen::TimeToCharArray(uint8_t, uint8_t, uint8_t)	16	static

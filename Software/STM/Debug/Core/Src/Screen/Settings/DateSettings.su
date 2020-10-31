@@ -1,4 +1,3 @@
-gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
-DateSettings.cpp:10:1:DateSettings::DateSettings(Model*, LCD*)	40	static
-DateSettings.cpp:17:16:Model::ESCREEN DateSettings::Update()	96	static
-DateSettings.cpp:236:7:char* DateSettings::DateToCharArray(uint8_t, uint8_t, uint8_t)	16	static
+DateSettings.cpp:10:1:DateSettings::DateSettings(Model*, LCD*)	24	static
+DateSettings.cpp:17:16:Model::ESCREEN DateSettings::Update()	56	static
+DateSettings.cpp:238:7:char* DateSettings::DateToCharArray(uint8_t, uint8_t, uint8_t)	16	static

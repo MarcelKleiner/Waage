@@ -17,7 +17,7 @@ Model::ESCREEN TimeScreen::Update(){
 
 	screen = Model::E_TIME;
 
-	lcd->Write("Zeit",0,TimeToCharArray(model->getHour(), model->getMinute(), model->getSeconds()),8,4);
+	lcd->Write("Zeit",4,0,TimeToCharArray(model->getHour(), model->getMinute(), model->getSeconds()),8,4);
 
 	//------------------SW_BW------------------
 	if(model->isT1Short()){

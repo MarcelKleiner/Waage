@@ -7,7 +7,7 @@
 
 #include "LCD.h"
 #include "main.h"
-using namespace std;
+
 
 
 
@@ -18,7 +18,7 @@ LCD::LCD() {
 
 void LCD::InitLCD(){
 
-	string s;
+
 	HAL_GPIO_WritePin(DB0_GPIO_Port, DB0_Pin, GPIO_PIN_RESET);
 	HAL_GPIO_WritePin(DB1_GPIO_Port, DB1_Pin, GPIO_PIN_RESET);
 	HAL_GPIO_WritePin(DB2_GPIO_Port, DB2_Pin, GPIO_PIN_RESET);
@@ -40,25 +40,6 @@ void LCD::InitLCD(){
 
 }
 
-void LCD::Write(string line1, string line2){
-
-	WriteCommand(0x80);
-	for(uint8_t i = 0; i<12; i++){
-		if(line1.length() > i){
-			WriteData(line1[i]);
-		}else{
-			WriteData(0x10);
-		}
-	}
-	WriteCommand(0x80+0x40);
-	for(uint8_t i = 0; i<12; i++){
-		if(line2.length() > i){
-			WriteData(line2[i]);
-		}else{
-			WriteData(0x10);
-		}
-	}
-}
 
 void LCD::Write(char* line1, uint8_t lengthL1,uint8_t startl1, char* line2, uint8_t lengthL2, uint8_t startl2){
 
@@ -88,10 +69,10 @@ void LCD::Write(char* line1, uint8_t lengthL1,uint8_t startl1, char* line2, uint
 }
 
 
-void LCD::Write(string line1, uint8_t startl1, char* line2, uint8_t lengthL2, uint8_t startl2){
+void LCD::Write(const char* line1, uint8_t lenght1,uint8_t startl1, char* line2, uint8_t lengthL2, uint8_t startl2){
 	WriteCommand(0x80+startl1);
 	for(uint8_t i = 0; i<12-startl1; i++){
-		if(line1.length() > i){
+		if(lenght1 > i){
 			WriteData(line1[i]);
 		}else{
 			WriteData(0x10);

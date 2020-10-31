@@ -21,7 +21,7 @@ Model::ESCREEN TimeSettings::Update(){
 
 	if(!init){
 		position = 0;
-		lcd->Write(line1,0,TimeToCharArray(model->getHour(), model->getMinute(), model->getSeconds()),8,4);
+		lcd->Write(line1,4,0,TimeToCharArray(model->getHour(), model->getMinute(), model->getSeconds()),8,4);
 		lcd->SetCursorPosition(position+4, 2,true);
 		init = true;
 	}
@@ -55,7 +55,7 @@ Model::ESCREEN TimeSettings::Update(){
 		if(position == 0){
 			if(hour < 13){
 				hour += 10;
-			}else if(hour < 19){
+			}else if(hour <= 19){
 				hour -= 10;
 			}else{
 				hour -= 20;
@@ -117,7 +117,7 @@ Model::ESCREEN TimeSettings::Update(){
 		model->setHour(hour);
 		model->setMinute(minute);
 		model->setSeconds(seconds);
-		lcd->Write(line1,0,TimeToCharArray(model->getHour(), model->getMinute(), model->getSeconds()),8,4);
+		lcd->Write(line1,4,0,TimeToCharArray(model->getHour(), model->getMinute(), model->getSeconds()),8,4);
 		lcd->SetCursorPosition(position+4, 2, true);
 		model->setT2Short(false);
 	}
@@ -145,12 +145,13 @@ Model::ESCREEN TimeSettings::Update(){
 	if(model->isT5Short()){
 		screen = Model::E_DATE_SETTINGS;
 		init = false;
+		model->setOverrideClock(true);
 		model->setT5Short(false);
 	}
 	if(model->isT5Long()){
 		screen = Model::E_MAIN_SCRREN;
 		init = false;
-		//Speichern ToDo
+		model->setOverrideClock(true);
 		model->setT5Long(false);
 	}
 

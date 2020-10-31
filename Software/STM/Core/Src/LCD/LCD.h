@@ -10,7 +10,7 @@
 
 #include "stm32l412xx.h"
 using namespace std;
-#include <string>
+
 
 
 class LCD {
@@ -20,9 +20,9 @@ public:
 
 
 public:
-	void Write(string lin1, string string);
+
 	void Write(char* line1, uint8_t lengthL1,uint8_t startl1, char* line2, uint8_t lengthL2, uint8_t startl2);
-	void Write(string line1, uint8_t startl1, char* line2, uint8_t lengthL2, uint8_t startl2);
+	void Write(const char* line1, uint8_t length1, uint8_t startl1, char* line2, uint8_t lengthL2, uint8_t startl2);
 	void Write(void);
 	void InitLCD(void);
 

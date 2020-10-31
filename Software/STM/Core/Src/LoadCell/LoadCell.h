@@ -10,6 +10,7 @@
 
 
 #include "../Model/Model.h"
+#include "../Model/Tools.h"
 #include "main.h"
 #include "LoadCellConfig.h"
 

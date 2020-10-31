@@ -33,6 +33,7 @@ Core/Src \
 Core/Src/ButtonControl \
 Core/Src/LCD \
 Core/Src/LoadCell \
+Core/Src/Log \
 Core/Src/Model \
 Core/Src/Screen \
 Core/Src/Screen/Settings \
