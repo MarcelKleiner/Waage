@@ -1,0 +1,73 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Waage"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="Waage.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="364.667" Width="837">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="204"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition/>
+                <RowDefinition Height="33"/>
+            </Grid.RowDefinitions>
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Right" Margin="0,3" Width="1" Grid.RowSpan="5" Grid.Column="1"/>
+            <Label x:Name="label" Content="COM Settings" Margin="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+            <ComboBox x:Name="cbCOM" HorizontalAlignment="Center" Height="20" Margin="60,5" Grid.Row="1" VerticalAlignment="Center" Width="84" Grid.ColumnSpan="2"/>
+            <Button x:Name="cmdConnect" Content="Connect" HorizontalAlignment="Center" Height="26" Margin="16,7" Grid.Row="2" VerticalAlignment="Center" Width="70"/>
+            <Button x:Name="cmdDisconnect" Content="Disconnect" HorizontalAlignment="Center" Height="26" Margin="16,7" Grid.Row="2" VerticalAlignment="Center" Width="70" Grid.Column="1"/>
+            <Button x:Name="cmdRefresh" Grid.Column="1" HorizontalAlignment="Left" Height="19" Margin="51,6,0,0" Grid.Row="1" VerticalAlignment="Top" Width="22">
+                <Image x:Name="image" Source="Img/Refresh_32px.png"/>
+            </Button>
+            <Label Content="Status:" HorizontalAlignment="Left" Grid.Row="4" Width="47" VerticalContentAlignment="Center"/>
+            <Label x:Name="lblStatus" Content="Disconnected" HorizontalAlignment="Right" Grid.Row="4" Width="167" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+        </Grid>
+        <Grid Grid.Column="1" Margin="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid Margin="0" Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="109*"/>
+                    <ColumnDefinition Width="109*"/>
+                    <ColumnDefinition Width="107*"/>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="108*"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="cmdReadLog" Content="Log lesen" HorizontalAlignment="Center" Height="25" Margin="0" VerticalAlignment="Center" Width="95"/>
+                <Button x:Name="cmdClearLog" HorizontalAlignment="Center" Height="25" Margin="0" VerticalAlignment="Center" Width="95" Grid.Column="2" Content="Log löschen"/>
+                <Button x:Name="cmdExport" Content="Export" HorizontalAlignment="Center" Height="26" Margin="0" VerticalAlignment="Center" Width="95" Grid.Column="4"/>
+                <Button x:Name="cmdClearEntries" Content="Einträge löschen" HorizontalAlignment="Center" Height="26" VerticalAlignment="Center" Width="95" Grid.Column="1" Margin="0"/>
+            </Grid>
+            <Border BorderBrush="Black" BorderThickness="1" Height="1" Margin="15,0" VerticalAlignment="Bottom" Grid.Row="1"/>
+            <mah:MetroProgressBar x:Name="pbProgress" Margin="5" Grid.Row="1" Foreground="#FF0AD301"/>
+            <ListView x:Name="listView" Margin="5">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="120" x:Name="nDatum" Header="Datum" DisplayMemberBinding="{Binding datum}"/>
+                        <GridViewColumn Width="100" x:Name="nZeit" Header="Zeit" DisplayMemberBinding="{Binding zeit}"/>
+                        <GridViewColumn Width="100" x:Name="nGewicht" Header="Gewicht" DisplayMemberBinding="{Binding gewicht}"/>
+                        <GridViewColumn Width="100" x:Name="nPreis" Header="Preis" DisplayMemberBinding="{Binding preis}"/>
+                        <GridViewColumn Width="150" x:Name="nWachstyp" Header="Wachstyp" DisplayMemberBinding="{Binding wachstyp}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+
+    </Grid>
+</Window>

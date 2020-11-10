@@ -32,7 +32,8 @@ public:
 	bool usbTransmit(uint8_t *data, uint8_t size);
 	bool updateEnable = false;
 
-	void ReadLogbook();
+	void ReadLogbook(uint32_t addr);
+	void ResetLogBook();
 private:
 
 

@@ -1,3 +1,3 @@
-MainScreen.cpp:13:1:MainScreen::MainScreen(Model*, LCD*)	24	static
-MainScreen.cpp:19:6:void MainScreen::Init()	24	static
-MainScreen.cpp:24:16:Model::ESCREEN MainScreen::Update()	80	static
+MainScreen.cpp:20:1:MainScreen::MainScreen(Model*, LCD*)	24	static
+MainScreen.cpp:29:6:void MainScreen::Init()	24	static
+MainScreen.cpp:35:16:Model::ESCREEN MainScreen::Update()	88	static

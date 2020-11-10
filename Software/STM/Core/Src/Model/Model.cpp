@@ -316,6 +316,14 @@ uint32_t Model::getPrize() const {
 	return prize;
 }
 
+bool Model::isAddEntry() const {
+	return addEntry;
+}
+
+void Model::setAddEntry(bool addEntry) {
+	this->addEntry = addEntry;
+}
+
 void Model::setPrize(uint32_t prize) {
 	this->prize = prize;
 }

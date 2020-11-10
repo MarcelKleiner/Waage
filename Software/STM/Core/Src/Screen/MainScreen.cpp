@@ -6,19 +6,30 @@
  */
 
 #include "MainScreen.h"
+#include "stdio.h"
+#include <stdio.h>
+#include <string.h>
 
 using namespace std;
+
+uint8_t weightStableCounter = 0;
+bool entryAdded = false;
+int32_t weight_1 = 0;;
 
 
 MainScreen::MainScreen(Model *model, LCD *lcd) {
 	this->model = model;
 	this->lcd = lcd;
 	this->screen = Model::E_MAIN_SCRREN;
+	summeActive = SUMDEACTIVATED;
+	weightSum = 0;
+	prizeSum = 0;
 }
 
 void MainScreen::Init(){
 	model->setLoadCellOffset1(model->getLoadCell1());
 	model->setLoadCellOffset2(model->getLoadCell2());
+
 }
 
 Model::ESCREEN MainScreen::Update(){
@@ -36,7 +47,67 @@ Model::ESCREEN MainScreen::Update(){
 	model->setPrize(prize);
 
 
-	char *asciiWeight = {Tools::intToAsciiChar(model->getWeight(),3)};
+	char asciiWeight[6];
+	char asciiPrize[6];
+
+
+	switch(summeActive){
+	case SUMACTIVATED:
+		strncpy(asciiWeight,Tools::intToAsciiChar(model->getWeight(),3),6);
+		strncpy(asciiPrize,Tools::intToAsciiChar(0,2),6);
+		entryAdded = false;
+		HAL_GPIO_WritePin(LED_SUM_GPIO_Port, LED_SUM_Pin, GPIO_PIN_RESET);
+		break;
+	case SUMDEACTIVATED:
+		strncpy(asciiWeight,Tools::intToAsciiChar(model->getWeight(),3),6);
+		strncpy(asciiPrize,Tools::intToAsciiChar(prize,2),6);
+		HAL_GPIO_WritePin(LED_SUM_GPIO_Port, LED_SUM_Pin, GPIO_PIN_SET);
+		if(weightStableCounter < 150){
+			weightStableCounter++;
+		}else{
+			int16_t actualWeight = model->getWeight();
+			if(actualWeight < weight_1+5 && actualWeight > weight_1-5 && !entryAdded && actualWeight > 10){
+				//im zielfenster
+				model->setAddEntry(true);
+				entryAdded = true;
+			}else{
+				weight_1 = actualWeight;
+			}
+
+			//zurücksetzen für nächster eintrag falls gewicht 0+/-10g
+			if(actualWeight < 5 && actualWeight > -5){
+				entryAdded = false;
+			}
+			weightStableCounter = 0;
+		}
+
+
+
+		break;
+	case TOTAL:
+		strncpy(asciiWeight,Tools::intToAsciiChar(weightSum,3),6);
+		strncpy(asciiPrize,Tools::intToAsciiChar(prizeSum,2),6);
+		model->setWeight(weightSum);
+		model->setPrize(prizeSum);
+		model->setWachstyp(Model::E_SUMME);
+		if(!entryAdded){
+			model->setAddEntry(true);
+			entryAdded = true;
+		}
+
+		break;
+	case TOTALEND:
+		summeActive = SUMDEACTIVATED;
+		summeCounter = 0;
+		prizeSum = 0;
+		weightSum = 0;
+		model->setWachstyp(Model::E_PARAFINWACHS);
+		break;
+	}
+
+
+
+
 
 	char w[9];
 	char p[9];
@@ -56,8 +127,6 @@ Model::ESCREEN MainScreen::Update(){
 	w[8] = 'k';
 	w[9] = 'g';
 
-
-	char* asciiPrize = {Tools::intToAsciiChar(prize, 2)};
 	p[0] = asciiPrize[0];
 	p[1] = asciiPrize[1];
 	p[2] = asciiPrize[2];
@@ -67,7 +136,6 @@ Model::ESCREEN MainScreen::Update(){
 	p[6] = ' ';
 	p[7] = 'F';
 	p[8] = 'r';
-
 
 
 	lcd->Write(w,10,2,p,9,3);
@@ -105,27 +173,32 @@ Model::ESCREEN MainScreen::Update(){
 	if(model->isT3Short()){
 		//Summe Aktivierten oder summieren
 		model->setT3Short(false);
-		if(summeActive){
-			//lcd->Write("            ", "            ");
 			summeCounter++;
-		}else{
-			summeActive = true;
-			summeCounter= 1;
-			//lcd->Write("            ", "            ");
-			HAL_GPIO_WritePin(LED_SUM_GPIO_Port, LED_SUM_Pin, GPIO_PIN_RESET);
-		}
+			weightSum = weightSum + model->getWeight();
+			prizeSum = prizeSum + model->getPrize();
+			lcd->Clear();
+			HAL_Delay(100);
+
+			summeActive = SUMACTIVATED;
 	}
 
 	//------------------Total------------------
 	if(model->isT4Long()){
 		model->setT4Long(false);
 		screen = Model::E_TIME;
+
+		summeActive = SUMDEACTIVATED;
+		summeCounter = 0;
+		weightSum = 0;
+		prizeSum = 0;
 	}
 	if(model->isT4Short()){
 		model->setT4Short(false);
-		summeActive = false;
-		HAL_GPIO_WritePin(LED_SUM_GPIO_Port, LED_SUM_Pin, GPIO_PIN_SET);
-		summeCounter = 0;
+		if(summeActive == SUMACTIVATED){
+			summeActive = TOTAL;
+		}else{
+			summeActive = TOTALEND;
+		}
 	}
 
 

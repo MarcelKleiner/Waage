@@ -19,7 +19,8 @@ ButtonControl buttonControl = ButtonControl(&model);
 Log logBook = Log(&model);
 
 Time time = Time(&model, &hi2c1);
-
+bool init = false;
+uint8_t initCounter = 0;
 
 AppMain::AppMain() {
 	// TODO Auto-generated constructor stub
@@ -40,30 +41,32 @@ AppMain::AppMain() {
 void AppMain::Init() {
 	loadCell1.InitLoadCell(&model, lcSettings1);
 	loadCell2.InitLoadCell(&model, lcSettings2);
-	HAL_GPIO_WritePin(LED_PW_GPIO_Port, LED_PW_Pin, GPIO_PIN_SET);
-	HAL_GPIO_WritePin(LED_BW_GPIO_Port, LED_BW_Pin, GPIO_PIN_SET);
 	screenControl.InitScreen();
-	timeSynchroCounter = 0;
-	HAL_GPIO_WritePin(LCD_LIGHT_GPIO_Port, LCD_LIGHT_Pin, GPIO_PIN_RESET);
-	HAL_Delay(200);
-	HAL_GPIO_WritePin(LCD_LIGHT_GPIO_Port, LCD_LIGHT_Pin, GPIO_PIN_SET);
-	HAL_Delay(200);
-	HAL_GPIO_WritePin(LCD_LIGHT_GPIO_Port, LCD_LIGHT_Pin, GPIO_PIN_RESET);
 	contrast.setContrast(0x09);
 	logBook.init();
+
+
+	HAL_GPIO_WritePin(LED_PW_GPIO_Port, LED_PW_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LED_BW_GPIO_Port, LED_BW_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LED_SUM_GPIO_Port, LED_SUM_Pin, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(LCD_LIGHT_GPIO_Port, LCD_LIGHT_Pin, GPIO_PIN_RESET);
+
+	time.UpdateTime();
+	timeSynchroCounter = 0;
+	model.setWachstyp(Model::E_PARAFINWACHS);
+
 }
 
 void AppMain::mainF() {
 	while (true) {
 		if (updateEnable)
 			updateEnable = false;
-		//loadCell2.Update();
+		loadCell2.Update();
 		loadCell1.Update(); //ToDo
 		int32_t weight1 = (model.getLoadCell1() - model.getLoadCellOffset1())
 				/ model.getLoadCellGradient1();
 		int32_t weight2 = (model.getLoadCell2() - model.getLoadCellOffset2())
 				/ model.getLoadCellGradient2();
-		model.setWeight(weight1);
 		model.setWeight(weight1 + weight2);
 		screenControl.Update();
 
@@ -71,6 +74,19 @@ void AppMain::mainF() {
 			time.SetTime();
 			model.setOverrideClock(false);
 		}
+
+		if(model.isAddEntry()){
+			logBook.addEntriy();
+			model.setAddEntry(false);
+		}
+
+		//Waage nullen
+		if(!init && initCounter == 100){
+			model.setLoadCellOffset1(model.getLoadCell1());
+			model.setLoadCellOffset2(model.getLoadCell2());
+			init = true;
+		}
+		initCounter++;
 	}
 
 }
@@ -163,31 +179,41 @@ void AppMain::Clk() {
 		}
 	}
 
-	if (timeSynchroCounter == 1800) {
+	if (screenControl.getCurrentScreen() != Model::E_TIME_SETTINGS
+			&& screenControl.getCurrentScreen() != Model::E_DATE_SETTINGS) {
+		model.setSeconds(seconds);
+		model.setMinute(minute);
+		model.setHour(hours);
+		model.setDay(day);
+		model.setMonth(month);
+		model.setYear(year);
+	}
+
+	if (timeSynchroCounter < 60) {
 		timeSynchroCounter++;
 	} else {
 		timeSynchroCounter = 0;
 		if (screenControl.getCurrentScreen() != Model::E_TIME_SETTINGS
 				&& screenControl.getCurrentScreen() != Model::E_DATE_SETTINGS) {
-			model.setSeconds(seconds);
-			model.setMinute(minute);
-			model.setHour(hours);
-			model.setDay(day);
-			model.setMonth(month);
-			model.setYear(year);
 			time.UpdateTime();
-
 		}
 	}
 
 }
 
-void AppMain::ReadLogbook() {
-	uint32_t size = model.getAddrPointer();
-	for(uint32_t i = 1; i<10;i++){
-		uint8_t *txBuffer = logBook.getLogBookEntry(i);
+void AppMain::ReadLogbook(uint32_t addr) {
+	if(addr == 0){
+		uint8_t txBuffer[3];
+		txBuffer[0] = (model.getAddrPointer()>>16)&0xFF;
+		txBuffer[1] = (model.getAddrPointer()>>8)&0xFF;
+		txBuffer[2] = model.getAddrPointer()&0xFF;
+		usbTransmit(txBuffer, 3);
+	}else{
+		uint8_t *txBuffer = logBook.getLogBookEntry(addr);
 		usbTransmit(txBuffer, 16);
-		HAL_Delay(1000);
 	}
+}
 
+void AppMain::ResetLogBook(){
+	logBook.resetAddrPointer();
 }

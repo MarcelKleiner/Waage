@@ -30,6 +30,7 @@ public:
 		E_UNDEF,
 		E_BIENENWACHS,
 		E_PARAFINWACHS,
+		E_SUMME
 	};
 
 
@@ -52,7 +53,7 @@ private:
 	//---------------Log settings---------------
 
 	uint16_t addrPointer;
-
+	bool addEntry;
 
 	//---------------Wachs settings---------------
 
@@ -174,6 +175,9 @@ public:
 	void setAddrPointer(uint16_t addrPointer);
 	uint32_t getPrize() const;
 	void setPrize(uint32_t prize);
+
+	bool isAddEntry() const;
+	void setAddEntry(bool addEntry);
 };
 
 #endif /* SRC_MODEL_MODEL_H_ */

@@ -58,6 +58,8 @@ Model.cpp:303:6:void Model::setKontrast(uint8_t)	16	static
 Model.cpp:307:6:bool Model::isOverrideClock() const	16	static
 Model.cpp:311:10:uint16_t Model::getAddrPointer() const	16	static
 Model.cpp:315:10:uint32_t Model::getPrize() const	16	static
-Model.cpp:319:6:void Model::setPrize(uint32_t)	16	static
-Model.cpp:323:6:void Model::setAddrPointer(uint16_t)	16	static
-Model.cpp:327:6:void Model::setOverrideClock(bool)	16	static
+Model.cpp:319:6:bool Model::isAddEntry() const	16	static
+Model.cpp:323:6:void Model::setAddEntry(bool)	16	static
+Model.cpp:327:6:void Model::setPrize(uint32_t)	16	static
+Model.cpp:331:6:void Model::setAddrPointer(uint16_t)	16	static
+Model.cpp:335:6:void Model::setOverrideClock(bool)	16	static

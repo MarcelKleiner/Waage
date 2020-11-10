@@ -1,9 +1,10 @@
 LCD.cpp:14:1:LCD::LCD()	16	static
 LCD.cpp:19:6:void LCD::InitLCD()	16	static
-LCD.cpp:44:6:void LCD::Write(char*, uint8_t, uint8_t, char*, uint8_t, uint8_t)	32	static
-LCD.cpp:72:6:void LCD::Write(const char*, uint8_t, uint8_t, char*, uint8_t, uint8_t)	32	static
-LCD.cpp:100:6:void LCD::Write()	24	static
-LCD.cpp:112:6:void LCD::SetCursorPosition(uint8_t, uint8_t, bool)	16	static
-LCD.cpp:132:6:void LCD::WriteCommaandWwakeUp(uint8_t)	24	static
-LCD.cpp:145:6:void LCD::WriteCommand(uint8_t)	24	static
-LCD.cpp:173:6:void LCD::WriteData(uint8_t)	24	static
+LCD.cpp:52:6:void LCD::Write(char*, uint8_t, uint8_t, char*, uint8_t, uint8_t)	32	static
+LCD.cpp:79:6:void LCD::Clear()	24	static
+LCD.cpp:93:6:void LCD::Write(const char*, uint8_t, uint8_t, char*, uint8_t, uint8_t)	32	static
+LCD.cpp:121:6:void LCD::Write()	24	static
+LCD.cpp:133:6:void LCD::SetCursorPosition(uint8_t, uint8_t, bool)	16	static
+LCD.cpp:153:6:void LCD::WriteCommaandWwakeUp(uint8_t)	24	static
+LCD.cpp:166:6:void LCD::WriteCommand(uint8_t)	24	static
+LCD.cpp:194:6:void LCD::WriteData(uint8_t)	24	static

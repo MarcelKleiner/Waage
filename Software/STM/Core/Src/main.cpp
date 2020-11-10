@@ -176,7 +176,7 @@ uint8_t timeCounter = 0;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	/*IO_COM Synchronisationstimer*/
 	if(htim->Instance == TIM2){
-		if(timeCounter == 99){
+		if(timeCounter == 50){
 			appMain.Clk();
 			timeCounter = 0;
 		}else{
@@ -191,8 +191,23 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 
 void USBReceive(uint8_t *buf){
 
-		appMain.ReadLogbook();
+	if(buf[0] == (1+48)){
+		uint8_t addr[5];
+		addr[4] = buf[1]-48;
+		addr[3] = buf[2]-48;
+		addr[2] = buf[3]-48;
+		addr[1] = buf[4]-48;
+		addr[0] = buf[5]-48;
 
+		uint32_t addresse = addr[0]+addr[1]*10+addr[2]*100 + addr[3]*1000+addr[4]*10000;
+		appMain.ReadLogbook(addresse);
+	}else if(buf[0]==(1+48)){
+		//ToDo
+	}else if(buf[0] == (22+48)){
+		appMain.ResetLogBook();
+	}else{
+		CDC_Transmit_FS(buf, 5);
+	}
 
 }
 

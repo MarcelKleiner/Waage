@@ -26,13 +26,24 @@ public:
 
 
 
+
 private:
 	Model *model;
 	LCD *lcd;
 	Model::ESCREEN screen;
 
+	enum E_SUM_STATUS{
+		SUMACTIVATED,
+		SUMDEACTIVATED,
+		TOTAL,
+		TOTALEND
+	};
+
+
 	uint8_t summeCounter;
-	bool summeActive;
+	E_SUM_STATUS summeActive;
+	int32_t weightSum;
+	int32_t prizeSum;
 	int32_t prize;
 };
 

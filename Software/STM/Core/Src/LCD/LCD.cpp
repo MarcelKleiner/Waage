@@ -29,13 +29,21 @@ void LCD::InitLCD(){
 	HAL_GPIO_WritePin(LCD_E_GPIO_Port, LCD_E_Pin, GPIO_PIN_RESET);
 
 	WriteCommaandWwakeUp(0x30);
+	HAL_Delay(1);
 	WriteCommaandWwakeUp(0x30);
+	HAL_Delay(1);
 	WriteCommaandWwakeUp(0x30);
+	HAL_Delay(1);
 	WriteCommaandWwakeUp(0x20);
+	HAL_Delay(1);
 	WriteCommand(0x28);
+	HAL_Delay(1);
 	WriteCommand(0x10); //Set cursor
+	HAL_Delay(1);
 	WriteCommand(0x0F); //Display ON; Blinking cursor
+	HAL_Delay(1);
 	WriteCommand(0x06);
+	HAL_Delay(1);
 	WriteCommand(0x01);
 
 }
@@ -65,6 +73,19 @@ void LCD::Write(char* line1, uint8_t lengthL1,uint8_t startl1, char* line2, uint
 		}else{
 			WriteData(0x10);
 		}
+	}
+}
+
+void LCD::Clear(){
+	WriteCommand(0x80);
+	uint8_t counter = 0;
+	for(counter= 0; counter<12; counter++){
+		WriteData(0x10);
+	}
+
+	WriteCommand(0xC0);
+	for(counter= 0; counter<12; counter++){
+		WriteData(0x10);
 	}
 }
 
@@ -136,9 +157,9 @@ void LCD::WriteCommaandWwakeUp(uint8_t data){
 	HAL_GPIO_WritePin(DB1_GPIO_Port, DB1_Pin, (GPIO_PinState)(data1 & 0x02));
 	HAL_GPIO_WritePin(DB2_GPIO_Port, DB2_Pin, (GPIO_PinState)(data1 & 0x04));
 	HAL_GPIO_WritePin(DB3_GPIO_Port, DB3_Pin, (GPIO_PinState)(data1 & 0x08));
-	HAL_Delay(1);
+	Tools::DWT_Delay_us(100);
 	HAL_GPIO_WritePin(LCD_E_GPIO_Port, LCD_E_Pin, GPIO_PIN_SET);
-	HAL_Delay(1);
+	Tools::DWT_Delay_us(100);
 	HAL_GPIO_WritePin(LCD_E_GPIO_Port, LCD_E_Pin, GPIO_PIN_RESET);
 }
 
@@ -154,7 +175,7 @@ void LCD::WriteCommand(uint8_t data){
 	HAL_GPIO_WritePin(DB3_GPIO_Port, DB3_Pin, (GPIO_PinState)(data1 & 0x08));
 
 	HAL_GPIO_WritePin(LCD_E_GPIO_Port, LCD_E_Pin, GPIO_PIN_SET);
-	HAL_Delay(1);
+	Tools::DWT_Delay_us(100);
 	HAL_GPIO_WritePin(LCD_E_GPIO_Port, LCD_E_Pin, GPIO_PIN_RESET);
 
 
@@ -165,9 +186,9 @@ void LCD::WriteCommand(uint8_t data){
 	HAL_GPIO_WritePin(DB3_GPIO_Port, DB3_Pin, (GPIO_PinState)(data & 0x08));
 
 	HAL_GPIO_WritePin(LCD_E_GPIO_Port, LCD_E_Pin, GPIO_PIN_SET);
-	HAL_Delay(1);
+	Tools::DWT_Delay_us(100);
 	HAL_GPIO_WritePin(LCD_E_GPIO_Port, LCD_E_Pin, GPIO_PIN_RESET);
-	HAL_Delay(1);
+	Tools::DWT_Delay_us(100);
 }
 
 void LCD::WriteData(uint8_t data){
@@ -182,7 +203,7 @@ void LCD::WriteData(uint8_t data){
 	HAL_GPIO_WritePin(DB3_GPIO_Port, DB3_Pin, (GPIO_PinState)(data1 & 0x08));
 
 	HAL_GPIO_WritePin(LCD_E_GPIO_Port, LCD_E_Pin, GPIO_PIN_SET);
-	HAL_Delay(1);
+	Tools::DWT_Delay_us(100);
 	HAL_GPIO_WritePin(LCD_E_GPIO_Port, LCD_E_Pin, GPIO_PIN_RESET);
 
 
@@ -192,9 +213,9 @@ void LCD::WriteData(uint8_t data){
 	HAL_GPIO_WritePin(DB3_GPIO_Port, DB3_Pin, (GPIO_PinState)(data & 0x08));
 
 	HAL_GPIO_WritePin(LCD_E_GPIO_Port, LCD_E_Pin, GPIO_PIN_SET);
-	HAL_Delay(1);
+	Tools::DWT_Delay_us(100);
 	HAL_GPIO_WritePin(LCD_E_GPIO_Port, LCD_E_Pin, GPIO_PIN_RESET);
-	HAL_Delay(1);
+	Tools::DWT_Delay_us(100);
 }
 
 

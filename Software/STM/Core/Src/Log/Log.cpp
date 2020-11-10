@@ -9,16 +9,17 @@
 
 Log::Log(Model *model) {
 	this->model = model;
-	addrPointer = 0;
+	addrPointer = 1;
 }
 
 void Log::init() {
 
 	uint8_t txBuffer[] = { 0x00, 0x00 };
-	uint8_t rxBuffer[] = { 0, 0 };
+	uint8_t rxBuffer[] = { 0, 0,0 };
 	HAL_I2C_Master_Transmit(&hi2c1, EEPROM_ADDR << 1, txBuffer, 2, 100);
-	HAL_I2C_Master_Receive(&hi2c1, EEPROM_ADDR << 1, rxBuffer, 2, 100);
-	if((addrPointer = ((rxBuffer[0] << 8) + rxBuffer[1])) < 1){
+	HAL_I2C_Master_Receive(&hi2c1, EEPROM_ADDR << 1, rxBuffer, 3, 100);
+
+	if((addrPointer = ((rxBuffer[0]<<16) + (rxBuffer[1]<<8) + (rxBuffer[2]))) == 0){
 		addrPointer = 1;
 	}
 
@@ -28,28 +29,41 @@ void Log::init() {
 
 uint8_t* Log::getLogBookEntry(uint32_t addr) {
 
-	addr = addr*16;
-	uint8_t txBuffer[2];
+	if(addr == 0){
+		uint8_t txBuffer[] = {0,0};
+		static uint8_t rxBuffer[3];
+		HAL_I2C_Master_Transmit(&hi2c1, (EEPROM_ADDR) << 1, txBuffer, 2, 100);
+		HAL_I2C_Master_Receive(&hi2c1, EEPROM_ADDR << 1, rxBuffer, 3, 100);
+		return rxBuffer;
+	}else{
+		uint32_t addrCounter = (addr*16-13);
+		uint8_t txBuffer[2];
 
-	txBuffer[0] = (addr>>16)&0xFF;
-	txBuffer[1] = (addr>>8)&0xFF;
-	txBuffer[2] = addr&0xFF;
 
-	static uint8_t rxBuffer[16];
+		addr = ((addrCounter)>>16)&0xFF;
+		txBuffer[0] = ((addrCounter)>>8)&0xFF;
+		txBuffer[1] = (addrCounter)&0xFF;
 
-	HAL_I2C_Master_Transmit(&hi2c1, EEPROM_ADDR << 1, txBuffer, 2, 100);
-	HAL_I2C_Master_Receive(&hi2c1, EEPROM_ADDR << 1, rxBuffer, 16, 100);
-	return rxBuffer;
+		static uint8_t rxBuffer[16];
+
+		HAL_I2C_Master_Transmit(&hi2c1, (EEPROM_ADDR | addr) << 1, txBuffer, 2, 100);
+		HAL_I2C_Master_Receive(&hi2c1, EEPROM_ADDR << 1, rxBuffer, 16, 100);
+		return rxBuffer;
+	}
+
+
 }
 
 void Log::addEntriy() {
 
 	uint8_t txBuffer[18];
 
-	uint8_t addr = (addrPointer>>16)&0xFF;
+	uint32_t addrCounter = (addrPointer*16-13);
 
-	txBuffer[0] = (addrPointer>>8)&0xFF;
-	txBuffer[1] = addrPointer&0xFF;
+	uint8_t addr = ((addrCounter)>>16)&0xFF;
+
+	txBuffer[0] = ((addrCounter)>>8)&0xFF;
+	txBuffer[1] = (addrCounter)&0xFF;
 	txBuffer[2] = model->getYear();
 	txBuffer[3] = model->getMonth();
 	txBuffer[4] = model->getDay();
@@ -74,22 +88,30 @@ void Log::addEntriy() {
 	//Update Addresspointer
 	txBuffer[0] = 0;
 	txBuffer[1] = 0;
-	txBuffer[2] = (addrPointer>>8)&0xFF;
-	txBuffer[3] = (addrPointer & 0xFF);
-	HAL_I2C_Master_Transmit(&hi2c1, (EEPROM_ADDR | addr) << 1, txBuffer, 4, 100);
+	txBuffer[2] = (addrPointer >> 16) & 0x0000FF;
+	txBuffer[3] = (addrPointer>>8)&0x0000FF;
+	txBuffer[4] = (addrPointer & 0x0000FF);
+
+	while(HAL_I2C_Master_Transmit(&hi2c1, (EEPROM_ADDR) << 1, txBuffer, 5, 100) != HAL_OK);
+
+//	HAL_I2C_Master_Transmit(&hi2c1, (EEPROM_ADDR) << 1, txBuffer, 5, 100);
 }
 
 
 void Log::resetAddrPointer() {
-	addrPointer = 0;
-
-	uint8_t txBuffer[4];
+	addrPointer = 1;
+	model->setAddrPointer(addrPointer);
+	uint8_t txBuffer[5];
 	//Update Addresspointer
+
 	txBuffer[0] = 0;
 	txBuffer[1] = 0;
-	txBuffer[2] = (addrPointer>>8)&0xFF;
-	txBuffer[3] = (addrPointer & 0xFF);
-	HAL_I2C_Master_Transmit(&hi2c1, (EEPROM_ADDR) << 1, txBuffer, 4, 100);
+
+	txBuffer[2] = 0;
+	txBuffer[3] = 0;
+	txBuffer[4] = 1;
+
+	HAL_I2C_Master_Transmit(&hi2c1, (EEPROM_ADDR) << 1, txBuffer, 5, 100);
 }
 
 
