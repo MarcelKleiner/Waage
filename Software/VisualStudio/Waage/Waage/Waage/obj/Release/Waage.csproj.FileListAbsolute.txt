@@ -1,0 +1,3 @@
+C:\Users\marce\Documents\Waage\Software\VisualStudio\Waage\Waage\Waage\obj\Release\Waage.csprojAssemblyReference.cache
+C:\Users\marce\Documents\Waage\Software\VisualStudio\Waage\Waage\Waage\obj\Release\App.g.cs
+C:\Users\marce\Documents\Waage\Software\VisualStudio\Waage\Waage\Waage\obj\Release\Waage_MarkupCompile.cache
