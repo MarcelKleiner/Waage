@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-C:\Users\marce\Documents\Waage\Software\VisualStudio\Waage\Waage\Waage\obj\Release\Waage.csprojAssemblyReference.cache
-C:\Users\marce\Documents\Waage\Software\VisualStudio\Waage\Waage\Waage\obj\Release\App.g.cs
-C:\Users\marce\Documents\Waage\Software\VisualStudio\Waage\Waage\Waage\obj\Release\Waage_MarkupCompile.cache
-=======
 C:\Users\marce\Documents\Waage\Software\VisualStudio\Waage\Waage\Waage\bin\Release\Waage.exe.config
 C:\Users\marce\Documents\Waage\Software\VisualStudio\Waage\Waage\Waage\bin\Release\Waage.exe.manifest
 C:\Users\marce\Documents\Waage\Software\VisualStudio\Waage\Waage\Waage\bin\Release\Waage.application
@@ -14,7 +9,6 @@ C:\Users\marce\Documents\Waage\Software\VisualStudio\Waage\Waage\Waage\bin\Relea
 C:\Users\marce\Documents\Waage\Software\VisualStudio\Waage\Waage\Waage\bin\Release\System.Windows.Interactivity.dll
 C:\Users\marce\Documents\Waage\Software\VisualStudio\Waage\Waage\Waage\bin\Release\ControlzEx.pdb
 C:\Users\marce\Documents\Waage\Software\VisualStudio\Waage\Waage\Waage\bin\Release\MahApps.Metro.pdb
-C:\Users\marce\Documents\Waage\Software\VisualStudio\Waage\Waage\Waage\obj\Release\Waage.csprojAssemblyReference.cache
 C:\Users\marce\Documents\Waage\Software\VisualStudio\Waage\Waage\Waage\obj\Release\MainWindow.g.cs
 C:\Users\marce\Documents\Waage\Software\VisualStudio\Waage\Waage\Waage\obj\Release\App.g.cs
 C:\Users\marce\Documents\Waage\Software\VisualStudio\Waage\Waage\Waage\obj\Release\Waage_MarkupCompile.cache
@@ -29,4 +23,3 @@ C:\Users\marce\Documents\Waage\Software\VisualStudio\Waage\Waage\Waage\obj\Relea
 C:\Users\marce\Documents\Waage\Software\VisualStudio\Waage\Waage\Waage\obj\Release\Waage.csproj.CopyComplete
 C:\Users\marce\Documents\Waage\Software\VisualStudio\Waage\Waage\Waage\obj\Release\Waage.exe
 C:\Users\marce\Documents\Waage\Software\VisualStudio\Waage\Waage\Waage\obj\Release\Waage.pdb
->>>>>>> 2ead6fe40afc14b3c66738451e3d8e5c7f1936ca

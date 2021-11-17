@@ -18,7 +18,6 @@ namespace Waage
         MainWindow main;
         SerialPortClass sPort;
         List<LogBookEntry> logBookEntries = new List<LogBookEntry>();
-        DataGridRow row;
         int logBookSize;
 
         Microsoft.Office.Interop.Excel.Application excelApplication;

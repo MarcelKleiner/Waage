@@ -7,8 +7,9 @@
 
 #include "PWSettings.h"
 
-PWSettings::PWSettings(Model *model, LCD *lcd) {
+PWSettings::PWSettings(Model *model, LCD *lcd, Flash *flash) {
 	this->model = model;
+	this->flash = flash;
 	this->lcd = lcd;
 }
 
@@ -115,6 +116,7 @@ Model::ESCREEN PWSettings::Update(){
 	//------------------SW_Tar------------------
 	if(model->isT5Long()){
 		//Neuer Wert speichern
+		flash->WriteFlash();
 		init = false;
 		screen = Model::E_MAIN_SCRREN;
 		model->setT5Long(false);

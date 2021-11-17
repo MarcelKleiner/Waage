@@ -1,5 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
+# Toolchain: GNU Tools for STM32 (9-2020-q2-update)
 ################################################################################
 
 ELF_SRCS := 
@@ -31,6 +32,7 @@ CPP_DEPS :=
 SUBDIRS := \
 Core/Src \
 Core/Src/ButtonControl \
+Core/Src/Flash \
 Core/Src/LCD \
 Core/Src/LoadCell \
 Core/Src/Log \

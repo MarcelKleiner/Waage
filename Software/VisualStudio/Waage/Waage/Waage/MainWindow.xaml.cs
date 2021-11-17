@@ -26,7 +26,7 @@ namespace Waage
             InitializeComponent();
 
             sPort = new SerialPortClass(this);
-            Control control = new Control(this, sPort);
+           Control control = new Control(this, sPort);
         }
     }
 }

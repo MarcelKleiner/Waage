@@ -1,6 +1,6 @@
-ScreenControl.cpp:24:1:ScreenControl::ScreenControl(Model*, Kontrast*)	40	static
-ScreenControl.cpp:37:6:void ScreenControl::InitScreen()	16	static
-ScreenControl.cpp:46:6:void ScreenControl::Update()	16	static
-ScreenControl.cpp:80:16:Model::ESCREEN ScreenControl::getCurrentScreen()	16	static
-ScreenControl.cpp:82:1:void __static_initialization_and_destruction_0(int, int)	16	static
-ScreenControl.cpp:82:1:cpp)	8	static
+ScreenControl.cpp:24:1:ScreenControl::ScreenControl(Model*, Kontrast*, Flash*)	40	static
+ScreenControl.cpp:39:6:void ScreenControl::InitScreen()	16	static
+ScreenControl.cpp:48:6:void ScreenControl::Update()	16	static
+ScreenControl.cpp:82:16:Model::ESCREEN ScreenControl::getCurrentScreen()	16	static
+ScreenControl.cpp:84:1:void __static_initialization_and_destruction_0(int, int)	16	static
+ScreenControl.cpp:84:1:cpp)	8	static

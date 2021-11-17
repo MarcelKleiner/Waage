@@ -11,15 +11,16 @@
 #include "../Model/Model.h"
 #include "../Model/Tools.h"
 #include "../LCD/LCD.h"
-
+#include "../Flash/Flash.h"
 
 class BWSettings  {
 public:
-	BWSettings(Model *model, LCD *lcd);
+	BWSettings(Model *model, LCD *lcd, Flash *flash);
 	Model::ESCREEN Update(void);
 private:
 	Model *model;
 	LCD *lcd;
+	Flash *flash;
 	Model::ESCREEN screen;
 
 	uint8_t position;

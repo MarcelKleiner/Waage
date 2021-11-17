@@ -19,10 +19,11 @@
 #include "../Model/Model.h"
 #include "../LCD/LCD.h"
 #include "Settings/Contrast.h"
+#include "../Flash/Flash.h"
 
 class ScreenControl {
 public:
-	ScreenControl(Model *model,Kontrast *contrast);
+	ScreenControl(Model *model,Kontrast *contrast, Flash *flash);
 	void InitScreen();
 	void Update();
 	Model::ESCREEN getCurrentScreen();
@@ -35,6 +36,7 @@ private:
 
 	Model *model;
 	Kontrast *contrast;
+	Flash *flash;
 };
 
 #endif /* SRC_SCREEN_SCREENCONTROL_H_ */
