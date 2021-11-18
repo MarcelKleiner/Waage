@@ -1,19 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO.Ports;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace Waage
 {
-    class SerialPortClass
+    internal class SerialPortClass
     {
-        SerialPort serialPort;
-        MainWindow main;
-        List<byte> rxData = new List<byte>();
+        private readonly SerialPort serialPort;
+        private readonly MainWindow main;
+        private readonly List<byte> rxData = new List<byte>();
 
         public SerialPortClass(MainWindow main)
         {
@@ -23,34 +19,9 @@ namespace Waage
             InitComPort();
         }
 
-
-        public void SendData(char[] data)
-        {
-            if (serialPort.IsOpen)
-            {
-                serialPort.Write(data, 0, data.Length);
-            }
-            
-        }
-
-        public void SendData(string data)
-        {
-            SendData(data.ToCharArray());
-        }
-
-
-        private void InitComPort()
-        {
-            main.cbCOM.Items.Clear();
-                string[] sPortName = SerialPort.GetPortNames();
-                foreach(string s in sPortName)
-                {
-                    main.cbCOM.Items.Add(s);
-                }
-        }
-
-
-
+        /// <summary>
+        /// Add event listener
+        /// </summary>
         private void AddListener()
         {
             main.cmdConnect.Click += CmdConnect_Click;
@@ -58,12 +29,31 @@ namespace Waage
             main.cmdRefresh.Click += CmdRefresh_Click;
         }
 
+
+
+
+        /// <summary>
+        /// send data over serial port
+        /// </summary>
+        /// <param name="data">data as string</param>
+        public void SendData(string data)
+        {
+            SendData(data.ToCharArray());
+        }
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CmdRefresh_Click(object sender, RoutedEventArgs e)
         {
             InitComPort();
         }
 
-        private void CmdDisconnect_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void CmdDisconnect_Click(object sender, RoutedEventArgs e)
         {
             if (serialPort.IsOpen)
             {
@@ -72,25 +62,25 @@ namespace Waage
                     serialPort.Close();
                     main.lblStatus.Content = "Disconnected";
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    _ = MessageBox.Show(ex.Message);
                 }
 
             }
         }
 
-        private void CmdConnect_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void CmdConnect_Click(object sender, RoutedEventArgs e)
         {
             if (serialPort.IsOpen)
             {
-                MessageBox.Show("Serialport already open", "SerialPort", MessageBoxButton.OK, MessageBoxImage.Information);
+                _ = MessageBox.Show("Serialport already open", "SerialPort", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
 
             if (main.cbCOM.SelectedIndex == -1)
             {
-                MessageBox.Show("No COM Port selected", "SerialPort", MessageBoxButton.OK, MessageBoxImage.Error);
+                _ = MessageBox.Show("No COM Port selected", "SerialPort", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
@@ -111,16 +101,33 @@ namespace Waage
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                _ = MessageBox.Show(ex.Message);
                 return;
             }
         }
 
+        /// <summary>
+        /// send data over serial port
+        /// </summary>
+        /// <param name="data">data as char arry</param>
+        public void SendData(char[] data)
+        {
+            if (serialPort.IsOpen)
+            {
+                serialPort.Write(data, 0, data.Length);
+            }
+        }
+
+        /// <summary>
+        /// serial port data receive interrupt
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             int counter = 0;
             byte[] buffer = new byte[16];
-            
+
             try
             {
                 for (int i = 0; i < 16; i++)
@@ -132,21 +139,26 @@ namespace Waage
             catch { }
 
             rxData.Clear();
-            for(int i = 0; i< counter; i++)
+            for (int i = 0; i < counter; i++)
             {
                 rxData.Add(buffer[i]);
             }
             IsDataReady = true;
         }
 
-        
-        public List<byte> getData()
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public List<byte> GetData()
         {
             return rxData;
         }
 
+
         private bool isDataReady;
-        public bool IsDataReady {
+        public bool IsDataReady
+        {
             get
             {
                 if (isDataReady)
@@ -154,19 +166,26 @@ namespace Waage
                     isDataReady = false;
                     return true;
                 }
-                else
-                {
-                    return false;
-                }
+                return false;
             }
-            set
-            {
-                isDataReady = value;
-            }
+            set => isDataReady = value;
         }
 
+        public bool IsConnected => serialPort.IsOpen;
 
 
+
+        /// <summary>
+        /// Read all avaliable comports 
+        /// </summary>
+        private void InitComPort()
+        {
+            main.cbCOM.Items.Clear();
+            foreach (string s in SerialPort.GetPortNames())
+            {
+                _ = main.cbCOM.Items.Add(s);
+            }
+        }
 
     }
 }
