@@ -63,19 +63,10 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ControlzEx">
-      <HintPath>..\..\..\..\..\..\Git_repos\MatMagSoftware\02_Software\MatMag\MatMag\bin\Debug\ControlzEx.dll</HintPath>
-    </Reference>
-    <Reference Include="MahApps.Metro">
-      <HintPath>..\..\..\..\..\..\Git_repos\MatMagSoftware\02_Software\MatMag\MatMag\bin\Debug\MahApps.Metro.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Windows.Interactivity">
-      <HintPath>..\..\..\..\..\..\Git_repos\MatMagSoftware\02_Software\MatMag\MatMag\bin\Debug\System.Windows.Interactivity.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />

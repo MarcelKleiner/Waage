@@ -1,47 +1,35 @@
-﻿using System;
+﻿using Microsoft.Office.Interop.Excel;
+using Microsoft.Win32;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using Microsoft.Office.Interop.Excel;
-using Microsoft.Win32;
 
 namespace Waage
 {
-    class Control
+    internal class Control
     {
-        MainWindow main;
-        SerialPortClass sPort;
-        List<LogBookEntry> logBookEntries = new List<LogBookEntry>();
-        int logBookSize;
+        private readonly MainWindow main;
+        private readonly SerialPortClass sPort;
+        private readonly List<LogBookEntry> logBookEntries = new List<LogBookEntry>();
+        private Microsoft.Office.Interop.Excel.Application excelApplication;
+        private _Workbook excelWorkbook;
+        private _Worksheet excelWorksheet;
 
-        Microsoft.Office.Interop.Excel.Application excelApplication;
-        _Workbook excelWorkbook;
-        _Worksheet excelWorksheet;
-
-
-        Thread progressBarThread;
-        bool isActive;
-        int counter = 0;
-
-        Thread readData;
-        Thread writeData;
-
-
+        private int counter = 0;
 
         public Control(MainWindow main, SerialPortClass sPort)
         {
             this.sPort = sPort;
             this.main = main;
-
             AddListener();
         }
 
+        /// <summary>
+        /// Add eventlistener
+        /// </summary>
         private void AddListener()
         {
             main.cmdClearEntries.Click += CmdClearEntries_Click;
@@ -50,121 +38,134 @@ namespace Waage
             main.cmdReadLog.Click += CmdReadLog_Click;
         }
 
-        private void CmdReadLog_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void CmdReadLog_Click(object sender, RoutedEventArgs e)
         {
+            if (!sPort.IsConnected)
+            {
+                _ = MessageBox.Show("Kein Gerät verbunden", "Device Error", MessageBoxButton.OK, MessageBoxImage.Error); ;
+                return;
+            }
+
+            //reset progressbar
             main.pbProgress.Value = 0;
+            //clear listview items
             main.listView.Items.Clear();
+
+            //read logbooksize
             sPort.SendData("100000");
-            while (!sPort.IsDataReady) ;
-            List<byte> data = sPort.getData();
-            logBookSize = 0;
-            logBookSize = logBookSize + data[0] * 100;
-            logBookSize = logBookSize + data[1] * 10;
-            logBookSize = logBookSize + data[2];
+            if (!Wait4Data(3))
+            {
+                return;
+            }
+            List<byte> data = sPort.GetData();
+            int logBookSize = (data[0] * 100) + (data[1] * 10) + data[2];
+
+            //set progressbar max value to logbooksize - 1
             main.pbProgress.Maximum = logBookSize - 1;
 
-
-            isActive = true;
-            progressBarThread = new Thread(new ThreadStart(pbThread));
-            progressBarThread.Start();
-            counter = 0;
-
-            readData = new Thread(new ThreadStart(read));
-            readData.Start();
+            Task DataRead = new Task(() => Read(logBookSize));
+            DataRead.Start();
 
             data.Clear();
-
         }
 
-        void read()
+        /// <summary>
+        /// 
+        /// </summary>
+        private void Read(int logBookSize)
         {
-
-            Int32 addr = 100001;
-            for (Int32 i = 0; i < logBookSize - 1; i++)
+            int addr = 100001;
+            for (int i = 0; i < logBookSize - 1; i++)
             {
                 addr = 100001 + i;
                 sPort.SendData(addr.ToString());
-                while (!sPort.IsDataReady) ;
-                List<byte> entrie = sPort.getData();
+
+                if (!Wait4Data(3))
+                {
+                    return;
+                }
+                List<byte> entrie = sPort.GetData();
 
                 LogBookEntry logBookEntry = new LogBookEntry(entrie[0], entrie[1], entrie[2], entrie[3], entrie[4], entrie[5], entrie[7], entrie[8], entrie[10], entrie[11], entrie[12], entrie[14]);
                 logBookEntries.Add(logBookEntry);
 
                 System.Windows.Application.Current.Dispatcher.Invoke(new System.Action(() =>
                 {
-                    main.listView.Items.Add(logBookEntry);
+                    _ = main.listView.Items.Add(logBookEntry);
+                    main.pbProgress.Value = counter;
                 }));
 
 
 
                 entrie.Clear();
                 counter++;
-
             }
 
-            isActive = false;
-        }
-
-        void pbThread()
-        {
-            while (isActive)
-            {
-                System.Windows.Application.Current.Dispatcher.Invoke(new System.Action(() =>
-                {
-                    main.pbProgress.Value = this.counter;
-                }));
-                Thread.Sleep(1);
-            }
             System.Windows.Application.Current.Dispatcher.Invoke(new System.Action(() =>
             {
-                main.pbProgress.Value = main.pbProgress.Maximum;
+                main.pbProgress.Value = counter;
             }));
         }
 
+
+        private bool Wait4Data(int timeOut_s)
+        {
+            int timeOut = 0;
+            while (!sPort.IsDataReady)
+            {
+                if (timeOut > timeOut_s)
+                {
+                    _ = MessageBox.Show("Zeitüberschreitung der Anforderung", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return false;
+                }
+                Thread.Sleep(1000);
+                timeOut++;
+            }
+            return true;
+        }
+
+
         private void CmdExport_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            this.counter = 0;
-            isActive = true;
-            progressBarThread = new Thread(new ThreadStart(pbThread));
-            progressBarThread.Start();
+            counter = 0;
             main.pbProgress.Maximum = logBookEntries.Count;
 
-            writeData = new Thread(new ThreadStart(write));
+            Task writeData = new Task(() => Write());
             writeData.Start();
         }
 
 
-        private void write()
+        private void Write()
         {
-            this.counter++;
+            counter++;
             excelApplication = new Microsoft.Office.Interop.Excel.Application();
-            this.counter++;
+            counter++;
             excelWorkbook = excelApplication.Workbooks.Add(Missing.Value);
-            this.counter++;
+            counter++;
             excelWorksheet = (Worksheet)excelWorkbook.Sheets.Add();
-            this.counter++;
+            counter++;
             excelWorksheet.Cells[1, 1] = "Datum";
             excelWorksheet.Cells[1, 2] = "Zeit";
             excelWorksheet.Cells[1, 3] = "Gewicht";
             excelWorksheet.Cells[1, 4] = "Preis";
             excelWorksheet.Cells[1, 5] = "Wachstyp";
-            this.counter++;
+            counter++;
             int entrieSize = logBookEntries.Count;
 
             for (int i = 0; i < entrieSize; i++)
             {
-                excelWorksheet.Cells[ i + 2,1] = logBookEntries[i].datum;
-                excelWorksheet.Cells[ i + 2, 2] = logBookEntries[i].zeit;
-                excelWorksheet.Cells[ i + 2, 3] = logBookEntries[i].gewicht;
-                excelWorksheet.Cells[ i + 2, 4] = logBookEntries[i].preis;
-                excelWorksheet.Cells[ i + 2, 5] = logBookEntries[i].wachstyp.ToString();
-                this.counter++;
+                excelWorksheet.Cells[i + 2, 1] = logBookEntries[i].Datum;
+                excelWorksheet.Cells[i + 2, 2] = logBookEntries[i].Zeit;
+                excelWorksheet.Cells[i + 2, 3] = logBookEntries[i].Gewicht;
+                excelWorksheet.Cells[i + 2, 4] = logBookEntries[i].Preis;
+                excelWorksheet.Cells[i + 2, 5] = logBookEntries[i].Wachstyp.ToString();
+                counter++;
             }
 
-            isActive = false;
+
             string fileName;
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.ShowDialog();
+            _ = saveFileDialog.ShowDialog();
             if (saveFileDialog.SafeFileName != "")
             {
                 fileName = saveFileDialog.SafeFileName;
@@ -177,17 +178,16 @@ namespace Waage
         }
 
 
-        private void CmdClearLog_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void CmdClearLog_Click(object sender, RoutedEventArgs e)
         {
             if (MessageBox.Show("Wollen Sie das Logbuch Löschen?", "Logbuch löschen", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 main.listView.Items.Clear();
                 sPort.SendData("F00000");
             }
-
         }
 
-        private void CmdClearEntries_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void CmdClearEntries_Click(object sender, RoutedEventArgs e)
         {
             main.listView.Items.Clear();
         }

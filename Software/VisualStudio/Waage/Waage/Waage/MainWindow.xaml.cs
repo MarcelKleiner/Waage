@@ -20,13 +20,13 @@ namespace Waage
     /// </summary>
     public partial class MainWindow : Window
     {
-        SerialPortClass sPort;
+        private readonly SerialPortClass sPort;
         public MainWindow()
         {
             InitializeComponent();
 
-            sPort = new SerialPortClass(this);
-           Control control = new Control(this, sPort);
+           sPort = new SerialPortClass(this);
+            _ = new Control(this, sPort);
         }
     }
 }

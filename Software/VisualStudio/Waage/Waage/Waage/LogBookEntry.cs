@@ -21,79 +21,58 @@ namespace Waage
 
         public LogBookEntry(byte Y, byte M, byte D, byte h, byte m, byte s, byte w1, byte w2, byte p1, byte p2, byte p3, byte WT)
         {
-            setDateTime(Y, M, D, h, m, s);
+            SetDateTime(Y, M, D, h, m, s);
 
 
             short weight =   (short)((w1 << 8) + w2);
-            setGewicht((double)weight / 1000);
+            SetGewicht((double)weight / 1000);
 
             int prize = ((p1 << 16) + (p2 << 8) + p3);
             if ((p1 & 0x80) == 0x80)
             {
-                setPreis((double)((0xFFFFFF - prize) * -1) / 100);
+                SetPreis((double)((0xFFFFFF - prize) * -1) / 100);
             }
             else
             {
-                setPreis((double)prize/100);
+                SetPreis((double)prize/100);
             }
 
-            wachstyp = (WAX_TYPE)WT;
+            Wachstyp = (WAX_TYPE)WT;
         }
 
 
-        public WAX_TYPE wachstyp { get; private set; }
+        public WAX_TYPE Wachstyp { get; private set; }
 
 
-        private void setPreis(double data)
+        private void SetPreis(double data)
         {
             _preis = data;
         }
 
-        public string preis
+        public string Preis
         {
             get
             {
-                return (_preis.ToString("##0.00") + " Fr");
+                return _preis.ToString("##0.00") + " Fr";
             }
         }
 
-        private void setGewicht(double data)
+        private void SetGewicht(double data)
         {
             _gewicht = data;
         }
 
-        public string gewicht
-        {
-            get
-            {
-                return (_gewicht.ToString("00.000") + " kg");
-            }
-        }
+        public string Gewicht => _gewicht.ToString("00.000") + " kg";
 
+        public string Zeit => _dateTime.ToString("HH:mm:ss");
 
+        public string Datum => _dateTime.ToString("dd/MM/yyyy");
 
-        public string zeit
-        {
-            get
-            {
-                return _dateTime.ToString("HH:mm:ss");
-            }
-        }
-
-        public string datum
-        {
-            get
-            {
-                //   return _dateTime.Date;
-               return  _dateTime.ToString("dd/MM/yyyy");
-            }
-        }
-
-        public DateTime getDateTime()
+        public DateTime GetDateTime()
         {
             return _dateTime;
         }
-        private void setDateTime(byte Y, byte M, byte D, byte h, byte m, byte s)
+        private void SetDateTime(byte Y, byte M, byte D, byte h, byte m, byte s)
         {
             try
             {
@@ -103,7 +82,6 @@ namespace Waage
             {
                 _dateTime = new DateTime(2000, 01, 01, 00, 00, 00);
             }
-            
         }
 
 
