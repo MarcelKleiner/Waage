@@ -7,8 +7,9 @@
 
 #include "BWSettings.h"
 
-BWSettings::BWSettings(Model *model, LCD *lcd) {
+BWSettings::BWSettings(Model *model, LCD *lcd, Flash *flash) {
 	this->model = model;
+	this->flash = flash;
 	position = 0;
 	init = false;
 }
@@ -115,6 +116,7 @@ Model::ESCREEN BWSettings::Update(){
 	//------------------SW_Tar------------------
 	if(model->isT5Long()){
 		//Neuer Wert speichern
+		flash->WriteFlash();
 		init = false;
 		screen = Model::E_MAIN_SCRREN;
 		model->setT5Long(false);

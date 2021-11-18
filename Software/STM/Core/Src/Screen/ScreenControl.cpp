@@ -21,13 +21,15 @@ static Contrast *kontrastSettings;
 
 
 
-ScreenControl::ScreenControl(Model *model, Kontrast *contrast) {
-	model = model;
-	contrast = contrast;
+ScreenControl::ScreenControl(Model *model, Kontrast *contrast, Flash *flash) {
+	this->model = model;
+	this->flash = flash;
+	this->contrast = contrast;
 	lcd  = LCD();
+
 	mainScreen = new MainScreen(model, &lcd);
-	pwSettings = new PWSettings(model, &lcd);
-	bwSettings = new BWSettings(model, &lcd);
+	pwSettings = new PWSettings(model, &lcd, flash);
+	bwSettings = new BWSettings(model, &lcd, flash);
 	timeSettings = new TimeSettings(model, &lcd);
 	dateSettings = new DateSettings(model, &lcd);
 	timeScreen = new TimeScreen(model, &lcd);

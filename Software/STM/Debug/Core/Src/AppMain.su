@@ -1,10 +1,10 @@
-AppMain.cpp:25:1:AppMain::AppMain()	16	static
-AppMain.cpp:41:6:void AppMain::Init()	32	static
-AppMain.cpp:60:6:void AppMain::mainF()	40	static
-AppMain.cpp:96:6:bool AppMain::usbTransmit(uint8_t*, uint8_t)	32	static
-AppMain.cpp:111:6:void AppMain::ButtonUpdate()	16	static
-AppMain.cpp:115:6:void AppMain::Clk()	24	static
-AppMain.cpp:204:6:void AppMain::ReadLogbook(uint32_t)	24	static
-AppMain.cpp:217:6:void AppMain::ResetLogBook()	16	static
-AppMain.cpp:219:1:void __static_initialization_and_destruction_0(int, int)	16	static
-AppMain.cpp:219:1:cpp)	8	static
+AppMain.cpp:27:1:AppMain::AppMain()	16	static
+AppMain.cpp:43:6:void AppMain::Init()	32	static
+AppMain.cpp:65:6:void AppMain::mainF()	40	static
+AppMain.cpp:103:6:bool AppMain::usbTransmit(uint8_t*, uint8_t)	32	static
+AppMain.cpp:118:6:void AppMain::ButtonUpdate()	16	static
+AppMain.cpp:122:6:void AppMain::Clk()	24	static
+AppMain.cpp:211:6:void AppMain::ReadLogbook(uint32_t)	24	static
+AppMain.cpp:224:6:void AppMain::ResetLogBook()	16	static
+AppMain.cpp:226:1:void __static_initialization_and_destruction_0(int, int)	16	static
+AppMain.cpp:226:1:cpp)	8	static

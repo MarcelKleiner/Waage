@@ -11,12 +11,14 @@ LoadCellSettings lcSettings1;
 LoadCellSettings lcSettings2;
 Model model;
 
+Flash flash = Flash(&model);
 LoadCell loadCell1; // = LoadCell(&model, 1);
 LoadCell loadCell2; // = LoadCell(&model, 2);
 Kontrast contrast = Kontrast();
-ScreenControl screenControl = ScreenControl(&model, &contrast);
+ScreenControl screenControl = ScreenControl(&model, &contrast, &flash);
 ButtonControl buttonControl = ButtonControl(&model);
 Log logBook = Log(&model);
+
 
 Time time = Time(&model, &hi2c1);
 bool init = false;
@@ -39,12 +41,15 @@ AppMain::AppMain() {
 }
 
 void AppMain::Init() {
+
+	HAL_Delay(1000);
+
 	loadCell1.InitLoadCell(&model, lcSettings1);
 	loadCell2.InitLoadCell(&model, lcSettings2);
 	screenControl.InitScreen();
 	contrast.setContrast(0x09);
 	logBook.init();
-
+	flash.flashLesen();
 
 	HAL_GPIO_WritePin(LED_PW_GPIO_Port, LED_PW_Pin, GPIO_PIN_SET);
 	HAL_GPIO_WritePin(LED_BW_GPIO_Port, LED_BW_Pin, GPIO_PIN_SET);
@@ -59,25 +64,27 @@ void AppMain::Init() {
 
 void AppMain::mainF() {
 	while (true) {
-		if (updateEnable)
+		if (updateEnable){
 			updateEnable = false;
-		loadCell2.Update();
-		loadCell1.Update(); //ToDo
-		int32_t weight1 = (model.getLoadCell1() - model.getLoadCellOffset1())
-				/ model.getLoadCellGradient1();
-		int32_t weight2 = (model.getLoadCell2() - model.getLoadCellOffset2())
-				/ model.getLoadCellGradient2();
-		model.setWeight(weight1 + weight2);
-		screenControl.Update();
+				loadCell2.Update();
+				loadCell1.Update(); //ToDo
+				int32_t weight1 = (model.getLoadCell1() - model.getLoadCellOffset1())
+						/ model.getLoadCellGradient1();
+				int32_t weight2 = (model.getLoadCell2() - model.getLoadCellOffset2())
+						/ model.getLoadCellGradient2();
+				model.setWeight(weight1 + weight2);
+				screenControl.Update();
 
-		if (model.isOverrideClock()) {
-			time.SetTime();
-			model.setOverrideClock(false);
-		}
+				if (model.isOverrideClock()) {
+					time.SetTime();
+					model.setOverrideClock(false);
+				}
 
-		if(model.isAddEntry()){
-			logBook.addEntriy();
-			model.setAddEntry(false);
+				if(model.isAddEntry()){
+					logBook.addEntriy();
+					model.setAddEntry(false);
+				}
+
 		}
 
 		//Waage nullen
